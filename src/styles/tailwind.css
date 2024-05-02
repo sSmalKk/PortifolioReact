@@ -49,10 +49,6 @@ select:focus {
   Container CSS
 --------------------------------------*/
   .container-xs {
-    @apply w-full mx-auto max-w-[1279px];
-  }
-
-  .container-sm {
-    @apply w-full mx-auto max-w-[1440px];
+    @apply w-full mx-auto max-w-[1282px];
   }
 }

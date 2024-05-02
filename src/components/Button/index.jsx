@@ -14,8 +14,8 @@ const variants = {
 };
 const sizes = {
   xs: "h-[24px] px-[5px]",
-  sm: "h-[36px] px-4 text-xs",
-  md: "h-[36px] px-2.5",
+  md: "h-[36px] px-4 text-xs",
+  sm: "h-[36px] px-2.5",
 };
 
 const Button = ({
@@ -25,7 +25,7 @@ const Button = ({
   rightIcon,
   shape,
   variant = "fill",
-  size = "md",
+  size = "sm",
   color = "blue_gray_900_19",
   ...restProps
 }) => {
@@ -47,7 +47,7 @@ Button.propTypes = {
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
   shape: PropTypes.oneOf(["round", "circle"]),
-  size: PropTypes.oneOf(["xs", "sm", "md"]),
+  size: PropTypes.oneOf(["xs", "md", "sm"]),
   variant: PropTypes.oneOf(["fill"]),
   color: PropTypes.oneOf(["black_900_60", "blue_gray_900_19", "green_700"]),
 };

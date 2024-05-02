@@ -32,18 +32,17 @@ export default function Header({ ...props }) {
       </ul>
       <div className="flex w-[16%] justify-between gap-5 md:w-full">
         <div className="flex gap-5">
-          <Button shape="circle" className="w-[36px] !rounded-[18px]">
+          <Button size="xs" shape="round" className="w-[36px]">
             <Img src="images/img_u_linkedin_alt.svg" />
           </Button>
-          <Button shape="circle" className="w-[36px] !rounded-[18px]">
+          <Button size="xs" shape="round" className="w-[36px]">
             <Img src="images/img_volume.svg" />
           </Button>
         </div>
         <Button
           color="green_700"
-          size="sm"
-          shape="round"
-          className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
+          size="md"
+          className="min-w-[92px] rounded-[18px] border border-solid border-green-400 tracking-[0.50px]"
         >
           CONTATO
         </Button>

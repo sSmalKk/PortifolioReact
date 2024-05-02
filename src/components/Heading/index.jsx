@@ -1,11 +1,11 @@
 import React from "react";
 
 const sizes = {
-  xl: "text-5xl font-bold md:text-[44px] sm:text-[38px]",
+  xl: "text-[38px] font-bold md:text-4xl sm:text-[34px]",
   s: "text-lg font-semibold",
   md: "text-[28px] font-bold md:text-[26px] sm:text-2xl",
   xs: "text-base font-semibold",
-  lg: "text-[38px] font-bold md:text-4xl sm:text-[34px]",
+  lg: "text-[34px] font-bold md:text-[32px] sm:text-3xl",
 };
 
 const Heading = ({ children, className = "", size = "s", as, ...restProps }) => {

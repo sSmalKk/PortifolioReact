@@ -5,7 +5,7 @@ export default function Footer({ ...props }) {
   return (
     <footer {...props}>
       <div className="flex justify-center self-stretch">
-        <div className="container-sm flex items-center justify-between gap-5 px-[61px] md:p-5 md:px-5 sm:flex-col">
+        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-5 px-[61px] md:p-5 md:px-5 sm:flex-col">
           <Text size="4xl" as="p" className="tracking-[0.18px]">
             DANTAS
           </Text>
@@ -34,23 +34,22 @@ export default function Footer({ ...props }) {
           </ul>
           <Button
             color="green_700"
-            size="sm"
-            shape="round"
-            className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
+            size="md"
+            className="min-w-[92px] rounded-[18px] border border-solid border-green-400 tracking-[0.50px]"
           >
             CONTATO
           </Button>
           <div className="flex flex-col items-center gap-[18px] border-l border-r border-solid border-black-900_60 p-[18px] shadow-xs">
-            <Button shape="circle" className="w-[36px] !rounded-[18px]">
+            <Button size="xs" shape="round" className="w-[36px]">
               <Img src="images/img_u_linkedin_alt.svg" />
             </Button>
-            <Button shape="circle" className="w-[36px] !rounded-[18px]">
+            <Button size="xs" shape="round" className="w-[36px]">
               <Img src="images/img_volume.svg" />
             </Button>
-            <Button shape="circle" className="w-[36px] !rounded-[18px]">
+            <Button size="xs" shape="round" className="w-[36px]">
               <Img src="images/img_u_instagram.svg" />
             </Button>
-            <Button shape="circle" className="w-[36px] !rounded-[18px]">
+            <Button size="xs" shape="round" className="w-[36px]">
               <Img src="images/img_lock.svg" />
             </Button>
           </div>

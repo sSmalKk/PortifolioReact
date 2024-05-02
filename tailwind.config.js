@@ -12,7 +12,7 @@ module.exports = {
         blue_gray: { 50: "#eff0f6", 500: "#627481", "900_19": "#2b2b2b19" },
         gray: { 50: "#f5fafc", 300: "#d6e3e7", 900: "#1a1a1a" },
         deep_purple: { 900: "#0000c0" },
-        indigo: { A200: "#617fff", A700: "#0039f0" },
+        indigo: { A700: "#0039f0", A200: "#617fff" },
       },
       boxShadow: { xs: "0px 0px 3px 0px #0000002b", sm: "0px 2px 8px 0px #14142b14" },
       fontFamily: { lato: "Lato", roboto: "Roboto", inter: "Inter", robotomono: "Roboto Mono" },

@@ -1,18 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Img, Heading, Text, Button } from "../../components";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Post from "../../components/Post";
-import ServiceA from "../../components/ServiceA";
-import ServiceB from "../../components/ServiceB";
-import ServiceC from "../../components/ServiceC";
-
-const data = [
-  { linkone: "images/img_link.png" },
-  { linkone: "images/img_link_396x406.png" },
-  { linkone: "images/img_link_1.png" },
-];
+import { Text, Img, Heading, Button } from "../../components";
+import Footer2 from "../../components/Footer2";
+import Header2 from "../../components/Header2";
 
 export default function DantasPage() {
   return (
@@ -21,108 +11,195 @@ export default function DantasPage() {
         <title>Portifolio</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <div className="flex w-full flex-col items-center gap-60 bg-gray-50 pt-2.5 md:gap-[180px] sm:gap-[120px]">
-        {/* header section */}
-        <Header className="flex w-[89%] items-center justify-between gap-5 md:w-full md:flex-col md:p-5" />
-        <div className="flex flex-col gap-5 self-stretch">
+
+      {/* main content section */}
+      <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
+        <div className="flex flex-col items-center">
+          {/* header section */}
+          <div className="container-xs px-7 md:p-5 sm:px-5">
+            <Header2 className="gap-5" />
+          </div>
+
           {/* hero section */}
-          <div className="flex flex-col items-center gap-[250px] md:gap-[187px] sm:gap-[125px]">
-            {/* about section */}
-            <div className="container-sm flex flex-col md:p-5">
-              <div className="relative h-[380px] md:h-auto">
-                <div className="flex w-full items-start justify-center md:flex-col">
-                  <div className="mt-[90px] flex flex-1 bg-indigo-A700 md:self-stretch">
-                    <Text size="8xl" as="p" className="mt-[15px] tracking-[-1.50px] !text-white-A700">
+          <div className="container-xs mt-60 md:p-5">
+            <div className="flex flex-col">
+              <div className="flex items-center justify-evenly md:flex-col">
+                <div className="flex w-[67%] flex-col items-center gap-[22px] md:w-full">
+                  <div className="flex self-start bg-indigo-A700">
+                    <Text size="8xl" as="p" className="mt-2 tracking-[-1.50px] !text-white-A700">
                       DANTAS SOLUÇÕES
                     </Text>
+                  </div>
+                  <Text size="6xl" as="p" className="w-[87%] leading-[56px] md:w-full">
+                    Soluções especializadas para o seu negocio
+                  </Text>
+                </div>
+                <div className="flex w-[32%] flex-col items-center gap-8 md:w-full">
+                  <Img
+                    src="images/img_container_380x410.png"
+                    alt="container"
+                    className="h-[380px] w-full object-cover md:h-auto"
+                  />
+                  <Heading size="lg" as="h1" className="!text-indigo-A200">
+                    Soluções personalizadas!
+                  </Heading>
+                </div>
+              </div>
+
+              {/* features section */}
+              <div className="mt-[302px]">
+                <div className="mt-[321px] flex items-center gap-5 md:flex-col">
+                  <Img
+                    src="images/img_container.png"
+                    alt="container"
+                    className="h-[380px] w-[379px] object-cover md:w-full"
+                  />
+                  <div className="flex flex-1 flex-col items-start gap-[21px] md:self-stretch">
+                    <Text size="lg" as="p" className="tracking-[0.50px]">
+                      FALE COMIGO!
+                    </Text>
+                    <div className="flex">
+                      <Text size="8xl" as="p" className="mt-2 tracking-[-1.50px]">
+                        DANTAS SOLUÇÕES
+                      </Text>
+                    </div>
+                    <Text size="6xl" as="p" className="w-[81%] leading-[56px] md:w-full">
+                      Soluções especializadas para o seu negocio
+                    </Text>
+                    <Button
+                      color="green_700"
+                      size="md"
+                      shape="round"
+                      className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
+                    >
+                      CONTATO
+                    </Button>
+                  </div>
+                </div>
+
+                {/* about section */}
+                <div className="mt-[572px] flex items-center gap-[7px] py-[5px] md:flex-col">
+                  <div className="flex flex-1 flex-col items-start gap-[21px] md:self-stretch">
+                    <Text size="lg" as="p" className="tracking-[0.50px]">
+                      FALE COMIGO!
+                    </Text>
+                    <div className="flex">
+                      <Text size="8xl" as="p" className="mt-2 tracking-[-1.50px]">
+                        DANTAS SOLUÇÕES
+                      </Text>
+                    </div>
+                    <Text size="6xl" as="p" className="w-[82%] leading-[56px] md:w-full">
+                      Soluções especializadas para o seu negocio
+                    </Text>
+                    <Button
+                      color="green_700"
+                      size="md"
+                      shape="round"
+                      className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
+                    >
+                      CONTATO
+                    </Button>
                   </div>
                   <Img
                     src="images/img_container.png"
                     alt="container"
-                    className="relative ml-[-216px] h-[380px] w-[27%] object-cover md:ml-0 md:w-full"
+                    className="h-[1014px] w-[32%] object-cover md:w-full"
                   />
                 </div>
-                <Text
-                  size="6xl"
-                  as="p"
-                  className="absolute bottom-[23.09px] left-[0.00px] m-auto w-[52%] leading-[56px]"
-                >
-                  Soluções especializadas para o seu negocio
-                </Text>
-              </div>
-              <div className="mt-[15px] flex flex-col items-end pl-14 pr-[63px] md:px-5">
-                <Heading size="xl" as="h1" className="!text-indigo-A200">
-                  Soluções personalizadas!
-                </Heading>
-              </div>
 
-              {/* contact section */}
-              <ServiceA className="mt-[301px] flex items-center gap-[50px] py-20 pr-14 md:flex-col md:py-5 md:pr-5" />
+                {/* services section */}
+                <div className="mt-[250px] flex h-[1024px] flex-col items-start justify-end gap-[21px] bg-[url(/public/images/img_section2.png)] bg-cover bg-no-repeat py-[50px] md:h-auto md:py-5">
+                  <Text size="lg" as="p" className="mt-[563px] tracking-[0.50px] !text-white-A700">
+                    FALE COMIGO!
+                  </Text>
+                  <div className="flex">
+                    <Text size="8xl" as="p" className="mt-2 tracking-[-1.50px] !text-white-A700">
+                      DANTAS SOLUÇÕES
+                    </Text>
+                  </div>
+                  <Text size="6xl" as="p" className="w-[55%] leading-[56px] !text-white-A700 md:w-full md:p-5">
+                    Soluções especializadas para o seu negocio
+                  </Text>
+                  <Button
+                    color="black_900_60"
+                    size="md"
+                    shape="round"
+                    className="min-w-[92px] border border-solid border-green-700 tracking-[0.50px]"
+                  >
+                    CONTATO
+                  </Button>
+                </div>
 
-              {/* services section */}
-              <ServiceB className="mt-[250px] flex items-center gap-[37px] py-[5px] md:flex-col" />
-
-              {/* testimonials section */}
-              <ServiceC className="mt-[250px] flex h-[1024px] flex-col items-start justify-end gap-[21px] bg-[url(/public/images/img_section2.png)] bg-cover bg-no-repeat py-[50px] md:h-auto md:py-5" />
-            </div>
-            <div className="flex flex-col items-center gap-[19px] self-stretch">
-              {/* services overview section */}
-              <div className="self-stretch py-[59px] md:py-5">
-                <div className="flex items-end justify-between gap-5 self-start overflow-auto border-b border-t border-solid border-gray-300 py-[15px] md:flex-col">
-                  <div className="flex w-[6%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <Img
-                      src="images/img_horizontal_divider.png"
-                      alt="horizontal"
-                      className="mt-[5px] h-px w-px object-cover"
-                    />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                {/* testimonials section */}
+                <div className="mb-[61px] mt-[309px] flex items-center justify-between gap-5 overflow-auto border-b border-t border-solid border-gray-300 py-[13px] md:flex-col">
+                  <Img
+                    src="images/img_horizontal_divider.png"
+                    alt="horizontal"
+                    className="h-px w-px object-cover md:w-full"
+                  />
+                  <div className="flex w-[66%] items-center justify-between gap-5 md:w-full md:flex-col">
+                    <Text
+                      size="md"
+                      as="p"
+                      className="w-[-153px] uppercase leading-5 tracking-[4.00px] !text-black-900_01"
+                    >
                       @service
                     </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
-                      @service
-                    </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
-                      @service
-                    </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
-                      @service
-                    </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
-                      @service
-                    </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
-                      @service
-                    </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
-                      @service
-                    </Text>
-                  </div>
-                  <div className="flex w-[8%] items-start justify-between gap-5 md:w-full md:p-5">
-                    <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
-                    <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                    <div className="flex w-[81%] items-center justify-between gap-5 self-end md:w-full md:flex-col">
+                      <Img
+                        src="images/img_horizontal_divider_1x1.png"
+                        alt="horizontal"
+                        className="mt-[5px] h-px w-px self-start object-cover md:w-full"
+                      />
+                      <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                        @service
+                      </Text>
+                      <div className="flex w-[11%] items-start justify-between gap-5 md:w-full">
+                        <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
+                        <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                          @service
+                        </Text>
+                      </div>
+                      <div className="flex w-[11%] items-start justify-between gap-5 md:w-full">
+                        <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
+                        <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                          @service
+                        </Text>
+                      </div>
+                      <div className="flex w-[11%] items-start justify-between gap-5 md:w-full">
+                        <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
+                        <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                          @service
+                        </Text>
+                      </div>
+                      <div className="flex w-[11%] items-start justify-between gap-5 md:w-full">
+                        <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
+                        <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                          @service
+                        </Text>
+                      </div>
+                      <div className="flex w-[11%] items-start justify-between gap-5 md:w-full">
+                        <div className="mt-[5px] h-px w-[36px] bg-gray-300" />
+                        <Text size="md" as="p" className="uppercase tracking-[4.00px] !text-black-900_01">
+                          @service
+                        </Text>
+                      </div>
+                      <Img
+                        src="images/img_horizontal_divider_1.png"
+                        alt="horizontal"
+                        className="mt-[5px] h-px w-px self-start object-cover md:w-full"
+                      />
+                    </div>
+                    <Text
+                      size="md"
+                      as="p"
+                      className="w-[-153px] uppercase leading-5 tracking-[4.00px] !text-black-900_01"
+                    >
                       @service
                     </Text>
                   </div>
                   <Img
-                    src="images/img_horizontal_divider_1x1.png"
+                    src="images/img_horizontal_divider_2.png"
                     alt="horizontal"
                     className="h-px w-px object-cover md:w-full"
                   />
@@ -130,7 +207,7 @@ export default function DantasPage() {
               </div>
 
               {/* personal info section */}
-              <div className="container-sm flex items-center gap-[50px] py-[5px] md:flex-col md:p-5">
+              <div className="mt-5 flex items-center gap-[50px] md:flex-col">
                 <Img
                   src="images/img_container.png"
                   alt="container"
@@ -140,7 +217,7 @@ export default function DantasPage() {
                   <Heading as="h2" className="self-start !font-bold uppercase tracking-[2.70px]">
                     QUEM EU SOU
                   </Heading>
-                  <div className="flex">
+                  <div className="flex self-start">
                     <Text size="8xl" as="p" className="mt-1.5 tracking-[-1.50px]">
                       Gustavo Dantas
                     </Text>
@@ -149,7 +226,7 @@ export default function DantasPage() {
                     Soluções especializadas para o seu negocio
                   </Text>
                   <Button
-                    size="sm"
+                    size="md"
                     shape="round"
                     className="min-w-[122px] self-end border border-solid border-black-900_dd tracking-[0.50px] text-black-900_dd"
                   >
@@ -157,47 +234,73 @@ export default function DantasPage() {
                   </Button>
                 </div>
               </div>
-              <div className="container-sm px-20 md:p-5 md:px-5">
-                {/* portfolio section */}
-                <div className="flex flex-col items-center gap-[19px]">
-                  <Heading as="h3" className="text-center !font-bold uppercase tracking-[2.70px]">
-                    PORTIFOLIO
-                  </Heading>
-                  <div className="flex w-[97%] gap-2.5 rounded-[19px] md:w-full md:flex-col">
-                    {data.map((d, index) => (
-                      <Img
-                        key={"container" + index}
-                        src="images/img_link.png"
-                        alt="link"
-                        className="h-[396px] w-[33%] object-cover md:w-full"
-                      />
-                    ))}
-                  </div>
-                  <div className="self-stretch">
-                    <div className="flex flex-col items-center">
-                      <div className="flex items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
-                        <Button size="xs" shape="circle" className="ml-[5px] w-[24px] !rounded-[12px]">
-                          <Img src="images/img_search.svg" />
-                        </Button>
-                        <Text size="lg" as="p" className="!font-inter tracking-[0.50px] !text-black-900_60">
-                          Filter
-                        </Text>
-                      </div>
-                      <Heading as="h4" className="text-center !font-bold uppercase tracking-[2.70px]">
-                        Blog
-                      </Heading>
-                      <Heading size="lg" as="h5" className="mt-[7px] text-center !text-gray-900">
-                        Conteúdos sobre o marketing
-                      </Heading>
+
+              {/* portfolio section */}
+              <div className="mt-[19px] flex flex-col items-center px-[574px] md:px-5">
+                <Heading as="h3" className="!font-bold uppercase tracking-[2.70px]">
+                  PORTIFOLIO
+                </Heading>
+              </div>
+
+              {/* blog section */}
+              <div className="mt-[18px] flex flex-col gap-5">
+                <div className="flex rounded-[19px] md:flex-col">
+                  <Img
+                    src="images/img_link_396x407.png"
+                    alt="link"
+                    className="h-[396px] w-[32%] object-cover md:w-full"
+                  />
+                  <Img
+                    src="images/img_link_396x407.png"
+                    alt="link"
+                    className="ml-[9px] h-[396px] w-[32%] object-cover md:ml-0 md:w-full"
+                  />
+                  <Img
+                    src="images/img_link_396x407.png"
+                    alt="link"
+                    className="ml-[9px] h-[396px] w-[32%] object-cover md:ml-0 md:w-full"
+                  />
+                </div>
+                <div>
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
+                      <Button size="xs" shape="circle" className="ml-[5px] w-[24px] !rounded-[12px]">
+                        <Img src="images/img_search.svg" />
+                      </Button>
+                      <Text size="lg" as="p" className="!font-inter tracking-[0.50px] !text-black-900_60">
+                        Filter
+                      </Text>
                     </div>
-                    <div className="flex items-start gap-8 md:flex-col">
-                      <div className="flex flex-1 flex-col gap-8 md:self-stretch">
-                        <Img src="images/img_container.png" alt="container" className="h-[453px] object-cover" />
-                        <div className="flex flex-col items-start gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-8 shadow-sm sm:p-5">
-                          <Heading as="h6" className="mt-2.5">
-                            @Nome
-                          </Heading>
-                          <Heading size="md" as="h3" className="w-full leading-10 !text-gray-900">
+                    <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]">
+                      Blog
+                    </Heading>
+                    <Heading size="xl" as="h5" className="mt-[7px] !text-gray-900">
+                      Conteúdos sobre o marketing
+                    </Heading>
+                  </div>
+                  <div className="flex items-start gap-8 md:flex-col">
+                    <div className="flex flex-1 flex-col gap-8 md:self-stretch">
+                      <Img src="images/img_container.png" alt="container" className="h-[453px] object-cover" />
+                      <div className="flex flex-col items-start gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-8 shadow-sm sm:p-5">
+                        <Heading as="h6" className="mt-[11px]">
+                          @Nome
+                        </Heading>
+                        <Heading size="md" as="h3" className="w-full leading-10 !text-gray-900">
+                          <>
+                            Como o design de sites afeta a conversão
+                            <br />
+                            de visitantes?
+                          </>
+                        </Heading>
+                      </div>
+                    </div>
+                    <div className="flex w-[45%] flex-col gap-8 md:w-full">
+                      <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[34px] shadow-sm sm:p-5">
+                        <Heading as="h6" className="mt-2">
+                          @Nome
+                        </Heading>
+                        <div className="mb-2.5 flex self-stretch">
+                          <Heading size="md" as="h3" className="w-[84%] leading-10 !text-gray-900">
                             <>
                               Como o design de sites afeta a conversão
                               <br />
@@ -206,32 +309,29 @@ export default function DantasPage() {
                           </Heading>
                         </div>
                       </div>
-                      <div className="flex w-[45%] flex-col gap-8 md:w-full">
-                        <Post className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[34px] shadow-sm sm:p-5" />
-                        <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[35px] shadow-sm sm:p-5">
-                          <Heading as="h6" className="mt-2">
-                            @Nome
-                          </Heading>
-                          <Heading size="md" as="h3" className="mb-2.5 w-[92%] leading-10 !text-gray-900 md:w-full">
-                            <>
-                              Como o design de sites afeta a conversão
-                              <br />
-                              de visitantes?
-                            </>
-                          </Heading>
-                        </div>
-                        <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[35px] shadow-sm sm:p-5">
-                          <Heading as="h6" className="mt-2">
-                            @Nome
-                          </Heading>
-                          <Heading size="md" as="h3" className="mb-2.5 w-full leading-10 !text-gray-900">
-                            <>
-                              Como o design de sites afeta a conversão
-                              <br />
-                              de visitantes?
-                            </>
-                          </Heading>
-                        </div>
+                      <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[35px] shadow-sm sm:p-5">
+                        <Heading as="h6" className="mt-2">
+                          @Nome
+                        </Heading>
+                        <Heading size="md" as="h3" className="mb-2.5 w-[92%] leading-10 !text-gray-900 md:w-full">
+                          <>
+                            Como o design de sites afeta a conversão
+                            <br />
+                            de visitantes?
+                          </>
+                        </Heading>
+                      </div>
+                      <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[35px] shadow-sm sm:p-5">
+                        <Heading as="h6" className="mt-2">
+                          @Nome
+                        </Heading>
+                        <Heading size="md" as="h3" className="mb-2.5 w-full leading-10 !text-gray-900">
+                          <>
+                            Como o design de sites afeta a conversão
+                            <br />
+                            de visitantes?
+                          </>
+                        </Heading>
                       </div>
                     </div>
                   </div>
@@ -239,21 +339,26 @@ export default function DantasPage() {
               </div>
 
               {/* partners section */}
-              <div className="flex flex-col items-center gap-[18px] self-stretch">
-                <div className="container-sm flex flex-col items-center px-[659px] md:p-5 md:px-5">
-                  <Heading as="h6" className="text-center !font-bold uppercase tracking-[2.70px]">
+              <div className="mt-[18px] flex flex-col gap-[18px]">
+                <div className="flex flex-col items-center px-[580px] md:px-5">
+                  <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
                     PARCEIROS
                   </Heading>
                 </div>
-                <div className="flex justify-center self-stretch border-b border-t border-solid border-black-900_60 shadow-xs">
-                  <div className="container-sm flex justify-center px-[274px] md:p-5 md:px-5">
-                    <div className="flex w-full gap-[18px] border-l border-r border-solid border-black-900_60 p-[18px] shadow-xs md:flex-col">
-                      {[...Array(4)].map((d, index) => (
+                <div className="border-b border-t border-solid border-black-900_60 px-[194px] shadow-xs md:px-5">
+                  <div className="flex gap-[18px] border-l border-r border-solid border-black-900_60 p-[18px] shadow-xs md:flex-col">
+                    <Img
+                      src="images/img_link_200x200.png"
+                      alt="link"
+                      className="h-[200px] w-[200px] object-cover md:w-full"
+                    />
+                    <div className="flex flex-1 gap-[18px] md:flex-col md:self-stretch">
+                      {[...Array(3)].map((d, index) => (
                         <Img
-                          key={"border" + index}
+                          key={"listlinkone" + index}
                           src="images/img_link_200x200.png"
                           alt="link"
-                          className="h-[200px] w-[23%] object-cover md:w-full"
+                          className="h-[200px] w-[31%] object-cover md:w-full"
                         />
                       ))}
                     </div>
@@ -262,7 +367,25 @@ export default function DantasPage() {
               </div>
             </div>
           </div>
-          <Footer className="flex flex-col items-center gap-5" />
+
+          {/* footer section */}
+          <Footer2 />
+        </div>
+
+        {/* privacy policy section */}
+        <div className="flex flex-col items-end">
+          <div className="mt-5 flex w-[84%] md:w-full md:p-5">
+            <div className="flex w-[81%] flex-wrap justify-between gap-5 border-t border-solid border-gray-300 py-7 pr-7 md:w-full sm:py-5 sm:pr-5">
+              <a href="#" className="self-start">
+                <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
+                  Privacy policy
+                </Text>
+              </a>
+              <Text size="xs" as="p" className="mr-[155px] self-start uppercase tracking-[4.00px] !text-blue_gray-500">
+                © 2024 DANTAS COPYRIGHT
+              </Text>
+            </div>
+          </div>
         </div>
       </div>
     </>
