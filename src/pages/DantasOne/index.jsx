@@ -1,8 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Button, Img, Text, Heading } from "../../components";
-import DantasOne141tabbar from "../../components/DantasOne141tabbar";
-import Header2 from "../../components/Header2";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function DantasOnePage() {
   return (
@@ -13,7 +13,7 @@ export default function DantasOnePage() {
       </Helmet>
       <div className="flex w-full flex-col gap-[11px] bg-gray-50">
         {/* header section */}
-        <Header2 className="py-[11px]" />
+        <Header className="py-[11px]" />
         <div className="flex flex-col items-center gap-5">
           {/* about section */}
           <div className="container-xs flex flex-col items-center gap-[83px] md:gap-[62px] md:p-5 sm:gap-[41px]">
@@ -229,61 +229,7 @@ export default function DantasOnePage() {
             </div>
 
             {/* footer section */}
-            <div className="relative h-[322px] self-stretch md:h-auto">
-              <div className="flex w-full flex-col gap-5">
-                <div className="flex items-center justify-between gap-5 px-[61px] md:px-5 sm:flex-col">
-                  <Text size="4xl" as="p" className="tracking-[0.18px]">
-                    DANTAS
-                  </Text>
-                  <DantasOne141tabbar />
-                  <Button
-                    color="green_700"
-                    size="md"
-                    shape="round"
-                    className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
-                  >
-                    CONTATO
-                  </Button>
-                  <div className="flex flex-col items-center gap-[18px] border-l border-r border-solid border-black-900_60 p-[18px] shadow-xs">
-                    <Button shape="circle" className="w-[36px] !rounded-[18px]">
-                      <Img src="images/img_u_linkedin_alt.svg" />
-                    </Button>
-                    <Button shape="circle" className="w-[36px] !rounded-[18px]">
-                      <Img src="images/img_volume.svg" />
-                    </Button>
-                    <Button shape="circle" className="w-[36px] !rounded-[18px]">
-                      <Img src="images/img_u_instagram.svg" />
-                    </Button>
-                    <Button shape="circle" className="w-[36px] !rounded-[18px]">
-                      <Img src="images/img_lock.svg" />
-                    </Button>
-                  </div>
-                </div>
-                <div className="flex flex-wrap items-center justify-between gap-5 border-t border-solid border-gray-300 py-1 pr-1">
-                  <a href="#" className="my-[23px]">
-                    <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-                      Privacy policy
-                    </Text>
-                  </a>
-                  <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-                    © 2024 DANTAS COPYRIGHT
-                  </Text>
-                  <a href="#">
-                    <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-                      Terms & conditions
-                    </Text>
-                  </a>
-                </div>
-              </div>
-              <div className="absolute bottom-[0.43px] left-[1.00px] m-auto flex flex-col items-center gap-[18px] p-[18px] shadow-xs">
-                <Button shape="circle" className="w-[36px] !rounded-[18px]">
-                  <Img src="images/img_u_comment.svg" />
-                </Button>
-                <Button shape="circle" className="w-[36px] !rounded-[18px]">
-                  <Img src="images/img_u_arrow_up.svg" />
-                </Button>
-              </div>
-            </div>
+            <Footer/>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, Button, Img, Heading } from "./..";
+import { Link } from "react-router-dom"; // Importe o Link do React Router
+import { Text, Button, Img} from "./..";
 
 export default function Footer({ ...props }) {
   return (
@@ -9,28 +10,23 @@ export default function Footer({ ...props }) {
           <Text size="4xl" as="p" className="tracking-[0.18px]">
             DANTAS
           </Text>
-          <ul className="flex w-[28%] flex-wrap justify-between gap-5 p-[7px] sm:w-full">
-            <li>
-              <a href="SERVIÇOS" target="_blank" rel="noreferrer" className="ml-[21px] self-end md:ml-0">
-                <Heading size="xs" as="h6" className="tracking-[0.50px] !text-black-900">
-                  SERVIÇOS
-                </Heading>
-              </a>
-            </li>
-            <li>
-              <a href="PROJETOS" target="_blank" rel="noreferrer">
-                <Text size="2xl" as="p" className="tracking-[0.50px]">
-                  PROJETOS
-                </Text>
-              </a>
-            </li>
-            <li>
-              <a href="SOBRE" target="_blank" rel="noreferrer" className="mr-[21px] md:mr-0">
-                <Text size="2xl" as="p" className="tracking-[0.50px]">
-                  SOBRE
-                </Text>
-              </a>
-            </li>
+          <ul className="flex items-center gap-[15px]">
+            {/* Use Link em vez de <a> */}
+            <Link to="/#services" className="cursor-pointer rounded-[3px] active:text-black-900">
+              <Text className="text-base font-semibold tracking-[0.50px]">
+                SERVIÇOS
+              </Text>
+            </Link>
+            <Link to="/#projects" className="cursor-pointer rounded-[3px] active:text-black-900">
+              <Text className="text-base font-normal tracking-[0.50px]">
+                PROJETOS
+              </Text>
+            </Link>
+            <Link to="/#about" className="cursor-pointer rounded-[3px] active:text-black-900">
+              <Text className="text-base font-normal tracking-[0.50px]">
+                SOBRE
+              </Text>
+            </Link>
           </ul>
           <Button
             color="green_700"
@@ -57,25 +53,26 @@ export default function Footer({ ...props }) {
       </div>
       <ul className="!mx-auto flex w-full max-w-[1449px] flex-wrap items-center justify-between gap-5 border-t border-solid border-gray-300 py-[9px] pr-[9px] md:p-5">
         <li>
-          <a href="#" className="my-[18px]">
+          <Link to="/privacypolicy
+">
             <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-              Privacy policy
+              Privacypolicy
             </Text>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <a href="copyright">
             <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
               © 2024 DANTAS COPYRIGHT
             </Text>
           </a>
         </li>
         <li>
-          <a href="#">
+          <Link to="/termsconditions">
             <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
               Terms & conditions
             </Text>
-          </a>
+          </Link>
         </li>
       </ul>
     </footer>
