@@ -30,16 +30,12 @@ export default function Header({ ...props }) {
       </ul>
       <div className="flex w-[22%] justify-between gap-5 md:w-full">
         <div className="flex gap-5">
-          <a href="#">
-            <Button className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5">
+            <Button onClick={() => window.location.href = '/#contact'} className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5">
               <Img src="images/img_u_linkedin_alt.svg" />
             </Button>
-          </a>
-          <a href="#">
-            <Button className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5">
+            <Button onClick={() => window.location.href = '/#contact'} className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5">
               <Img src="images/img_volume.svg" />
             </Button>
-          </a>
         </div>
         <Button onClick={() => window.location.href = '/#contact'} className="h-[36px] min-w-[92px] rounded-[18px] border border-solid border-green-400 bg-green-700 px-[15px] text-xs tracking-[0.50px] text-white-A700">
           CONTATO
