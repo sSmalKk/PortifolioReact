@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Img, Heading, Button } from "../../components";
+import { Text, Img, Button } from "../../components";
 
 const ServiceComponentType1 = ({ service }) => {
   return (

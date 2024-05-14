@@ -47,16 +47,24 @@ const Portfolio = [{
   link: "https://www.implantegiovanicentro.com.br",
 },];
 
-const parceiros = [{
-  title: "implante giovani centro",
-  image: "images/img_link_200x200.png",
-},{
-  title: "implante giovani centro",
-  image: "images/img_link_200x200.png",
-},{
-  title: "implante giovani centro",
-  image: "images/img_link_200x200.png",
-},];
+const parceiros = [
+    {
+        link: "https://example.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 1"
+    },
+    {
+        link: "https://example2.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 2"
+    } ,
+    {
+        link: "https://example2.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 2"
+    } 
+    // Add more partners as needed
+];
 /*o id vai ser o link do post do blog*/
 const Blog = [{
   id:1,
@@ -143,14 +151,12 @@ const hasNextPage = indexOfLastPost < filteredPosts.length;
       <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
         <div className="flex flex-col items-center">
           {/* header section */}
-          <div className="container-xs px-7 md:p-5 sm:px-5">
-            <Header className="gap-5" />
-          </div>
-
+           <Header className="container-xs  gap-5 px-7 md:p-5 sm:px-5 " style={{ position: 'fixed'}} />
+ 
           {/* hero section */}
           <div className="container-xs md:p-5" >
             <div className="flex flex-col" >
-            <div className="h-screen bg-blue-500 flex items-center justify-center">
+            <div className="h-screen bg-red-500 flex items-center justify-center">
   <div className="flex items-center justify-evenly md:flex-col w-full max-w-screen-xl mx-auto">
     <div className="flex w-full flex-col items-center gap-8 md:w-[67%]">
       <div className="flex self-start bg-indigo-A700">
@@ -162,7 +168,7 @@ const hasNextPage = indexOfLastPost < filteredPosts.length;
         Soluções especializadas para o seu negócio
       </Text>
     </div>
-    <div className="flex w-full flex-col items-center gap-8 md:w-[32%]">
+    <div className="flex w-full flex-col items-center gap-8">
       <Img
         src="images/img_container_380x410.png"
         alt="container"
