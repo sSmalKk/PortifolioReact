@@ -1,9 +1,17 @@
+// ServiceC.jsx
 import React from 'react';
 import { Text, Button } from "../../components";
 
-const ServiceComponentType3 = ({ service }) => {
+const ServiceComponentType3 = ({ service, imagePosition }) => {
   return (
-    <div id={service.id} className="flex h-screen bg-red-500 flex-col items-start justify-end gap-[21px] bg-cover bg-no-repeat py-[50px] md:h-auto md:py-5" style={{backgroundImage: `url(${service.image})`}}>
+    <div
+      id={service.id}
+      className="flex h-screen flex-col items-start justify-end gap-[21px] bg-cover bg-no-repeat py-[50px] md:h-auto md:py-5"
+      style={{
+        backgroundImage: `url(${service.image})`,
+        backgroundPosition: imagePosition // Apply imagePosition directly to backgroundPosition
+      }}
+    >
       <Text size="lg" as="p" className="mt-[563px] tracking-[0.50px] !text-white-A700">
         {service.subtitle}
       </Text>

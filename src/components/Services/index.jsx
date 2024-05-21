@@ -17,7 +17,13 @@ const ServicesComponent = ({ services }) => {
             component = <ServiceComponentType2 key={service.id} service={service} />;
             break;
           case 3:
-            component = <ServiceComponentType3 key={service.id} service={service} />;
+            component = (
+              <ServiceComponentType3
+                key={service.id}
+                service={service}
+                imagePosition={service.imagePosition || 'center'} // Assuming 'start' as default
+              />
+            );
             break;
           default:
             component = null;
@@ -25,7 +31,7 @@ const ServicesComponent = ({ services }) => {
         return (
           <React.Fragment key={service.id}>
             {component}
-            {index < services.length - 1 && <div className="my-10" />} {/* Adiciona margem entre os componentes */}
+            {index < services.length - 1 && <div className="my-10" />} {/* Add margin between components */}
           </React.Fragment>
         );
       })}

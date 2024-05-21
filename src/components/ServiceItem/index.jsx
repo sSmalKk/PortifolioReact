@@ -32,8 +32,8 @@ const ServiceItem = ({ service, index, animationDelay, animationDuration }) => {
       {/* Adicione uma linha horizontal */}
       <div className="w-full border-t border-gray-300"></div>
       {/* Texto do serviço com atraso de animação */}
-      <button
-        onClick={() => scrollToElement(service.id)}
+      <button 
+        onClick={() => scrollToElement(`#${service.id}`)}
         className={`wave-animation uppercase tracking-[4.00px] !text-black-900_01 animate-delay`}
         style={{
           animationDelay: delay,

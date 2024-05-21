@@ -13,7 +13,7 @@ export default function Page({ title, texts }) {
       </Helmet>
 
       {/* main content section */}
-      <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
+      <div className="flex  w-full flex-col gap-5 bg-gray-50 pt-2.5">
         <div className="flex flex-col items-center">
           {/* header section */}
           <div className="container-xs px-7 md:p-5 sm:px-5">
