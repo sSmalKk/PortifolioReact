@@ -127,7 +127,7 @@ export default function DantasPage() {
       <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
         <div className="flex flex-col items-center">
           {/* header section */}
-          <Header className="container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed' }} />
+          <Header className="container-xs gap-5 px-7 md:p-5 sm:px-5"  />
 
           {/* hero section */}
           <div className="container-xs md:p-5">
