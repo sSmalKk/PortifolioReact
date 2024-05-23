@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { PartnerSlider, ServicesComponent, Text, Img, Heading, Button, ServiceItem } from "../../components";
+import {Notification, ContactForm, Popup, PartnerSlider, ServicesComponent, Text, Img, Heading, Button, ServiceItem } from "../../components"; // Importe o componente Notification
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
+
 const services = [
   { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
   { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
@@ -53,7 +54,14 @@ const parceiros = [
   }
   // Adicione mais parceiros conforme necessário
 ];
-
+const Changelog = [
+  {
+    id: 1,
+    title: "0.0.1",
+    content: "Conteúdo do blog sobre marketing...",
+  }, 
+  // Adicione mais posts de blog conforme necessário
+];
 const Blog = [
   {
     id: 1,
@@ -82,10 +90,31 @@ const Blog = [
   },
   // Adicione mais posts de blog conforme necessário
 ];
+const Changelogs = (handleSendMessage) => {
+ 
+  return (
+    <div className="changelogs-container">
+      <h2>Changelogs</h2>
+      <div className="changelogs-list">
+      <ul>
+      {Changelog.map((log, index) => (
+        <li key={index}>{log.title}: {log.content}</li>
+      ))}
+    </ul>
+      </div>
+      <h2>Envie nos uma mensagem</h2>
+
+      <ContactForm onMessageSent={handleSendMessage} text={"Digite aqui..."} url={'https://example.com/api/contact'}/>
+    </div>
+  );
+};
+
 
 const animationDelay = 1; // Altere para o valor desejado
 
 export default function DantasPage() {
+    localStorage.setItem('token', "myjwtclientsecret");
+  
   const [filter, setFilter] = useState(""); // Estado do filtro
   const [currentPage, setCurrentPage] = useState(1); // Estado da página atual
   const postsPerPage = 3; // Número de posts por página
@@ -116,6 +145,17 @@ export default function DantasPage() {
   // Lógica para verificar se existem posts suficientes para exibir a próxima página
   const hasNextPage = indexOfLastPost < filteredPosts.length;
 
+  const [popupOpen, setPopupOpen] = useState(true);
+  const [message, setMessage] = useState("");
+
+  const onClose = () => {
+    setPopupOpen(false);
+  };
+
+  const handleSendMessage = () => {
+    // Simulando o envio de uma mensagem
+    setMessage("Mensagem enviada com sucesso!");
+  };
   return (
     <>
       <Helmet>
@@ -127,7 +167,20 @@ export default function DantasPage() {
       <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
         <div className="flex flex-col items-center">
           {/* header section */}
-          <Header className="container-xs gap-5 px-7 md:p-5 sm:px-5"  />
+          <Header className="container-xs gap-5 px-7 md:p-5 sm:px-5" />
+          {popupOpen && (
+        <Popup
+        url="http://localhost:5000/client/auth/login"
+        onClose={onClose}
+        title="Site em Construção"
+        subTitle="Desculpe-nos pelo transtorno. Estamos trabalhando para melhorar sua experiência."
+      >
+        {/* Seu código Popup continua aqui... */}
+        <Notification message={message} /> {/* Adicione o componente Notification aqui */}
+        <Changelogs handleSendMessage={handleSendMessage} />
+      </Popup>
+        )}
+
 
           {/* hero section */}
           <div className="container-xs md:p-5">

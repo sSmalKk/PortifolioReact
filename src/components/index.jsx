@@ -5,4 +5,7 @@ import PartnerSlider from "./PartnerSlider";
 import { ServiceItem } from "./ServiceItem";
 import { ServicesComponent } from "./Services";
 import { Img } from "./Img";
-export { PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent};
+import Popup from "./Popup";
+import Notification from "./Notification";
+import ContactForm from "./ContactForm";
+export { ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };

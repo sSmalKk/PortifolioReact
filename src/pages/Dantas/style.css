@@ -63,3 +63,43 @@
     transform: scale(0.8) translateX(50%);
     z-index: 0;
 }
+.changelogs-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.changelogs-list {
+  max-height: 200px; /* Defina a altura máxima para o scroll */
+  overflow-y: auto; /* Adicione scroll vertical quando necessário */
+}
+
+.changelogs-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.changelogs-list ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+input[type="text"] {
+  width: calc(100% - 80px); /* Ajuste conforme necessário */
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
