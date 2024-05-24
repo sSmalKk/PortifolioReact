@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 const PCInfoComponent = ({ onInfoChange }) => {
   useEffect(() => {
