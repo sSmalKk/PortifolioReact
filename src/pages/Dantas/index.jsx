@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, Button, ServiceItem } from "../../components";
 import Footer from "../../components/Footer";
@@ -137,11 +137,66 @@ export default function DantasPage() {
 
   const hasPrevPage = currentPage > 1;
   const hasNextPage = indexOfLastPost < filteredPosts.length;
+  const ScrollSection = ({ prevRef, nextRef }) => {
+    const ref = useRef(null);
+    const [scrollDirection, setScrollDirection] = useState(null);
+    const [prevScrollPosition, setPrevScrollPosition] = useState(0);
 
-  // Função para rolar suavemente para uma seção específica
-  const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        setScrollDirection(currentScrollPosition > prevScrollPosition ? 'down' : 'up');
+        setPrevScrollPosition(currentScrollPosition);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [prevScrollPosition]);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            // Decide para onde rolar com base na direção da rolagem
+            if (scrollDirection === 'down') {
+              setScrollToRef(nextRef);
+            } else if (scrollDirection === 'up') {
+              setScrollToRef(prevRef);
+            }
+          }
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5
+        }
+      );
+
+      observer.observe(ref.current);
+
+      return () => {
+        observer.unobserve(ref.current);
+      };
+    }, [prevRef, nextRef, scrollDirection]);
+
+    const [scrollToRef, setScrollToRef] = useState(prevRef);
+
+    useEffect(() => {
+      if (scrollToRef) {
+        window.scrollTo({
+          top: scrollToRef.current.offsetTop,
+          behavior: "smooth"
+        });
+      }
+    }, [scrollToRef]);
+
+    return <div ref={ref} style={{ height: "150vh" }} />;
   };
+
+
 
   // Referências para as seções
   const servicesRef = useRef(null);
@@ -149,6 +204,7 @@ export default function DantasPage() {
   const portfolioRef = useRef(null);
   const blogRef = useRef(null);
   const partnersRef = useRef(null);
+  const topRef = useRef(null);
 
   return (
     <>
@@ -164,7 +220,7 @@ export default function DantasPage() {
         </div>
       </div>
 
-      <div className="container-xs md:p-5">
+      <div className="container-xs md:p-5" ref={topRef}>
         <div className="flex flex-col">
           <div className="h-screen flex items-center justify-center">
             <div className="flex items-center justify-evenly md:flex-col ">
@@ -199,10 +255,7 @@ export default function DantasPage() {
             </div>
           </div>
 
-
-
-
-          {/* features section */}
+          <ScrollSection prevRef={topRef} nextRef={servicesRef} />
           <div id={"services"} ref={servicesRef}>
             {/* services section */}
             <ServicesComponent services={services} />
@@ -217,6 +270,7 @@ export default function DantasPage() {
               <div className="w-full border-t border-gray-300"></div>
             </div>
           </div>
+          <ScrollSection prevRef={servicesRef} nextRef={personalInfoRef} />
 
           {/* personal info section */}
           <div className="container mx-auto px-4" ref={personalInfoRef}>
@@ -236,6 +290,7 @@ export default function DantasPage() {
           </div>
 
 
+          <ScrollSection prevRef={personalInfoRef} nextRef={portfolioRef} />
 
 
           {/* portfolio section */}
@@ -253,6 +308,8 @@ export default function DantasPage() {
               />
             ))}
           </div>
+          <ScrollSection prevRef={portfolioRef} nextRef={blogRef} />
+
           {/* blog section */}
           <div className="mt-[18px] flex flex-col gap-5" ref={blogRef}>
             <div className="flex items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
@@ -328,6 +385,9 @@ export default function DantasPage() {
               </Button>
             </div>
           </div>
+          <ScrollSection prevRef={blogRef} nextRef={partnersRef} />
+
+
           {/* parceiros section */}
           <div className="mt-[18px] flex flex-col gap-[18px]" ref={partnersRef}>
             <div className="flex flex-col items-center px-[580px] md:px-5">
@@ -340,9 +400,6 @@ export default function DantasPage() {
           </div>
 
         </div>
-
-
-        
 
         <Footer />
       </div >
