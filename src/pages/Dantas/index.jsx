@@ -5,16 +5,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co';
-
-const services = [
-
-  { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
-  { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
-  { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
-  { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
-  { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
-  // Adicione quantos serviços desejar
-];
+const languages = ['pt', 'fr', 'es'];
 
 const content = [
   {
@@ -60,6 +51,16 @@ const content = [
 
   }
 ];
+const services = [
+
+  { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
+  { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
+  { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
+  { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
+  { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
+  // Adicione quantos serviços desejar
+];
+
 
 
 const Portfolio = [
@@ -212,7 +213,7 @@ export default function DantasPage() {
         <title>Dantas Soluções</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <Header content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
+      <Header languages={languages} content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
 
       <div className="flex w-full flex-col gap-5 bg-gray-50 ">
         <div className="main-content flex flex-col items-center">

@@ -3,35 +3,41 @@ import { Button, Img, Text } from "..";
 import "./style.css";
 
 export default function Header(props) {
-  const { content, languages, selectedId} = props;
-  const [selectedLanguage, setSelectedLanguage] = useState("");
+  const { content, languages } = props;
+  const [selectedLanguageIndex, setSelectedLanguageIndex] = useState(0); // Inicialize selectedLanguageIndex com 0
 
   useEffect(() => {
-    // Check if there's a stored language in localStorage
-    const storedLanguage = localStorage.getItem("selectedLanguage");
-    if (storedLanguage && languages.includes(storedLanguage)) {
-      setSelectedLanguage(storedLanguage);
+    // Check if there's a stored language index in localStorage
+    const storedLanguageIndex = localStorage.getItem("selectedLanguageIndex");
+    if (storedLanguageIndex && !isNaN(storedLanguageIndex)) { // Verificar se o índice armazenado é válido
+      const index = parseInt(storedLanguageIndex);
+      if (index >= 0 && index < languages.length) { // Verificar se o índice está dentro dos limites do array de idiomas
+        setSelectedLanguageIndex(index);
+      }
     } else {
-      // If no stored language or stored language is invalid, set the default language to the first one in the array
-      const defaultLanguage = languages[0];
-      setSelectedLanguage(defaultLanguage);
-      localStorage.setItem("selectedLanguage", defaultLanguage);
+      // Se não houver índice armazenado ou se for inválido, definir o índice padrão como 0
+      localStorage.setItem("selectedLanguageIndex", 0);
     }
-  }, [languages]); // Include languages array in dependencies to handle changes
+  }, [languages]);
+
   const handleLanguageChange = () => {
-    const currentIndex = languages.indexOf(selectedLanguage);
-    let nextIndex = currentIndex + 1;
-    if (nextIndex >= languages.length) {
-      nextIndex = 0; // Voltar para o início da matriz se estiver além do final
-    }
-    const nextLanguage = languages[nextIndex];
-    setSelectedLanguage(nextLanguage);
-    localStorage.setItem("selectedLanguage", nextLanguage);
+    const nextIndex = (selectedLanguageIndex + 1) % languages.length; // Calcular o próximo índice
+    setSelectedLanguageIndex(nextIndex);
+    localStorage.setItem("selectedLanguageIndex", nextIndex); // Armazenar o próximo índice
   };
+
+  const selectedLanguage = languages[selectedLanguageIndex]; // Obter o idioma selecionado com base no índice
+  console.log("localStorage content:", localStorage);
+
+
+
+
+
+
   return (
     <header {...props} className={`${props.className} flex md:flex-col justify-between items-center sticky bg-white z-10`}>
       <Text className="text-2xl font-normal tracking-[0.18px] md:text-[22px]">
-        {content && content.length > 0 && content[selectedId].headerTitle}
+        {content && content.length > 0 && content[0].headerTitle}
       </Text>
       <ul className="flex items-center gap-[15px]">
         <Button
@@ -48,7 +54,7 @@ export default function Header(props) {
           className="h-[36px] min-w-[92px] border border-solid bg-white px-[15px] text-xs tracking-[0.50px] text-white-A700"
         >
           <Text className="text-base font-semibold tracking-[0.50px]">
-            {content && content.length > 0 && content[selectedId].projetos}
+            {content && content.length > 0 && content[0].projetos}
           </Text>
         </Button>
 
@@ -82,7 +88,7 @@ export default function Header(props) {
             onClick={() => handleLanguageChange(selectedLanguage === languages[0] ? languages[1] : languages[0])}
             className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5"
           >
-            {localStorage.getItem("selectedLanguage")}
+            {languages[localStorage.getItem("selectedLanguageIndex")]}
           </Button>
         </div>
         <Button
