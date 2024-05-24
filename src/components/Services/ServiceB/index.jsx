@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, Img, Button } from "../../components";
+import { Text, Img, Button } from "../..";
+import "../style.css"
 
 const ServiceComponentType2 = ({ service }) => {
   return (
-    <div id={service.id} className="flex items-start justify-around "> 
+    <div id={service.id} className="service-component flex items-start justify-around w-full">
       <div className="flex flex-col items-start gap-[21px] md:self-stretch">
         <Text size="lg" as="p" className="tracking-[0.50px]">
           {service.subtitle}

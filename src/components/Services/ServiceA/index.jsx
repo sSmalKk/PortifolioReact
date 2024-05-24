@@ -1,16 +1,16 @@
 import React from 'react';
-import { Text, Img, Button } from "../../components";
-
+import { Text, Img, Button } from "../..";
+import "../style.css"
 const ServiceComponentType1 = ({ service }) => {
   return (
-    <div id={service.id} className="flex flex-col md:flex-row items-start justify-around w-full">
+    <div id={service.id} className="service-component flex items-start justify-around w-full">
       
       <Img
         src={service.image}
         alt="container"
-        className="flex-shrink-0 min-w-[200px] h-[380px] w-[379px] object-cover md:w-auto"
+        className="flex-shrink-0 min-w-[200px] h-[380px] w-[379px] object-cover"
       />
-      <div className="flex flex-col items-start gap-[21px] md:self-stretch">
+      <div className="flex flex-col items-start gap-[21px] self-stretch">
         <Text size="lg" as="p" className="tracking-[0.50px]">
           {service.subtitle}
         </Text>

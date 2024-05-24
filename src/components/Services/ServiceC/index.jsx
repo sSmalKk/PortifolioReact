@@ -1,6 +1,6 @@
 // ServiceC.jsx
 import React from 'react';
-import { Text, Button } from "../../components";
+import { Text, Button } from "../..";
 const ServiceComponentType3 = ({ service, imagePosition }) => {
   return (
     <div

@@ -1,8 +1,8 @@
 // ServicesComponent.jsx
 import React from 'react';
-import ServiceComponentType1 from '../ServiceA';
-import ServiceComponentType2 from '../ServiceB';
-import ServiceComponentType3 from '../ServiceC';
+import ServiceComponentType1 from './ServiceA';
+import ServiceComponentType2 from './ServiceB';
+import ServiceComponentType3 from './ServiceC';
 
 const ServicesComponent = ({ services }) => {
   return (

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, Button, ServiceItem } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
+const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co';
 
 const services = [
+
   { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
   { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
   { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
@@ -53,7 +55,9 @@ const content = [
     popsubtitle: "Desculpe-nos pelo transtorno. Estamos trabalhando para melhorar sua experiência.",
     personalimage: "images/img_container.png",
     messageSentSuccess: "Mensagem enviada com sucesso!",
-    errorMessage: "Erro ao enviar mensagem."
+    errorMessage: "Erro ao enviar mensagem.",
+    solucoes: "Soluções personalizadas!",
+
   }
 ];
 
@@ -111,8 +115,8 @@ const Blog = [
 ];
 
 const animationDelay = 1; // Altere para o valor desejado
+
 export default function DantasPage() {
-  localStorage.setItem('token', "myjwtclientsecret");
   const [filter, setFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
@@ -122,17 +126,29 @@ export default function DantasPage() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
-  const nextPage = () => {
-    setCurrentPage(prevPage => prevPage + 1);
-  };
-  const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co';
 
   const prevPage = () => {
     setCurrentPage(prevPage => prevPage - 1);
   };
 
+  const nextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
   const hasPrevPage = currentPage > 1;
   const hasNextPage = indexOfLastPost < filteredPosts.length;
+
+  // Função para rolar suavemente para uma seção específica
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Referências para as seções
+  const servicesRef = useRef(null);
+  const personalInfoRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const blogRef = useRef(null);
+  const partnersRef = useRef(null);
 
   return (
     <>
@@ -142,22 +158,31 @@ export default function DantasPage() {
       </Helmet>
       <Header content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
 
-      <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
+      <div className="flex w-full flex-col gap-5 bg-gray-50 ">
         <div className="main-content flex flex-col items-center">
           <PopupManager url={bdurl} content={content} />
         </div>
       </div>
+
       <div className="container-xs md:p-5">
         <div className="flex flex-col">
           <div className="h-screen flex items-center justify-center">
-            <div className="flex items-center justify-evenly md:flex-col w-full max-w-screen-xl mx-auto">
-              <div className="flex w-full flex-col items-center gap-8 md:w-[67%]">
+            <div className="flex items-center justify-evenly md:flex-col ">
+              <div className="flex w-full flex-col items-center ">
                 <div className="flex self-start bg-indigo-A700">
-                  <Text size="8xl" as="p" className="mt-2 tracking-[1.50px] !text-white">
+                  <Text
+                    size="8xl"
+                    as="p"
+                    className="mt-2 tracking-[1.50px] !text-white text-responsive"
+                  >
                     {content[0].headerTitle}
                   </Text>
                 </div>
-                <Text size="6xl" as="p" className="w-[87%] leading-[56px]">
+                <Text
+                  size="6xl"
+                  as="p"
+                  className="w-[87%] leading-[56px] text-responsive"
+                >
                   {content[0].headerSubtitle}
                 </Text>
               </div>
@@ -165,17 +190,20 @@ export default function DantasPage() {
                 <Img
                   src="images/img_container_380x410.png"
                   alt="container"
-                  className="h-[380px] w-full object-cover md:h-auto"
+                  className="h-[380px] w-full object-cover md:h-[200px] md:w-auto"
                 />
-                <Heading size="lg" as="h1" className="!text-indigo-A200">
-                  Soluções personalizadas!
+                <Heading size="lg" as="h1" className="!text-indigo-A200 text-responsive">
+                  {content[0].solucoes}
                 </Heading>
               </div>
             </div>
           </div>
 
+
+
+
           {/* features section */}
-          <div id={"services"}>
+          <div id={"services"} ref={servicesRef}>
             {/* services section */}
             <ServicesComponent services={services} />
 
@@ -191,7 +219,7 @@ export default function DantasPage() {
           </div>
 
           {/* personal info section */}
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4" ref={personalInfoRef}>
             <div className="bg-blue-500 flex-col md:flex-row md:max-w-screen-xl md:mx-auto">
               <div className="h-screen md:h-auto md:relative md:w-full md:max-w-[379px]">
                 <img src={content[0].personalimage} alt="container" className="w-full h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
@@ -211,7 +239,7 @@ export default function DantasPage() {
 
 
           {/* portfolio section */}
-          <div className="mt-[19px] flex flex-col items-center px-[574px] md:px-5">
+          <div className="mt-[19px] flex flex-col items-center px-[574px] md:px-5" ref={portfolioRef}>
             <Heading as="h3" className="!font-bold uppercase tracking-[2.70px]">
               {content[0].portfolioTitle}
             </Heading>
@@ -226,7 +254,7 @@ export default function DantasPage() {
             ))}
           </div>
           {/* blog section */}
-          <div className="mt-[18px] flex flex-col gap-5">
+          <div className="mt-[18px] flex flex-col gap-5" ref={blogRef}>
             <div className="flex items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
               <input
                 type="text"
@@ -301,7 +329,7 @@ export default function DantasPage() {
             </div>
           </div>
           {/* parceiros section */}
-          <div className="mt-[18px] flex flex-col gap-[18px]">
+          <div className="mt-[18px] flex flex-col gap-[18px]" ref={partnersRef}>
             <div className="flex flex-col items-center px-[580px] md:px-5">
               <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
                 {content[0].parceirosTitle}
@@ -314,6 +342,7 @@ export default function DantasPage() {
         </div>
 
 
+        
 
         <Footer />
       </div >

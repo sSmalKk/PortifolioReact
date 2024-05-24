@@ -16,12 +16,10 @@
  
   @media (max-width: 768px) {
     .main-content {
-      padding-top: 50%; /* Adjust this value based on header height */
+      padding-top: 35%; /* Adjust this value based on header height */
     }
     
-    .wrapper {
-      margin: 0; /* Remove a margem nos dispositivos móveis */
-    }
+   
   }
    
   .animate-delay {
