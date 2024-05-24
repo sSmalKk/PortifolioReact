@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const ContactForm = ({ text, url, onMessageSent }) => {
+const ContactForm = ({ content, url, onMessageSent }) => {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState(null);
 
@@ -11,15 +11,13 @@ const ContactForm = ({ text, url, onMessageSent }) => {
   };
 
   const handleSend = async () => {
-    const content = inputValue; // Using state value directly
-
     const formData = JSON.stringify({
       "formularioid": "contactform",
-      "content": content
+      "content": inputValue
     });
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch(url + '/client/api/v1/contactform/create', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -32,14 +30,14 @@ const ContactForm = ({ text, url, onMessageSent }) => {
 
       if (response.ok) {
         // Notify parent component that message was sent successfully
-        onMessageSent("Mensagem enviada com sucesso!");
+        onMessageSent(content[0].messageSentSuccess);
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
       }
     } catch (error) {
       console.error("Erro:", error);
-      setError("Erro ao enviar mensagem.");
+      setError(content[0].errorMessage);
     }
   };
 
@@ -49,15 +47,14 @@ const ContactForm = ({ text, url, onMessageSent }) => {
         <input
           id="content"
           type="text"
-          placeholder={text}
+          placeholder={content[0].typehere}
           value={inputValue}
           onChange={handleInputChange}
           style={{ marginBottom: '10px' }}
         />
-        <button onClick={handleSend}>Enviar</button>
+        <button onClick={handleSend}>{content[0].personalInfoButton}</button>
       </div>
-      {error && <p style={{ color: 'red', fontSize: '12px' }}>Erro: {error}</p>}
-
+      {error && <p style={{ color: 'red', fontSize: '12px' }}>{content[0].errorMessage}</p>}
     </div>
   );
 };

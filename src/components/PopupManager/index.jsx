@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Popup, Notification, Cookies, Changelogs } from "../../components";
+import { Popup, ContactForm, Notification, Cookies, Changelogs } from "../../components";
 import "./style.css";
 
-const PopupManager = ({ children }) => {
+const PopupManager = ({ content ,url}) => {
   const [popupQueue, setPopupQueue] = useState(["popupOpen", "cookiesPopupOpen", "empty"]);
   const [currentPopup, setCurrentPopup] = useState("");
 
@@ -20,7 +20,7 @@ const PopupManager = ({ children }) => {
 
   const [message, setMessage] = useState("");
   const handleSendMessage = () => {
-    setMessage("Mensagem enviada com sucesso!");
+    setMessage(content[0].messageSentSuccess);
   };
 
   const handleClick = async () => {
@@ -52,8 +52,6 @@ const PopupManager = ({ children }) => {
         // Adicione mais informações se desejar
       };
 
-      // Debug das informações no console
-      console.log("Informações do PC:", info);
 
       // Salvando as informações no localStorage usando o IP como chave
       localStorage.setItem(ip, JSON.stringify(info));
@@ -69,26 +67,28 @@ const PopupManager = ({ children }) => {
     if (popupQueue.length === 0) {
       return null; // Se não houver mais nenhum popup na fila, fecha a sessão de popups
     }
-
+  
     switch (currentPopup) {
       case "popupOpen":
         return (
           <Popup
-            url="http://localhost:5000/client/auth/login"
             onClose={onClose}
-            title="Site em Construção"
-            subTitle="Desculpe-nos pelo transtorno. Estamos trabalhando para melhorar sua experiência."
+            title={content[0].popuptitle}
+            subTitle={content[0].popsubtitle}
           >
             <Notification message={message} /> {/* Adicione o componente Notification aqui */}
-            <Changelogs handleSendMessage={handleSendMessage} />
+            <Changelogs content={content} handleSendMessage={handleSendMessage} />
+            <h2>{content[0].personalInfoTitle}</h2>
+            <ContactForm content={content} onMessageSent={handleSendMessage} url={url} />
           </Popup>
         );
       case "cookiesPopupOpen":
-        return <Cookies onClick={handleClick} handleClosePopup={onClose} />;
+        return <Cookies content={content} onClick={handleClick} handleClosePopup={onClose} />;
       default:
         return null;
     }
   };
+  
 
   return (
     <>

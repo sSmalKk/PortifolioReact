@@ -17,20 +17,46 @@ const services = [
 const content = [
   {
     language: "PT",
+    changelogsText: "Changelogs",
+    changelog: [
+      {
+        id: 1,
+        title: "0.0.1",
+        content: "Conteúdo do blog sobre marketing...",
+      }, {
+        id: 2,
+        title: "0.0.2",
+        content: "Conteúdo do blog sobre marketing...",
+      },
+    ],
+    cookiesa: "Aqui vai o conteúdo explicativo sobre cookies...",
+    cookiesmais: "ler mais...",
+    cookiesmenos: "ler menos",
+    cookiesb: "Conteúdo adicional que aparece quando o botão ''Ler mais'' é clicado.",
     headerTitle: "DANTAS SOLUÇÕES",
     headerSubtitle: "Soluções especializadas para o seu negócio",
-    personalInfoTitle: "FALE COMIGO!",
+    personalInfoTitle: "Me mande uma mensagem!",
     personalInfoSubtitle: "Soluções especializadas para o seu negócio",
+    sobre: "SOBRE",
+    projetos: "PROJETOS",
+    contato: "CONTATO",
+    servicos: "SERVIÇOS",
     personalInfoButton: "CONTATO",
-    portfolioTitle: "PORTIFOLIO",
+    typehere: "digite aqui...",
+    portfolioTitle: "PORTFÓLIO",
     blogTitle: "Blog",
     blogSubtitle: "Conteúdos sobre o marketing",
     parceirosTitle: "PARCEIROS",
     buttonPrevious: "Anterior",
-    buttonNext: "Proximo",
-    personalimage: "images/img_container.png"
+    buttonNext: "Próximo",
+    popuptitle: "Site em Construção",
+    popsubtitle: "Desculpe-nos pelo transtorno. Estamos trabalhando para melhorar sua experiência.",
+    personalimage: "images/img_container.png",
+    messageSentSuccess: "Mensagem enviada com sucesso!",
+    errorMessage: "Erro ao enviar mensagem."
   }
 ];
+
 
 const Portfolio = [
   {
@@ -99,6 +125,7 @@ export default function DantasPage() {
   const nextPage = () => {
     setCurrentPage(prevPage => prevPage + 1);
   };
+  const bdurl = 'http://localhost:5000';
 
   const prevPage = () => {
     setCurrentPage(prevPage => prevPage - 1);
@@ -113,11 +140,11 @@ export default function DantasPage() {
         <title>Dantas Soluções</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <Header className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
+      <Header content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
 
       <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
         <div className="main-content flex flex-col items-center">
-          <PopupManager />
+          <PopupManager url={bdurl} content={content} />
         </div>
       </div>
       <div className="container-xs md:p-5">
@@ -164,18 +191,18 @@ export default function DantasPage() {
           </div>
 
           {/* personal info section */}
-          <div class="container mx-auto px-4">
-            <div class="bg-blue-500 flex-col md:flex-row md:max-w-screen-xl md:mx-auto">
-              <div class="h-screen md:h-auto md:relative md:w-full md:max-w-[379px]">
-                <img src={content[0].personalimage} alt="container" class="w-full h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
+          <div className="container mx-auto px-4">
+            <div className="bg-blue-500 flex-col md:flex-row md:max-w-screen-xl md:mx-auto">
+              <div className="h-screen md:h-auto md:relative md:w-full md:max-w-[379px]">
+                <img src={content[0].personalimage} alt="container" className="w-full h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
               </div>
-              <div class="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full">
+              <div className="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full">
                 <div>
-                  <p class="text-lg tracking-[0.50px] md:text-base">{content[0].personalInfoTitle}</p>
-                  <p class="text-8xl mt-2 tracking-[-1.50px] md:text-4xl">{content[0].headerTitle}</p>
-                  <p class="text-6xl w-[81%] leading-[56px] md:text-base md:w-full">{content[0].personalInfoSubtitle}</p>
+                  <p className="text-lg tracking-[0.50px] md:text-base">{content[0].personalInfoTitle}</p>
+                  <p className="text-8xl mt-2 tracking-[-1.50px] md:text-4xl">{content[0].headerTitle}</p>
+                  <p className="text-6xl w-[81%] leading-[56px] md:text-base md:w-full">{content[0].personalInfoSubtitle}</p>
                 </div>
-                <button class="bg-green-700 text-white px-4 py-2 rounded-full border border-solid border-green-400 tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">{content[0].personalInfoButton}</button>
+                <button className="bg-green-700 text-white px-4 py-2 rounded-full border border-solid border-green-400 tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">{content[0].personalInfoButton}</button>
               </div>
             </div>
           </div>
@@ -231,7 +258,7 @@ export default function DantasPage() {
                   <Img src={Blog[0].image} alt="container" className="h-[453px] object-cover" />
                   <div className="flex flex-col items-start gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-8 shadow-sm sm:p-5">
                     <Heading as="h6" className="mt-[11px]">
-                      @{Blog[0].author}
+                      {Blog[0].author}
                     </Heading>
                     <Heading size="md" as="h3" className="w-full leading-10 !text-gray-900">
                       <>

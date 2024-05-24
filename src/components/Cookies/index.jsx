@@ -1,9 +1,8 @@
-// Cookies.js
 import React, { useState } from 'react';
 import './Cookies.css';
 import { Popup } from "../../components"; // Importe o componente Notification
 
-const Cookies = ({ onClick, handleClosePopup }) => {
+const Cookies = ({ content, onClick, handleClosePopup }) => {
   const [showMore, setShowMore] = useState(false);
 
   const handleReadMore = () => {
@@ -21,17 +20,17 @@ const Cookies = ({ onClick, handleClosePopup }) => {
       >
         <div className='flex'>
           <p>
-            Aqui vai o conteúdo explicativo sobre cookies...
+            {content[0].cookiesa}
             {showMore && (
               <>
                 <br />
                 <br />
-                Conteúdo adicional que aparece quando o botão "Ler mais" é clicado.
+                {content[0].cookiesb}
               </>
             )}
           </p>
           <button onClick={handleReadMore}>
-            {showMore ? 'Ler menos' : 'Ler mais'}
+            {showMore ? content[0].cookiesmenos : content[0].cookiesmais}
           </button>
         </div>
       </Popup>
