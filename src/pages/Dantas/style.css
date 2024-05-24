@@ -5,8 +5,20 @@
     align-items: center; /* Centraliza verticalmente */
     margin: 0 auto; /* Isso garantirá que haja margens automáticas nos lados quando a tela for grande */
   }
-  
+  /* style.css */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header is on top */
+  background-color: #fff; /* Add background color to prevent content bleed-through */
+}
+ 
   @media (max-width: 768px) {
+    .main-content {
+      padding-top: 50%; /* Adjust this value based on header height */
+    }
+    
     .wrapper {
       margin: 0; /* Remove a margem nos dispositivos móveis */
     }

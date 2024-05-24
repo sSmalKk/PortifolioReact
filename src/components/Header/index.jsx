@@ -6,7 +6,7 @@ export default function Header({ ...props }) {
   return (
     <header
       {...props}
-      className={`${props.className} flex md:flex-col justify-between items-center sticky top-0 bg-white z-10`}
+      className={`${props.className} flex md:flex-col justify-between items-center  sticky bg-white z-10`}
     >
       <Text className="text-2xl font-normal tracking-[0.18px] md:text-[22px]">DANTAS</Text>
       <ul className="flex items-center gap-[15px]">
