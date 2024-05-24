@@ -125,7 +125,7 @@ export default function DantasPage() {
   const nextPage = () => {
     setCurrentPage(prevPage => prevPage + 1);
   };
-  const bdurl = 'http://localhost:5000';
+  const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co';
 
   const prevPage = () => {
     setCurrentPage(prevPage => prevPage - 1);

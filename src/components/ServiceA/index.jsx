@@ -3,7 +3,7 @@ import { Text, Img, Button } from "../../components";
 
 const ServiceComponentType1 = ({ service }) => {
   return (
-    <div id={service.id} className="flex items-start justify-around "> {/* Adicionado w-full para esticar a div pai */}
+    <div id={service.id} className="flex flex-col md:flex-row items-start justify-around w-full">
       
       <Img
         src={service.image}
