@@ -143,6 +143,7 @@ export default function DantasPage() {
     const [scrollDirection, setScrollDirection] = useState(null);
     const [prevScrollPosition, setPrevScrollPosition] = useState(0);
     const [scrollToRef, setScrollToRef] = useState(prevRef);
+    localStorage.setItem("selectedLanguageIndex", 0);
 
     useEffect(() => {
       const handleScroll = () => {
