@@ -9,6 +9,7 @@ const ContactForm = ({ content, url, onMessageSent }) => {
     setInputValue(event.target.value);
     setError(null); // Reset error when input changes
   };
+  console.log("localStorage content:", localStorage);
 
   const handleSend = async () => {
     const formData = JSON.stringify({
@@ -22,7 +23,7 @@ const ContactForm = ({ content, url, onMessageSent }) => {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Device-Secret': localStorage.token,
+          'Device-Secret': 'myjwtdevicesecret',
           'Credentials': 'include'
         },
         body: formData
