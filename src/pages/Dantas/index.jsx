@@ -6,109 +6,115 @@ import Header from "../../components/Header";
 import "./style.css";
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co';
 const languages = ['pt', 'fr', 'es'];
-const content = {
-  language: "PT",
-  changelogsText: "Changelogs",
-  changelog: [
-    {
-      id: 1,
-      title: "0.0.1",
-      content: "Conteúdo do blog sobre marketing...",
-    },
-    {
-      id: 2,
-      title: "0.0.2",
-      content: "Conteúdo do blog sobre marketing...",
-    },
-  ],
-  cookiesa: "Aqui vai o conteúdo explicativo sobre cookies...",
-  cookiesmais: "ler mais...",
-  cookiesmenos: "ler menos",
-  cookiesb: "Conteúdo adicional que aparece quando o botão ''Ler mais'' é clicado.",
-  headerTitle: "DANTAS SOLUÇÕES",
-  headerSubtitle: "Soluções especializadas para o seu negócio",
-  personalInfoTitle: "Me mande uma mensagem!",
-  personalInfoSubtitle: "Soluções especializadas para o seu negócio",
-  sobre: "SOBRE",
-  projetos: "PROJETOS",
-  contato: "CONTATO",
-  servicos: "SERVIÇOS",
-  personalInfoButton: "CONTATO",
-  typehere: "digite aqui...",
-  portfolioTitle: "PORTFÓLIO",
-  blogTitle: "Blog",
-  blogSubtitle: "Conteúdos sobre o marketing",
-  parceirosTitle: "PARCEIROS",
-  buttonPrevious: "Anterior",
-  buttonNext: "Próximo",
-  popuptitle: "Site em Construção",
-  popsubtitle: "Desculpe-nos pelo transtorno. Estamos trabalhando para melhorar sua experiência.",
-  personalimage: "images/img_container.png",
-  messageSentSuccess: "Mensagem enviada com sucesso!",
-  errorMessage: "Erro ao enviar mensagem.",
-  solucoes: "Soluções personalizadas!",
-  services: [
-    { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
-    { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
-    { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
-    { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
-    { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
-    // Adicione quantos serviços desejar
-  ],
-  Portfolio: [
-    {
-      title: "implante giovani centro",
-      type: "link",
-      img: "/images/img_link_396x407.png",
-      link: "https://www.implantegiovanicentro.com.br",
-    },
-    // Adicione mais portfólios conforme necessário
-  ],
-  parceiros: [
-    {
-      link: "https://example.com",
-      image: "images/img_link_200x200.png",
-      title: "Partner 1"
-    },
-    {
-      link: "https://example.com",
-      image: "images/img_link_200x200.png",
-      title: "Partner 1"
-    }
-    // Adicione mais parceiros conforme necessário
-  ],
-  Blog: [
-    {
-      id: 1,
-      image: "images/img_link_200x200.png",
-      title: "Title",
-      subtitle: "Como o design de sites afeta a conversão de visitantes?",
-      content: "Conteúdo do blog sobre marketing...",
-    },
-    {
-      id: 2,
-      image: "images/img_link_200x200.png",
-      title: "Title",
-      subtitle: "Como o design de sites afeta a conversão de visitantes?",
-      content: "Conteúdo do blog sobre marketing...",
-    },
-    {
-      id: 3,
-      image: "images/img_link_200x200.png",
-      title: "Title",
-      subtitle: "Como o design de sites afeta a conversão de visitantes?",
-      content: "Conteúdo do blog sobre marketing...",
-    },
-    {
-      id: 4,
-      image: "images/img_link_200x200.png",
-      title: "Title",
-      subtitle: "Como o design de sites afeta a conversão de visitantes?",
-      content: "Conteúdo do blog sobre marketing...",
-    },
-    // Adicione mais posts de blog conforme necessário
-  ]
-};
+
+const content = [
+  {
+    language: "PT",
+    changelogsText: "Changelogs",
+    changelog: [
+      {
+        id: 1,
+        title: "0.0.1",
+        content: "Conteúdo do blog sobre marketing...",
+      }, {
+        id: 2,
+        title: "0.0.2",
+        content: "Conteúdo do blog sobre marketing...",
+      },
+    ],
+    cookiesa: "Aqui vai o conteúdo explicativo sobre cookies...",
+    cookiesmais: "ler mais...",
+    cookiesmenos: "ler menos",
+    cookiesb: "Conteúdo adicional que aparece quando o botão ''Ler mais'' é clicado.",
+    headerTitle: "DANTAS SOLUÇÕES",
+    headerSubtitle: "Soluções especializadas para o seu negócio",
+    personalInfoTitle: "Me mande uma mensagem!",
+    personalInfoSubtitle: "Soluções especializadas para o seu negócio",
+    sobre: "SOBRE",
+    projetos: "PROJETOS",
+    contato: "CONTATO",
+    servicos: "SERVIÇOS",
+    personalInfoButton: "CONTATO",
+    typehere: "digite aqui...",
+    portfolioTitle: "PORTFÓLIO",
+    blogTitle: "Blog",
+    blogSubtitle: "Conteúdos sobre o marketing",
+    parceirosTitle: "PARCEIROS",
+    buttonPrevious: "Anterior",
+    buttonNext: "Próximo",
+    popuptitle: "Site em Construção",
+    popsubtitle: "Desculpe-nos pelo transtorno. Estamos trabalhando para melhorar sua experiência.",
+    personalimage: "images/img_container.png",
+    messageSentSuccess: "Mensagem enviada com sucesso!",
+    errorMessage: "Erro ao enviar mensagem.",
+    solucoes: "Soluções personalizadas!",
+
+  }
+];
+const services = [
+
+  { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
+  { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
+  { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
+  { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
+  { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
+  // Adicione quantos serviços desejar
+];
+
+
+
+const Portfolio = [
+  {
+    title: "implante giovani centro",
+    type: "link",
+    img: "/images/img_link_396x407.png",
+    link: "https://www.implantegiovanicentro.com.br",
+  },
+  // Adicione mais portfólios conforme necessário
+];
+
+const parceiros = [
+  {
+    link: "https://example.com",
+    image: "images/img_link_200x200.png",
+    title: "Partner 1"
+  }, {
+    link: "https://example.com",
+    image: "images/img_link_200x200.png",
+    title: "Partner 1"
+  }
+  // Adicione mais parceiros conforme necessário
+];
+
+const Blog = [
+  {
+    id: 1,
+    image: "images/img_link_200x200.png",
+    title: "Title",
+    subtitle: "Como o design de sites afeta a conversão de visitantes?",
+    content: "Conteúdo do blog sobre marketing...",
+  }, {
+    id: 2,
+    image: "images/img_link_200x200.png",
+    title: "Title",
+    subtitle: "Como o design de sites afeta a conversão de visitantes?",
+    content: "Conteúdo do blog sobre marketing...",
+  }, {
+    id: 3,
+    image: "images/img_link_200x200.png",
+    title: "Title",
+    subtitle: "Como o design de sites afeta a conversão de visitantes?",
+    content: "Conteúdo do blog sobre marketing...",
+  }, {
+    id: 4,
+    image: "images/img_link_200x200.png",
+    title: "Title",
+    subtitle: "Como o design de sites afeta a conversão de visitantes?",
+    content: "Conteúdo do blog sobre marketing...",
+  },
+  // Adicione mais posts de blog conforme necessário
+];
+
 const animationDelay = 1; // Altere para o valor desejado
 
 export default function DantasPage() {
