@@ -5,7 +5,16 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
 const bdurl = 'https://portifolioreactback.onrender.com';
-const languages = ['pt', 'fr', 'es'];
+
+const services = [
+
+  { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
+  { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
+  { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
+  { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
+  { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
+  // Adicione quantos serviços desejar
+];
 
 const content = [
   {
@@ -51,16 +60,6 @@ const content = [
 
   }
 ];
-const services = [
-
-  { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
-  { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
-  { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
-  { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
-  { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
-  // Adicione quantos serviços desejar
-];
-
 
 
 const Portfolio = [
@@ -142,8 +141,6 @@ export default function DantasPage() {
     const ref = useRef(null);
     const [scrollDirection, setScrollDirection] = useState(null);
     const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-    const [scrollToRef, setScrollToRef] = useState(prevRef);
-    localStorage.setItem("selectedLanguageIndex", 0);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -163,6 +160,7 @@ export default function DantasPage() {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
+            // Decide para onde rolar com base na direção da rolagem
             if (scrollDirection === 'down') {
               setScrollToRef(nextRef);
             } else if (scrollDirection === 'up') {
@@ -178,11 +176,13 @@ export default function DantasPage() {
       );
 
       observer.observe(ref.current);
-      const currentRef = ref.current; // Store the current value of ref
+
       return () => {
-        observer.unobserve(currentRef); // Use the stored value in the cleanup function
+        observer.unobserve(ref.current);
       };
     }, [prevRef, nextRef, scrollDirection]);
+
+    const [scrollToRef, setScrollToRef] = useState(prevRef);
 
     useEffect(() => {
       if (scrollToRef) {
@@ -195,6 +195,7 @@ export default function DantasPage() {
 
     return <div ref={ref} style={{ height: "150vh" }} />;
   };
+
 
 
   // Referências para as seções
@@ -211,7 +212,7 @@ export default function DantasPage() {
         <title>Dantas Soluções</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <Header languages={languages} content={content} className="header sticky md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
+      <Header content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
 
       <div className="flex w-full flex-col gap-5 bg-gray-50 ">
         <div className="main-content flex flex-col items-center">
@@ -230,7 +231,7 @@ export default function DantasPage() {
                     as="p"
                     className="mt-2 tracking-[1.50px] !text-white text-responsive"
                   >
-                    {content[localStorage.getItem("selectedLanguageIndex")].headerTitle}
+                    {content[0].headerTitle}
                   </Text>
                 </div>
                 <Text
@@ -238,7 +239,7 @@ export default function DantasPage() {
                   as="p"
                   className="w-[87%] leading-[56px] text-responsive"
                 >
-                  {content[localStorage.getItem("selectedLanguageIndex")].headerSubtitle}
+                  {content[0].headerSubtitle}
                 </Text>
               </div>
               <div className="flex w-full flex-col items-center gap-8">
@@ -248,7 +249,7 @@ export default function DantasPage() {
                   className="h-[380px] w-full object-cover md:h-[200px] md:w-auto"
                 />
                 <Heading size="lg" as="h1" className="!text-indigo-A200 text-responsive">
-                  {content[localStorage.getItem("selectedLanguageIndex")].solucoes}
+                  {content[0].solucoes}
                 </Heading>
               </div>
             </div>
@@ -275,15 +276,15 @@ export default function DantasPage() {
           <div className="container mx-auto px-4" ref={personalInfoRef}>
             <div className="bg-blue-500 flex-col md:flex-row md:max-w-screen-xl md:mx-auto">
               <div className="h-screen md:h-auto md:relative md:w-full md:max-w-[379px]">
-                <img src={content[localStorage.getItem("selectedLanguageIndex")].personalimage} alt="container" className="w-full h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
+                <img src={content[0].personalimage} alt="container" className="w-full h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
               </div>
               <div className="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full">
                 <div>
-                  <p className="text-lg tracking-[0.50px] md:text-base">{content[localStorage.getItem("selectedLanguageIndex")].personalInfoTitle}</p>
-                  <p className="text-8xl mt-2 tracking-[-1.50px] md:text-4xl">{content[localStorage.getItem("selectedLanguageIndex")].headerTitle}</p>
-                  <p className="text-6xl w-[81%] leading-[56px] md:text-base md:w-full">{content[localStorage.getItem("selectedLanguageIndex")].personalInfoSubtitle}</p>
+                  <p className="text-lg tracking-[0.50px] md:text-base">{content[0].personalInfoTitle}</p>
+                  <p className="text-8xl mt-2 tracking-[-1.50px] md:text-4xl">{content[0].headerTitle}</p>
+                  <p className="text-6xl w-[81%] leading-[56px] md:text-base md:w-full">{content[0].personalInfoSubtitle}</p>
                 </div>
-                <button className="bg-green-700 text-white px-4 py-2 rounded-full border border-solid border-green-400 tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">{content[localStorage.getItem("selectedLanguageIndex")].personalInfoButton}</button>
+                <button className="bg-green-700 text-white px-4 py-2 rounded-full border border-solid border-green-400 tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">{content[0].personalInfoButton}</button>
               </div>
             </div>
           </div>
@@ -295,7 +296,7 @@ export default function DantasPage() {
           {/* portfolio section */}
           <div className="mt-[19px] flex flex-col items-center px-[574px] md:px-5" ref={portfolioRef}>
             <Heading as="h3" className="!font-bold uppercase tracking-[2.70px]">
-              {content[localStorage.getItem("selectedLanguageIndex")].portfolioTitle}
+              {content[0].portfolioTitle}
             </Heading>
           </div>
           <div className="flex rounded-[19px] md:flex-col">
@@ -376,11 +377,11 @@ export default function DantasPage() {
 
             </div><div className="flex justify-between mt-5">
               <Button onClick={prevPage} disabled={!hasPrevPage} className="!text-gray-900">
-                {content[localStorage.getItem("selectedLanguageIndex")].buttonPrevious}
+                {content[0].buttonPrevious}
 
               </Button>
               <Button onClick={nextPage} disabled={!hasNextPage} className="!text-gray-900">
-                {content[localStorage.getItem("selectedLanguageIndex")].buttonNext}
+                {content[0].buttonNext}
               </Button>
             </div>
           </div>
@@ -391,7 +392,7 @@ export default function DantasPage() {
           <div className="mt-[18px] flex flex-col gap-[18px]" ref={partnersRef}>
             <div className="flex flex-col items-center px-[580px] md:px-5">
               <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
-                {content[localStorage.getItem("selectedLanguageIndex")].parceirosTitle}
+                {content[0].parceirosTitle}
               </Heading>
             </div>
             <PartnerSlider parceiros={parceiros} />
