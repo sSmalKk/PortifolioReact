@@ -351,21 +351,17 @@ export default function DantasPage() {
                 </div>
               </div>
               {/* Lista de posts restantes */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-[18px]">
+              <div className="grid-container">
   {currentPosts.map((post, index) => (
-    <div key={`blog-post-${index}`} className="flex flex-col gap-8">
-      <Img src={post.image} alt="container" className="h-[453px] object-cover" />
-      <div className="flex flex-col items-start gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-8 shadow-sm sm:p-5">
-        <Heading as="h6" className="mt-[11px]">
-          @{post.author}
-        </Heading>
-        <Heading size="md" as="h3" className="w-full leading-10 !text-gray-900">
-          <>
-            {post.title}
-            <br />
-            {post.subtitle}
-          </>
-        </Heading>
+    <div key={`blog-post-${index}`} className="blog-post">
+      <img src={post.image} alt="container" className="post-image" />
+      <div className="post-content">
+        <h6>@{post.author}</h6>
+        <h3>
+          {post.title}
+          <br />
+          {post.subtitle}
+        </h3>
       </div>
     </div>
   ))}

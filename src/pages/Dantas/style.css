@@ -1,78 +1,93 @@
 .wrapper {
-    height: 100vh; /* Define a altura da div para ocupar toda a tela */
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    margin: 0 auto; /* Isso garantirá que haja margens automáticas nos lados quando a tela for grande */
-  }
-  /* style.css */
+  height: 100vh;
+  /* Define a altura da div para ocupar toda a tela */
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  margin: 0 auto;
+  /* Isso garantirá que haja margens automáticas nos lados quando a tela for grande */
+}
+
+/* style.css */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure header is on top */
-  background-color: #fff; /* Add background color to prevent content bleed-through */
+  z-index: 1000;
+  /* Ensure header is on top */
+  background-color: #fff;
+  /* Add background color to prevent content bleed-through */
 }
- 
-  @media (max-width: 768px) {
-    .main-content {
-      padding-top: 35%; /* Adjust this value based on header height */
-    }
-    
-   
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 35%;
+    /* Adjust this value based on header height */
   }
-   
-  .animate-delay {
-    animation-delay: 1s; /* Valor padrão */
-  }
+
+
+}
+
+.animate-delay {
+  animation-delay: 1s;
+  /* Valor padrão */
+}
+
 .wave-animation {
-  animation: wave 10s infinite ;
+  animation: wave 10s infinite;
 }
 
 @keyframes wave {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-10px);
-    }
-    50% {
-      transform: translateY(0);
-    }
-    75% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
   }
-  
-  .partner-slider {
-    overflow: hidden;
-    position: relative;
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.partner-slider {
+  overflow: hidden;
+  position: relative;
 }
 
 .partner-slider img {
-    transition: transform 0.5s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
+  transition: transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .partner-slider img.center {
-    transform: scale(1.2);
-    z-index: 1;
+  transform: scale(1.2);
+  z-index: 1;
 }
 
 .partner-slider img.left {
-    transform: scale(0.8) translateX(-50%);
-    z-index: 0;
+  transform: scale(0.8) translateX(-50%);
+  z-index: 0;
 }
 
 .partner-slider img.right {
-    transform: scale(0.8) translateX(50%);
-    z-index: 0;
+  transform: scale(0.8) translateX(50%);
+  z-index: 0;
 }
+
 .changelogs-container {
   max-width: 600px;
   margin: 0 auto;
@@ -80,8 +95,10 @@
 }
 
 .changelogs-list {
-  max-height: 200px; /* Defina a altura máxima para o scroll */
-  overflow-y: auto; /* Adicione scroll vertical quando necessário */
+  max-height: 200px;
+  /* Defina a altura máxima para o scroll */
+  overflow-y: auto;
+  /* Adicione scroll vertical quando necessário */
 }
 
 .changelogs-list ul {
@@ -96,7 +113,8 @@
 }
 
 input[type="text"] {
-  width: calc(100% - 80px); /* Ajuste conforme necessário */
+  width: calc(100% - 80px);
+  /* Ajuste conforme necessário */
   padding: 8px;
   margin-right: 10px;
 }
@@ -112,4 +130,38 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-image {
+  height: 300px;
+  object-position: cover;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  /* border-blue_gray-50 */
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
 }
