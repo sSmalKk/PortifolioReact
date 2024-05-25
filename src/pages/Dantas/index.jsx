@@ -24,12 +24,8 @@ const content = [
       {
         id: 1,
         title: "0.0.1",
-        content: "Conteúdo do blog sobre marketing...",
-      }, {
-        id: 2,
-        title: "0.0.2",
-        content: "Conteúdo do blog sobre marketing...",
-      },
+        content: "Primeira versão do site, fronent em react, backend em node.js, mongo.db em fase de testes",
+      }
     ],
     cookiesa: "Aqui vai o conteúdo explicativo sobre cookies...",
     cookiesmais: "ler mais...",
