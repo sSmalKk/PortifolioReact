@@ -4,7 +4,7 @@ import { PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, But
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
-const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co';
+const bdurl = 'https://portifolioreactback.onrender.com';
 const languages = ['pt', 'fr', 'es'];
 
 const content = [
