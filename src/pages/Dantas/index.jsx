@@ -196,8 +196,6 @@ export default function DantasPage() {
   };
 
 
-
-
   // Referências para as seções
   const servicesRef = useRef(null);
   const personalInfoRef = useRef(null);

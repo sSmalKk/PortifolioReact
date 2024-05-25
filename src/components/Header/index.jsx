@@ -37,7 +37,7 @@ export default function Header(props) {
   return (
     <header {...props} className={`${props.className} flex md:flex-col justify-between items-center sticky bg-white z-10`}>
       <Text className="text-2xl font-normal tracking-[0.18px] md:text-[22px]">
-        {content && content.length > 0 && content[0].headerTitle}
+        {content && content.length > 0 && content[localStorage.getItem("selectedLanguageIndex")].headerTitle}
       </Text>
       <ul className="flex items-center gap-[15px]">
         <Button
@@ -45,7 +45,7 @@ export default function Header(props) {
           className="h-[36px] min-w-[92px] border border-solid bg-white px-[15px] text-xs tracking-[0.50px] text-white-A700"
         >
           <Text className="text-base font-semibold tracking-[0.50px]">
-            {content && content.length > 0 && content[0].servicos}
+            {content && content.length > 0 && content[localStorage.getItem("selectedLanguageIndex")].servicos}
           </Text>
         </Button>
 
@@ -54,7 +54,7 @@ export default function Header(props) {
           className="h-[36px] min-w-[92px] border border-solid bg-white px-[15px] text-xs tracking-[0.50px] text-white-A700"
         >
           <Text className="text-base font-semibold tracking-[0.50px]">
-            {content && content.length > 0 && content[0].projetos}
+            {content && content.length > 0 && content[localStorage.getItem("selectedLanguageIndex")].projetos}
           </Text>
         </Button>
 
@@ -64,7 +64,7 @@ export default function Header(props) {
           className="h-[36px] min-w-[92px] border border-solid bg-white px-[15px] text-xs tracking-[0.50px] text-white-A700"
         >
           <Text className="text-base font-semibold tracking-[0.50px]">
-            {content && content.length > 0 && content[0].sobre}
+            {content && content.length > 0 && content[localStorage.getItem("selectedLanguageIndex")].sobre}
           </Text>
         </Button>
 
@@ -95,7 +95,7 @@ export default function Header(props) {
           onClick={() => window.location.href = '/#contact'}
           className="h-[36px] min-w-[92px] rounded-[18px] border border-solid border-green-400 bg-green-700 px-[15px] text-xs tracking-[0.50px] text-white-A700"
         >
-          {content && content.length > 0 && content[0].personalInfoButton}
+          {content && content.length > 0 && content[localStorage.getItem("selectedLanguageIndex")].personalInfoButton}
         </Button>
       </div>
     </header>
