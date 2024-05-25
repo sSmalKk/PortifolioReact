@@ -142,7 +142,7 @@ export default function DantasPage() {
     const ref = useRef(null);
     const [scrollDirection, setScrollDirection] = useState(null);
     const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-    const [scrollToRef, setScrollToRef] = useState(prevRef); // Estado para controlar a referência de rolagem
+    const [scrollToRef, setScrollToRef] = useState(prevRef);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -162,12 +162,9 @@ export default function DantasPage() {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            // Decide para onde rolar com base na direção da rolagem
             if (scrollDirection === 'down') {
-              // Atualize o estado de rolagem para a próxima referência
               setScrollToRef(nextRef);
             } else if (scrollDirection === 'up') {
-              // Atualize o estado de rolagem para a referência anterior
               setScrollToRef(prevRef);
             }
           }
@@ -180,11 +177,11 @@ export default function DantasPage() {
       );
 
       observer.observe(ref.current);
-
+      const currentRef = ref.current; // Store the current value of ref
       return () => {
-        observer.unobserve(ref.current);
+        observer.unobserve(currentRef); // Use the stored value in the cleanup function
       };
-    }, [prevRef, nextRef, scrollDirection]); // Dependências atualizadas
+    }, [prevRef, nextRef, scrollDirection]);
 
     useEffect(() => {
       if (scrollToRef) {
@@ -193,7 +190,7 @@ export default function DantasPage() {
           behavior: "smooth"
         });
       }
-    }, [scrollToRef]); // Depende do estado de rolagem atualizado
+    }, [scrollToRef]);
 
     return <div ref={ref} style={{ height: "150vh" }} />;
   };
