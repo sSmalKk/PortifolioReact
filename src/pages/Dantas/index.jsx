@@ -5,10 +5,11 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
+
 const content = [
   {
     language: "PT",
-    Services: [
+    services: [
 
       { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
       { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
@@ -35,7 +36,7 @@ const content = [
       },
       // Adicione mais portfólios conforme necessário
     ],
-    Parceiros: [
+    parceiros: [
       {
         link: "https://example.com",
         image: "images/img_link_200x200.png",
@@ -104,14 +105,15 @@ const content = [
   }
 ];
 
-const Services = content[0].Services;
+const services = content[0].services;
 
 
 const Portfolio = content[0].Portfolio;
 
-const Parceiros = content[0].Parceiros;
+const parceiros = content[0].parceiros;
 
 const Blog = content[0].Blog;
+
 
 const animationDelay = 1; // Altere para o valor desejado
 
@@ -197,7 +199,7 @@ export default function DantasPage() {
 
 
   // Referências para as seções
-  const ServicesRef = useRef(null);
+  const servicesRef = useRef(null);
   const personalInfoRef = useRef(null);
   const portfolioRef = useRef(null);
   const blogRef = useRef(null);
@@ -253,14 +255,14 @@ export default function DantasPage() {
             </div>
           </div>
 
-          <ScrollSection prevRef={topRef} nextRef={ServicesRef} />
-          <div id={"Services"} ref={ServicesRef}>
-            {/* Services section */}
-            <ServicesComponent Services={Services} />
+          <ScrollSection prevRef={topRef} nextRef={servicesRef} />
+          <div id={"services"} ref={servicesRef}>
+            {/* services section */}
+            <ServicesComponent services={services} />
 
-            {/* Services bar */}
+            {/* services bar */}
             <div className="mb-[61px] mt-[309px] flex items-center justify-around gap-5 overflow-auto border-b border-t border-solid border-gray-300 py-[13px] md:flex-col">
-              {Services.map((service, index) => (
+              {services.map((service, index) => (
 
                 <ServiceItem service={service} index={index} animationDelay={animationDelay} />
 
@@ -268,7 +270,7 @@ export default function DantasPage() {
               <div className="w-full border-t border-gray-300"></div>
             </div>
           </div>
-          <ScrollSection prevRef={ServicesRef} nextRef={personalInfoRef} />
+          <ScrollSection prevRef={servicesRef} nextRef={personalInfoRef} />
 
           {/* personal info section */}
           <div className="container mx-auto px-4" ref={personalInfoRef}>
@@ -384,14 +386,14 @@ export default function DantasPage() {
           <ScrollSection prevRef={blogRef} nextRef={partnersRef} />
 
 
-          {/* Parceiros section */}
+          {/* parceiros section */}
           <div className="mt-[18px] flex flex-col gap-[18px]" ref={partnersRef}>
             <div className="flex flex-col items-center px-[580px] md:px-5">
               <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
-                {content[0].ParceirosTitle}
+                {content[0].parceirosTitle}
               </Heading>
             </div>
-            <PartnerSlider Parceiros={Parceiros} />
+            <PartnerSlider parceiros={parceiros} />
 
           </div>
 
