@@ -6,19 +6,19 @@ import Header from "../../components/Header";
 import "./style.css";
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
 
-const services = [
-
-  { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
-  { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
-  { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
-  { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
-  { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
-  // Adicione quantos serviços desejar
-];
 
 const content = [
   {
     language: "PT",
+    services: [
+
+      { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
+      { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
+      { designtype: 3, id: 'Service3', name: 'Service 3', link: 'service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
+      { designtype: 3, id: 'Service4', name: 'Service 4', link: 'service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
+      { designtype: 3, id: 'Service5', name: 'Service 5', link: 'service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
+      // Adicione quantos serviços desejar
+    ],
     changelogsText: "Changelogs",
     changelog: [
       {
@@ -253,11 +253,11 @@ export default function DantasPage() {
           <ScrollSection prevRef={topRef} nextRef={servicesRef} />
           <div id={"services"} ref={servicesRef}>
             {/* services section */}
-            <ServicesComponent services={services} />
+            <ServicesComponent services={content[0].services} />
 
             {/* services bar */}
             <div className="mb-[61px] mt-[309px] flex items-center justify-around gap-5 overflow-auto border-b border-t border-solid border-gray-300 py-[13px] md:flex-col">
-              {services.map((service, index) => (
+              {content[0].services.map((service, index) => (
 
                 <ServiceItem service={service} index={index} animationDelay={animationDelay} />
 
@@ -352,20 +352,20 @@ export default function DantasPage() {
               </div>
               {/* Lista de posts restantes */}
               <div className="grid-container">
-  {currentPosts.map((post, index) => (
-    <div key={`blog-post-${index}`} className="blog-post">
-      <img src={post.image} alt="container" className="post-image" />
-      <div className="post-content">
-        <h6>@{post.author}</h6>
-        <h3>
-          {post.title}
-          <br />
-          {post.subtitle}
-        </h3>
-      </div>
-    </div>
-  ))}
-</div>
+                {currentPosts.map((post, index) => (
+                  <div key={`blog-post-${index}`} className="blog-post">
+                    <img src={post.image} alt="container" className="post-image" />
+                    <div className="post-content">
+                      <h6>@{post.author}</h6>
+                      <h3>
+                        {post.title}
+                        <br />
+                        {post.subtitle}
+                      </h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
 
             </div><div className="flex justify-between mt-5">
