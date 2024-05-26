@@ -5,12 +5,10 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
-
-
 const content = [
   {
     language: "PT",
-    services: [
+    Services: [
 
       { designtype: 1, id: 'Service1', name: 'Service 1', link: 'service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
       { designtype: 2, id: 'Service2', name: 'Service 2', link: 'service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
@@ -26,6 +24,55 @@ const content = [
         title: "0.0.1",
         content: "Primeira versão do site, fronent em react, backend em node.js, mongo.db em fase de testes",
       }
+    ],
+
+    Portfolio: [
+      {
+        title: "implante giovani centro",
+        type: "link",
+        img: "/images/img_link_396x407.png",
+        link: "https://www.implantegiovanicentro.com.br",
+      },
+      // Adicione mais portfólios conforme necessário
+    ],
+    Parceiros: [
+      {
+        link: "https://example.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 1"
+      }, {
+        link: "https://example.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 1"
+      }
+      // Adicione mais Parceiros conforme necessário
+    ], Blog: [
+      {
+        id: 1,
+        image: "images/img_link_200x200.png",
+        title: "Title",
+        subtitle: "Como o design de sites afeta a conversão de visitantes?",
+        content: "Conteúdo do blog sobre marketing...",
+      }, {
+        id: 2,
+        image: "images/img_link_200x200.png",
+        title: "Title",
+        subtitle: "Como o design de sites afeta a conversão de visitantes?",
+        content: "Conteúdo do blog sobre marketing...",
+      }, {
+        id: 3,
+        image: "images/img_link_200x200.png",
+        title: "Title",
+        subtitle: "Como o design de sites afeta a conversão de visitantes?",
+        content: "Conteúdo do blog sobre marketing...",
+      }, {
+        id: 4,
+        image: "images/img_link_200x200.png",
+        title: "Title",
+        subtitle: "Como o design de sites afeta a conversão de visitantes?",
+        content: "Conteúdo do blog sobre marketing...",
+      },
+      // Adicione mais posts de blog conforme necessário
     ],
     cookiesa: "Aqui vai o conteúdo explicativo sobre cookies...",
     cookiesmais: "ler mais...",
@@ -44,7 +91,7 @@ const content = [
     portfolioTitle: "PORTFÓLIO",
     blogTitle: "Blog",
     blogSubtitle: "Conteúdos sobre o marketing",
-    parceirosTitle: "PARCEIROS",
+    ParceirosTitle: "PARCEIROS",
     buttonPrevious: "Anterior",
     buttonNext: "Próximo",
     popuptitle: "Site em Construção",
@@ -57,58 +104,14 @@ const content = [
   }
 ];
 
+const Services = content[0].Services;
 
-const Portfolio = [
-  {
-    title: "implante giovani centro",
-    type: "link",
-    img: "/images/img_link_396x407.png",
-    link: "https://www.implantegiovanicentro.com.br",
-  },
-  // Adicione mais portfólios conforme necessário
-];
 
-const parceiros = [
-  {
-    link: "https://example.com",
-    image: "images/img_link_200x200.png",
-    title: "Partner 1"
-  }, {
-    link: "https://example.com",
-    image: "images/img_link_200x200.png",
-    title: "Partner 1"
-  }
-  // Adicione mais parceiros conforme necessário
-];
+const Portfolio = content[0].Portfolio;
 
-const Blog = [
-  {
-    id: 1,
-    image: "images/img_link_200x200.png",
-    title: "Title",
-    subtitle: "Como o design de sites afeta a conversão de visitantes?",
-    content: "Conteúdo do blog sobre marketing...",
-  }, {
-    id: 2,
-    image: "images/img_link_200x200.png",
-    title: "Title",
-    subtitle: "Como o design de sites afeta a conversão de visitantes?",
-    content: "Conteúdo do blog sobre marketing...",
-  }, {
-    id: 3,
-    image: "images/img_link_200x200.png",
-    title: "Title",
-    subtitle: "Como o design de sites afeta a conversão de visitantes?",
-    content: "Conteúdo do blog sobre marketing...",
-  }, {
-    id: 4,
-    image: "images/img_link_200x200.png",
-    title: "Title",
-    subtitle: "Como o design de sites afeta a conversão de visitantes?",
-    content: "Conteúdo do blog sobre marketing...",
-  },
-  // Adicione mais posts de blog conforme necessário
-];
+const Parceiros = content[0].Parceiros;
+
+const Blog = content[0].Blog;
 
 const animationDelay = 1; // Altere para o valor desejado
 
@@ -194,7 +197,7 @@ export default function DantasPage() {
 
 
   // Referências para as seções
-  const servicesRef = useRef(null);
+  const ServicesRef = useRef(null);
   const personalInfoRef = useRef(null);
   const portfolioRef = useRef(null);
   const blogRef = useRef(null);
@@ -250,14 +253,14 @@ export default function DantasPage() {
             </div>
           </div>
 
-          <ScrollSection prevRef={topRef} nextRef={servicesRef} />
-          <div id={"services"} ref={servicesRef}>
-            {/* services section */}
-            <ServicesComponent services={content[0].services} />
+          <ScrollSection prevRef={topRef} nextRef={ServicesRef} />
+          <div id={"Services"} ref={ServicesRef}>
+            {/* Services section */}
+            <ServicesComponent Services={Services} />
 
-            {/* services bar */}
+            {/* Services bar */}
             <div className="mb-[61px] mt-[309px] flex items-center justify-around gap-5 overflow-auto border-b border-t border-solid border-gray-300 py-[13px] md:flex-col">
-              {content[0].services.map((service, index) => (
+              {Services.map((service, index) => (
 
                 <ServiceItem service={service} index={index} animationDelay={animationDelay} />
 
@@ -265,7 +268,7 @@ export default function DantasPage() {
               <div className="w-full border-t border-gray-300"></div>
             </div>
           </div>
-          <ScrollSection prevRef={servicesRef} nextRef={personalInfoRef} />
+          <ScrollSection prevRef={ServicesRef} nextRef={personalInfoRef} />
 
           {/* personal info section */}
           <div className="container mx-auto px-4" ref={personalInfoRef}>
@@ -381,14 +384,14 @@ export default function DantasPage() {
           <ScrollSection prevRef={blogRef} nextRef={partnersRef} />
 
 
-          {/* parceiros section */}
+          {/* Parceiros section */}
           <div className="mt-[18px] flex flex-col gap-[18px]" ref={partnersRef}>
             <div className="flex flex-col items-center px-[580px] md:px-5">
               <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
-                {content[0].parceirosTitle}
+                {content[0].ParceirosTitle}
               </Heading>
             </div>
-            <PartnerSlider parceiros={parceiros} />
+            <PartnerSlider Parceiros={Parceiros} />
 
           </div>
 
