@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import { Button } from "..";
 
 const ContactForm = ({ content, url, onMessageSent }) => {
   const [inputValue, setInputValue] = useState('');
@@ -9,7 +10,6 @@ const ContactForm = ({ content, url, onMessageSent }) => {
     setInputValue(event.target.value);
     setError(null); // Reset error when input changes
   };
-  console.log("localStorage content:", localStorage);
 
   const handleSend = async () => {
     const formData = JSON.stringify({
@@ -35,11 +35,21 @@ const ContactForm = ({ content, url, onMessageSent }) => {
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
+        redirectToWhatsApp();
       }
     } catch (error) {
       console.error("Erro:", error);
       setError(content[0].errorMessage);
+      redirectToWhatsApp();
     }
+  };
+
+  const redirectToWhatsApp = () => {
+    const phone = "5561981594849";
+    const baseUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(phone)}`;
+    const url = `${baseUrl}&text=${encodeURIComponent(inputValue)}`;
+
+    window.location.href = url;
   };
 
   return (
@@ -53,11 +63,14 @@ const ContactForm = ({ content, url, onMessageSent }) => {
           onChange={handleInputChange}
           style={{ marginBottom: '10px' }}
         />
-        <button onClick={handleSend}>{content[0].personalInfoButton}</button>
+
+        <Button onClick={handleSend} className="h-[36px] min-w-[92px] rounded-[18px] border border-solid border-green-400 bg-green-700 px-[15px] text-xs tracking-[0.50px] text-white-A700">
+          {content[0].personalInfoButton}
+        </Button>
       </div>
       {error && <p style={{ color: 'red', fontSize: '12px' }}>{content[0].errorMessage}</p>}
     </div>
   );
-};
+}
 
 export default ContactForm;

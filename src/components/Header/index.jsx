@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Img, Text } from "..";
+import {Contact, Button, Img, Text } from "..";
 import "./style.css";
 
 export default function Header(props) {
@@ -39,9 +39,7 @@ export default function Header(props) {
             <Img src="images/img_volume.svg" />
           </Button>
         </div>
-        <Button onClick={() => window.location.href = '/#contact'} className="h-[36px] min-w-[92px] rounded-[18px] border border-solid border-green-400 bg-green-700 px-[15px] text-xs tracking-[0.50px] text-white-A700">
-          {content[0].personalInfoButton}
-        </Button>
+        <Contact content={content}/>
       </div>
     </header>
   );
