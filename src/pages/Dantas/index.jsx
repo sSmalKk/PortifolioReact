@@ -215,7 +215,7 @@ export default function DantasPage() {
 
           {/* personal info section */}
           <div className="container mx-auto px-4" ref={personalInfoRef}>
-            <div className="bg-blue-500 flex-col md:flex-row md:max-w-screen-xl md:mx-auto">
+            <div className="flex-col md:flex-row md:max-w-screen-xl md:mx-auto">
               <div className="h-screen md:h-auto md:relative md:w-full md:max-w-[379px]">
                 <img src={content[0].personalimage} alt="container" className="w-full h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
               </div>

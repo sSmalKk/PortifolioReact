@@ -1,7 +1,6 @@
 import React from "react";
-import {Contact, Button, Img, Text } from "..";
+import {Contact,Contactbar, Button, Img, Text } from "..";
 import "./style.css";
-
 export default function Header(props) {
   const { content } = props;
 
@@ -31,14 +30,7 @@ export default function Header(props) {
         </button>
       </ul>
       <div className="flex w-[22%] justify-between gap-5 md:w-full">
-        <div className="flex gap-5">
-          <Button onClick={() => window.location.href = '/#contact'} className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5">
-            <Img src="images/img_u_linkedin_alt.svg" />
-          </Button>
-          <Button onClick={() => window.location.href = '/#contact'} className="h-[36px] w-[36px] rounded-[18px] bg-blue_gray-900_19 px-2.5">
-            <Img src="images/img_volume.svg" />
-          </Button>
-        </div>
+        <Contactbar/>
         <Contact content={content}/>
       </div>
     </header>

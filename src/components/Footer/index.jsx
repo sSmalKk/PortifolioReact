@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Importe o Link do React Router
-import { Text, Button, Img} from "./..";
+import { Text,Contactbar, Button, Img} from "./..";
 
 export default function Footer({ ...props }) {
   return (
@@ -35,20 +35,9 @@ export default function Footer({ ...props }) {
           >
             CONTATO
           </Button>
-          <div className="flex flex-col items-center gap-[18px] border-l border-r border-solid border-black-900_60 p-[18px] shadow-xs">
-            <Button size="xs" shape="round" className="w-[36px]">
-              <Img src="images/img_u_linkedin_alt.svg" />
-            </Button>
-            <Button size="xs" shape="round" className="w-[36px]">
-              <Img src="images/img_volume.svg" />
-            </Button>
-            <Button size="xs" shape="round" className="w-[36px]">
-              <Img src="images/img_u_instagram.svg" />
-            </Button>
-            <Button size="xs" shape="round" className="w-[36px]">
-              <Img src="images/img_lock.svg" />
-            </Button>
-          </div>
+          
+          <Contactbar/>
+
         </div>
       </div>
       <ul className="!mx-auto flex w-full max-w-[1449px] flex-wrap items-center justify-between gap-5 border-t border-solid border-gray-300 py-[9px] pr-[9px] md:p-5">

@@ -12,5 +12,6 @@ import Notification from "./Notification";
 import ContactForm from "./ContactForm";
 import Changelogs from "./Changelogs";
 import Contact from "./Contact";
+import Contactbar from "./Contactbar";
 import PCInfoComponent from "./PCInfoComponent";
-export {Contact, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };
+export {Contact,Contactbar, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };
