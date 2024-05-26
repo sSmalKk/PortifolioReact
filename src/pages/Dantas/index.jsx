@@ -4,7 +4,7 @@ import { PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, But
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
-const bdurl = 'https://aa0e27ec-kend-sandbox.dhiwise.co/swagger/';
+const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
 
 const content = [
   {
@@ -138,63 +138,6 @@ export default function DantasPage() {
 
   const hasPrevPage = currentPage > 1;
   const hasNextPage = indexOfLastPost < filteredPosts.length;
-  const ScrollSection = ({ prevRef, nextRef }) => {
-    const ref = useRef(null);
-    const [scrollDirection, setScrollDirection] = useState(null);
-    const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-    const [scrollToRef, setScrollToRef] = useState(prevRef);
-
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        setScrollDirection(currentScrollPosition > prevScrollPosition ? 'down' : 'up');
-        setPrevScrollPosition(currentScrollPosition);
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, [prevScrollPosition]);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            if (scrollDirection === 'down') {
-              setScrollToRef(nextRef);
-            } else if (scrollDirection === 'up') {
-              setScrollToRef(prevRef);
-            }
-          }
-        },
-        {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.5
-        }
-      );
-
-      observer.observe(ref.current);
-      const currentRef = ref.current; // Store the current value of ref
-      return () => {
-        observer.unobserve(currentRef); // Use the stored value in the cleanup function
-      };
-    }, [prevRef, nextRef, scrollDirection]);
-
-    useEffect(() => {
-      if (scrollToRef) {
-        window.scrollTo({
-          top: scrollToRef.current.offsetTop,
-          behavior: "smooth"
-        });
-      }
-    }, [scrollToRef]);
-
-    return <div ref={ref} style={{ height: "150vh" }} />;
-  };
-
 
 
 
@@ -255,7 +198,6 @@ export default function DantasPage() {
             </div>
           </div>
 
-          <ScrollSection prevRef={topRef} nextRef={servicesRef} />
           <div id={"services"} ref={servicesRef}>
             {/* services section */}
             <ServicesComponent services={services} />
@@ -270,7 +212,6 @@ export default function DantasPage() {
               <div className="w-full border-t border-gray-300"></div>
             </div>
           </div>
-          <ScrollSection prevRef={servicesRef} nextRef={personalInfoRef} />
 
           {/* personal info section */}
           <div className="container mx-auto px-4" ref={personalInfoRef}>
@@ -290,7 +231,6 @@ export default function DantasPage() {
           </div>
 
 
-          <ScrollSection prevRef={personalInfoRef} nextRef={portfolioRef} />
 
 
           {/* portfolio section */}
@@ -308,7 +248,6 @@ export default function DantasPage() {
               />
             ))}
           </div>
-          <ScrollSection prevRef={portfolioRef} nextRef={blogRef} />
 
           {/* blog section */}
           <div className="mt-[18px] flex flex-col gap-5" ref={blogRef}>
@@ -383,7 +322,6 @@ export default function DantasPage() {
               </Button>
             </div>
           </div>
-          <ScrollSection prevRef={blogRef} nextRef={partnersRef} />
 
 
           {/* parceiros section */}
