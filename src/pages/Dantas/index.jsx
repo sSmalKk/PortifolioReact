@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, Button, ServiceItem } from "../../components";
 import Footer from "../../components/Footer";
