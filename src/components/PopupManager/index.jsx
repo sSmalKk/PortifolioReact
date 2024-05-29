@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Popup, ContactForm, Notification, Cookies, Changelogs } from "../../components";
+import { UseFetch, Popup, ContactForm, Notification, Cookies, Changelogs } from "../../components";
 import "./style.css";
 
-const PopupManager = ({ content ,url}) => {
+const PopupManager = ({ content, url }) => {
   const [popupQueue, setPopupQueue] = useState(["popupOpen", "cookiesPopupOpen", "empty"]);
   const [currentPopup, setCurrentPopup] = useState("");
 
   useEffect(() => {
     if (popupQueue.length > 0) {
-      setCurrentPopup(popupQueue[0]); // Define o primeiro popup na fila como o popup atual
+      setCurrentPopup(popupQueue[0]);
     } else {
-      setCurrentPopup(""); // Define nenhum popup caso a fila esteja vazia
+      setCurrentPopup("");
     }
   }, [popupQueue]);
 
   const onClose = () => {
-    setPopupQueue(prevQueue => prevQueue.slice(1)); // Remove o primeiro item da fila
+    setPopupQueue((prevQueue) => prevQueue.slice(1));
   };
 
   const [message, setMessage] = useState("");
@@ -28,10 +28,9 @@ const PopupManager = ({ content ,url}) => {
       const ipResponse = await fetch('https://api.ipify.org?format=json');
       const { ip } = await ipResponse.json();
 
-      // Verificar se o IP já está cadastrado
       const pcInfo = localStorage.getItem(ip);
       if (pcInfo) {
-        setPopupQueue(prevQueue => prevQueue.filter(popup => popup !== "cookiesPopupOpen"));
+        setPopupQueue((prevQueue) => prevQueue.filter((popup) => popup !== "cookiesPopupOpen"));
         return;
       }
 
@@ -39,7 +38,7 @@ const PopupManager = ({ content ,url}) => {
       const locationData = await locationResponse.json();
 
       const info = {
-        id: ip, // Usando o IP como ID
+        id: ip,
         userAgent: navigator.userAgent,
         platform: navigator.platform,
         language: navigator.language,
@@ -48,16 +47,26 @@ const PopupManager = ({ content ,url}) => {
         colorDepth: window.screen.colorDepth,
         ipAddress: ip,
         location: `${locationData.city}, ${locationData.region}, ${locationData.country}`,
-        date: new Date().toLocaleString()
-        // Adicione mais informações se desejar
+        date: new Date().toLocaleString(),
       };
 
-
-      // Salvando as informações no localStorage usando o IP como chave
       localStorage.setItem(ip, JSON.stringify(info));
 
-      // Se as informações já foram salvas, remove o popup de cookies da fila
-      setPopupQueue(prevQueue => prevQueue.filter(popup => popup !== "cookiesPopupOpen"));
+      const { executeFetch } = UseFetch({
+        url: "https://0e27ec-kend-sandbox.dhiwise.co",
+        api: "/client/content/list",
+        onMessageSent: (status, mensagem) => {
+          if (status === "SUCCESS") {
+            console.log("saved");
+          } else {
+            console.error("Erro:", mensagem);
+          }
+        },
+      });
+
+      await executeFetch(info);
+
+      setPopupQueue((prevQueue) => prevQueue.filter((popup) => popup !== "cookiesPopupOpen"));
     } catch (error) {
       console.error('Erro ao obter informações:', error);
     }
@@ -65,18 +74,14 @@ const PopupManager = ({ content ,url}) => {
 
   const renderNextPopup = () => {
     if (popupQueue.length === 0) {
-      return null; // Se não houver mais nenhum popup na fila, fecha a sessão de popups
+      return null;
     }
-  
+
     switch (currentPopup) {
       case "popupOpen":
         return (
-          <Popup
-            onClose={onClose}
-            title={content[0].popuptitle}
-            subTitle={content[0].popsubtitle}
-          >
-            <Notification message={message} /> {/* Adicione o componente Notification aqui */}
+          <Popup onClose={onClose} title={content[0].popuptitle} subTitle={content[0].popsubtitle}>
+            <Notification message={message} />
             <Changelogs content={content} handleSendMessage={handleSendMessage} />
             <h2>{content[0].personalInfoTitle}</h2>
             <ContactForm content={content} onMessageSent={handleSendMessage} url={url} />
@@ -88,16 +93,13 @@ const PopupManager = ({ content ,url}) => {
         return null;
     }
   };
-  
 
   return (
-    <>
-      <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
-        <div className="main-content flex flex-col items-center">
-          {renderNextPopup()}
-        </div>
+    <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
+      <div className="main-content flex flex-col items-center">
+        {renderNextPopup()}
       </div>
-    </>
+    </div>
   );
 };
 

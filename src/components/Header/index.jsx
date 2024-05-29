@@ -7,7 +7,7 @@ export default function Header(props) {
   return (
     <header
       {...props}
-      className={`${props.className} flex md:flex-col justify-between items-center  sticky bg-white z-10`}
+      className={`${props.className} w-[100%]  flex md:flex-col justify-between items-center  sticky bg-white z-10`}
     >
       <Text className="text-2xl font-normal tracking-[0.18px] md:text-[22px]">{content[0].headerTitle}</Text>
       <ul className="flex items-center gap-[15px]">
@@ -29,7 +29,7 @@ export default function Header(props) {
           </Text>
         </button>
       </ul>
-      <div className="flex w-[22%] justify-between gap-5 md:w-full">
+      <div className="flex justify-between gap-5 md:w-full">
         <Contactbar/>
         <Contact content={content}/>
       </div>

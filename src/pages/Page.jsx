@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Text, Heading } from "../components";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { content } from "../components/content.jsx"
 
 export default function Page({ title, texts }) {
   return (
@@ -16,9 +17,7 @@ export default function Page({ title, texts }) {
       <div className="flex  w-full flex-col gap-5 bg-gray-50 pt-2.5">
         <div className="flex flex-col items-center">
           {/* header section */}
-          <div className="container-xs px-7 md:p-5 sm:px-5">
-            <Header className="gap-5" />
-          </div>
+          <Header content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
 
           {/* hero section */}
           <div className="container-xs flex flex-col items-center py-10 px-5 gap-5">

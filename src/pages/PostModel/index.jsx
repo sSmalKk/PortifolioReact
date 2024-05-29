@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Helmet } from "react-helmet";
-import { Button, Img, Text, Heading } from "../../components";
+import { BlogModel, Button, Img, Text, Heading } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { Blog, content } from "../../components/content.jsx"
 
-export default function DantasOnePage() {
+
+
+
+export default function Post() {
   return (
     <>
       <Helmet>
@@ -13,7 +17,7 @@ export default function DantasOnePage() {
       </Helmet>
       <div className="flex w-full flex-col gap-[11px] bg-gray-50">
         {/* header section */}
-        <Header className="py-[11px]" />
+        <Header content={content} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
         <div className="flex flex-col items-center gap-5">
           {/* about section */}
           <div className="container-xs flex flex-col items-center gap-[83px] md:gap-[62px] md:p-5 sm:gap-[41px]">
@@ -169,67 +173,12 @@ export default function DantasOnePage() {
                   Conteúdos sobre o marketing
                 </Heading>
               </div>
-              <div className="flex items-start gap-8 md:flex-col">
-                <div className="flex flex-1 flex-col gap-8 md:self-stretch">
-                  <Img src="images/img_container.png" alt="container" className="h-[453px] object-cover" />
-                  <div className="flex flex-col items-start gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-8 shadow-sm sm:p-5">
-                    <Heading as="h5" className="mt-2.5">
-                      @Nome
-                    </Heading>
-                    <Heading size="md" as="h6" className="w-full leading-10 !text-gray-900">
-                      <>
-                        Como o design de sites afeta a conversão
-                        <br />
-                        de visitantes?
-                      </>
-                    </Heading>
-                  </div>
-                </div>
-                <div className="flex w-[45%] flex-col gap-8 md:w-full">
-                  <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[34px] shadow-sm sm:p-5">
-                    <Heading as="h6" className="mt-2">
-                      @Nome
-                    </Heading>
-                    <div className="mb-2.5 flex self-stretch">
-                      <Heading size="md" as="h3" className="w-[84%] leading-10 !text-gray-900">
-                        <>
-                          Como o design de sites afeta a conversão
-                          <br />
-                          de visitantes?
-                        </>
-                      </Heading>
-                    </div>
-                  </div>
-                  <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[35px] shadow-sm sm:p-5">
-                    <Heading as="h6" className="mt-2">
-                      @Nome
-                    </Heading>
-                    <Heading size="md" as="h3" className="mb-2.5 w-[92%] leading-10 !text-gray-900 md:w-full">
-                      <>
-                        Como o design de sites afeta a conversão
-                        <br />
-                        de visitantes?
-                      </>
-                    </Heading>
-                  </div>
-                  <div className="flex flex-1 flex-col items-start justify-center gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-[35px] shadow-sm sm:p-5">
-                    <Heading as="h6" className="mt-2">
-                      @Nome
-                    </Heading>
-                    <Heading size="md" as="h3" className="mb-2.5 w-full leading-10 !text-gray-900">
-                      <>
-                        Como o design de sites afeta a conversão
-                        <br />
-                        de visitantes?
-                      </>
-                    </Heading>
-                  </div>
-                </div>
-              </div>
+
             </div>
 
+            <BlogModel blogData={Blog} content={content} />
             {/* footer section */}
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>

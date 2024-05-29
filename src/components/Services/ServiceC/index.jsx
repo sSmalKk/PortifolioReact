@@ -4,8 +4,8 @@ import { Text, Button } from "../..";
 const ServiceComponentType3 = ({ service, imagePosition }) => {
   return (
     <div
-      id={service.id}
-      className="flex h-screen flex-col items-start justify-end gap-[21px] bg-cover bg-no-repeat py-[50px] md:h-auto md:py-5"
+      id={service.id} 
+      className="flex flex-col items-start justify-end gap-[21px] bg-cover bg-no-repeat py-[50px] md:h-auto md:py-5"
       style={{
         backgroundImage: `url(${service.image})`,
         backgroundPosition: imagePosition // Apply imagePosition directly to backgroundPosition
@@ -27,7 +27,7 @@ const ServiceComponentType3 = ({ service, imagePosition }) => {
         size="md"
         shape="round"
         className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
-        href={service.link}
+      href={service.link}
       >
         {service.button}
       </Button>
