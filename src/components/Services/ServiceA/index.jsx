@@ -38,27 +38,27 @@ const ServiceComponentType1 = ({ url, content, service }) => {
           src={service.image}
           alt="container"
           className="flex-shrink-0 min-w-[200px] h-[380px] w-[379px] object-cover"
-        />
-        <div className="flex flex-col items-start gap-[21px] self-stretch">
-          <Text size="lg" as="p" className="tracking-[0.50px]">
+          />
+      <div className="flex flex-col items-start gap-[21px] self-stretch">
+        <Text size="lg" as="p" className="tracking-[0.50px]">
             {service.item}
           </Text>
           <div className="flex">
-            <Text size="8xl" as="p" className="mt-2 tracking-[-1.50px]">
+          <Text size="6xl" as="p" className="mt-2 tracking-[-1.50px]">
               {service.Title}
             </Text>
           </div>
-          <Text size="6xl" as="p" className="w-full leading-[56px]">
-            {service.description}
+          <Text size="3xl" as="p" className="w-full leading-[56px]">
+                        {service.description}
           </Text>
 
           <Button
-            color="green_700"
-            size="md"
-            shape="round"
-            className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
-            onClick={handleButtonClick} // Chame a função handleButtonClick ao clicar no botão
-          >
+          color="green_700"
+          size="md"
+          shape="round"
+          className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
+          href={service.link}
+        >
             {content[0].falecmg}
           </Button>
         </div>

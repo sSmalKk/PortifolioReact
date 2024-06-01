@@ -11,17 +11,19 @@ const ServicesComponent = ({ services, content, url }) => {
         let component;
         switch (service.designtype) {
           case 1:
-            component = <ServiceComponentType1 url={url} content={content} key={service.id} service={service} />;
+            component = <ServiceComponentType1 url={url} content={content} key={service.orderId} service={service} />;
             break;
           case 2:
-            component = <ServiceComponentType2 url={url} content={content} key={service.id} service={service} />;
+            component = <ServiceComponentType2 url={url} content={content} key={service.orderId} service={service} />;
             break;
           case 3:
             component = (
-              <ServiceComponentType3 url={url} content={content}
-                key={service.id}
+              <ServiceComponentType3
+                url={url}
+                content={content}
+                key={service.orderId}
                 service={service}
-                imagePosition={service.imagePosition || 'center'} // Assuming 'start' as default
+                imagePosition={service.imagePosition || 'center'} // Assuming 'center' as default
               />
             );
             break;
@@ -29,7 +31,7 @@ const ServicesComponent = ({ services, content, url }) => {
             component = null;
         }
         return (
-          <React.Fragment key={service.id}>
+          <React.Fragment key={service.orderId}>
             {component}
             {index < services.length - 1 && <div className="my-10" />} {/* Add margin between components */}
           </React.Fragment>
