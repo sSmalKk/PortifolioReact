@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Img } from "..";
-import linkedInIcon from "../../../public/images/img_u_linkedin_alt.svg";
-import volumeIcon from "../../../public/images/img_volume.svg";
-import instagramIcon from "../../../public/images/img_u_instagram.svg";
-import lockIcon from "../../../public/images/img_lock.svg";
+import linkedInIcon from "../../assets/images/img_u_linkedin_alt.svg";
+import volumeIcon from "../../assets/images/img_volume.svg";
+import instagramIcon from "../../assets/images/img_u_instagram.svg";
+import lockIcon from "../../assets/images/img_lock.svg";
 
 export default function Contactbar() {
   return (
