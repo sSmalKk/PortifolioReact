@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Helmet } from "react-helmet";
-import { MeuComponente, BlogModel, PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, ServiceItem } from "../../components";
+import { Contact, BlogModel, PopupManager, PartnerSlider, ServicesComponent, Text, Img, Heading, ServiceItem } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
@@ -29,12 +29,12 @@ export default function DantasPage() {
       <Header content={content} style={{ position: 'fixed', padding: '5px' }} />
 
       <div class="flex w-full flex-col gap-5 bg-gray-50 ">
-    <div class="main-content flex flex-col items-center">
-        <div class="popup-wrapper" >
+        <div class="main-content flex flex-col items-center">
+          <div class="popup-wrapper" >
             <PopupManager url={bdurl} content={content} />
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
       <div className="container-xs px-4 md:px-5" ref={topRef}>
         <div className="flex flex-col">
@@ -64,7 +64,7 @@ export default function DantasPage() {
                   alt="container"
                   className="h-[380px] w-full object-cover md:h-[200px] md:w-auto"
                 />
-            <Heading as="h3" className="!font-bold uppercase tracking-[2.70px]">
+                <Heading as="h3" className="!font-bold uppercase tracking-[2.70px]">
                   {content[0].solucoes}
                 </Heading>
               </div>
@@ -81,7 +81,7 @@ export default function DantasPage() {
             </div>
 
             {/* services section */}
-            <ServicesComponent services={services} />
+            <ServicesComponent url={bdurl} services={services} content={content} />
           </div>
 
           {/* personal info section */}
@@ -95,9 +95,8 @@ export default function DantasPage() {
                 <p className="text-8xl mt-2 tracking-[-1.50px] md:text-4xl">{content[0].headerTitle}</p>
                 <p className="text-6xl w-[81%] leading-[56px] md:text-base md:w-full">{content[0].personalInfoSubtitle}</p>
               </div>
-              <button className="bg-green-700 text-white px-4 py-2 rounded-full border border-solid border-green-400 tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
-                {content[0].personalInfoButton}
-              </button>
+              <div className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0" ><Contact content={content} /></div>
+
             </div>
           </div>
 
@@ -111,12 +110,12 @@ export default function DantasPage() {
             {Portfolio.map((item, index) => (
               <div className="portfolio-item flex flex-col items-center md:items-start mb-8 md:mb-12" key={`portfolio-item-${index}`}>
                 <img
-                  src={item.img}
-                  alt={item.title}
+                  src={item.image}
+                  alt={item.Title}
                   className="h-[396px] w-full object-cover mb-4 md:mb-6"
                 />
                 <Heading as="h3" className="font-bold uppercase tracking-[2.70px] text-center md:text-left">
-                  {item.title}
+                  {item.Title}
                 </Heading>
               </div>
             ))}
@@ -125,7 +124,6 @@ export default function DantasPage() {
           {/* blog section */}
           <BlogModel blogData={Blog} content={content} />
 
-          <MeuComponente />
 
           {/* parceiros section */}
           <div className="mt-8 flex flex-col gap-8" ref={partnersRef}>

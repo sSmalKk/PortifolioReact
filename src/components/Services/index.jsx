@@ -4,21 +4,21 @@ import ServiceComponentType1 from './ServiceA';
 import ServiceComponentType2 from './ServiceB';
 import ServiceComponentType3 from './ServiceC';
 
-const ServicesComponent = ({ services }) => {
+const ServicesComponent = ({ services, content, url }) => {
   return (
     <div>
       {services.map((service, index) => {
         let component;
         switch (service.designtype) {
           case 1:
-            component = <ServiceComponentType1 key={service.id} service={service} />;
+            component = <ServiceComponentType1 url={url} content={content} key={service.id} service={service} />;
             break;
           case 2:
-            component = <ServiceComponentType2 key={service.id} service={service} />;
+            component = <ServiceComponentType2 url={url} content={content} key={service.id} service={service} />;
             break;
           case 3:
             component = (
-              <ServiceComponentType3
+              <ServiceComponentType3 url={url} content={content}
                 key={service.id}
                 service={service}
                 imagePosition={service.imagePosition || 'center'} // Assuming 'start' as default

@@ -42,7 +42,7 @@ const ServiceItem = ({ service, index, animationDelay, animationDuration }) => {
         }}
       >
         <Text size="md" as="p">
-          {service.name}
+          {service.Title}
         </Text>
       </button>
     </React.Fragment>

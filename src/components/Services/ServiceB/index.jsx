@@ -1,10 +1,38 @@
-import React from 'react';
-import { Text, Img, Button } from "../..";
-import "../style.css"
+import React, { useState } from 'react';
+import { ContactForm, Notification, Text, Img, Button, Popup } from "../..";
+import "../style.css";
 
-const ServiceComponentType2 = ({ service }) => {
+const ServiceComponentType2 =  ({ url, content, service }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // Estado para controlar se o popup está aberto
+  const [message, setMessage] = useState("");
+
+  const handleButtonClick = () => {
+    // Abrir o popup ao clicar no botão
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    // Fechar o popup
+    setIsPopupOpen(false);
+  };
+
+  const handleSendMessage = () => {
+    setMessage(content[0]?.messageSentSuccess || "Message sent successfully");
+  };
+
   return (
     <div id={service.id} className="service-component flex items-start justify-around w-full">
+      {isPopupOpen && (
+        <Popup onClose={handleClosePopup} title={service.name} subTitle={service.subtitle}>
+          <Notification message={message} />
+          <div
+            className="w-full leading-[56px]"
+            dangerouslySetInnerHTML={{ __html: service.body }}
+          />
+          <ContactForm content={content} onMessageSent={handleSendMessage} url={url} />
+
+        </Popup>
+      )}
       <div className="flex flex-col items-start gap-[21px] md:self-stretch">
         <Text size="lg" as="p" className="tracking-[0.50px]">
           {service.subtitle}
@@ -22,9 +50,9 @@ const ServiceComponentType2 = ({ service }) => {
           size="md"
           shape="round"
           className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
-          href={service.link}
+          onClick={handleButtonClick}
         >
-          {service.button}
+          {content[0].falecmg}
         </Button>
       </div>
       <Img

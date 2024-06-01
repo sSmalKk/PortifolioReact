@@ -1,15 +1,65 @@
+import blogPosts from "../assets/posts.json";
+import services from "../assets/orders.json";
+import Portfolio from "../assets/portfolio.json";
 
 const content = [
   {
     language: "PT",
     services: [
-
-      { designtype: 1, id: 'Service1', name: 'Service 1', link: '/#service1', subtitle: 'Subtitle 1', text: 'This is the text for service 1', button: 'Learn More', image: "images/img_container.png" },
-      { designtype: 2, id: 'Service2', name: 'Service 2', link: '/#service2', subtitle: 'Subtitle 2', text: 'This is the text for service 2', button: 'Learn More', image: "images/img_container.png" },
-      { designtype: 3, id: 'Service3', name: 'Service 3', link: '/#service3', subtitle: 'Subtitle 3', text: 'This is the text for service 3', button: 'Learn More', image: "images/img_container.png", imagePosition: 'center' },
-      { designtype: 3, id: 'Service4', name: 'Service 4', link: '/#service4', subtitle: 'Subtitle 4', text: 'This is the text for service 4', button: 'Learn More', image: "images/img_container.png", imagePosition: 'start' },
-      { designtype: 3, id: 'Service5', name: 'Service 5', link: '/#service5', subtitle: 'Subtitle 5', text: 'This is the text for service 5', button: 'Learn More', image: "images/img_container.png", imagePosition: 'end' },
-      // Adicione quantos serviços desejar
+      {
+        designtype: 1,
+        id: 'Service1',
+        name: 'Service 1',
+        subtitle: 'Subtitle 1',
+        text: 'This is the text for service 1',
+        button: 'Learn More',
+        image: "images/img_container.png",
+        popupType: 'Service1Popup' // Adicione o tipo de popup associado ao serviço 1
+      },
+      {
+        designtype: 2,
+        id: 'Service2',
+        name: 'Service 2',
+        subtitle: 'Subtitle 2',
+        text: 'This is the text for service 2',
+        button: 'Learn More',
+        image: "images/img_container.png",
+        popupType: 'Service2Popup' // Adicione o tipo de popup associado ao serviço 2
+      },
+      {
+        designtype: 3,
+        id: 'Service3',
+        name: 'Service 3',
+        subtitle: 'Subtitle 3',
+        text: 'This is the text for service 3',
+        button: 'Learn More',
+        image: "images/img_container.png",
+        imagePosition: 'center',
+        popupType: 'Service3Popup' // Adicione o tipo de popup associado ao serviço 3
+      },
+      {
+        designtype: 3,
+        id: 'Service4',
+        name: 'Service 4',
+        subtitle: 'Subtitle 4',
+        text: 'This is the text for service 4',
+        button: 'Learn More',
+        image: "images/img_container.png",
+        imagePosition: 'start',
+        popupType: 'Service4Popup' // Adicione o tipo de popup associado ao serviço 4
+      },
+      {
+        designtype: 3,
+        id: 'Service5',
+        name: 'Service 5',
+        subtitle: 'Subtitle 5',
+        text: 'This is the text for service 5',
+        button: 'Learn More',
+        image: "images/img_container.png",
+        imagePosition: 'end',
+        popupType: 'Service5Popup' // Adicione o tipo de popup associado ao serviço 5
+      },
+      // Adicione mais serviços conforme necessário
     ],
     changelogsText: "Changelogs",
     changelog: [
@@ -40,74 +90,8 @@ const content = [
         title: "Partner 1"
       }
       // Adicione mais Parceiros conforme necessário
-    ], Blog: [
-      {
-        id: 1,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      }, {
-        id: 2,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-
-      }, {
-        id: 3,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      }, {
-        id: 4,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      },{
-        id: 5,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      },{
-        id: 6,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      },{
-        id: 7,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      },{
-        id: 8,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      },{
-        id: 9,
-        image: "images/img_link_200x200.png",
-        title: "Title",
-        subtitle: "Como o design de sites afeta a conversão de visitantes?",
-        content: "Conteúdo do blog sobre marketing...",
-        pagecontent: [{Title:"LOREM",Content:"Content lorem",Image:"images/img_link_200x200.png"}]
-      },
-      // Adicione mais posts de blog conforme necessário
     ],
+    falecmg: "entre em contato",
     cookiesa: "Aqui vai o conteúdo explicativo sobre cookies...",
     cookiesmais: "ler mais...",
     cookiesmenos: "ler menos",
@@ -138,12 +122,10 @@ const content = [
   }
 ];
 
-const services = content[0].services;
 
 
-const Portfolio = content[0].Portfolio;
 
 const parceiros = content[0].parceiros;
 
-const Blog = content[0].Blog;
-export {Blog,parceiros,Portfolio,services,content};
+const Blog = blogPosts;
+export { Blog, parceiros, Portfolio, services, content };

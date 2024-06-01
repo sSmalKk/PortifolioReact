@@ -16,5 +16,7 @@ import Contact from "./Contact";
 import Contactbar from "./Contactbar";
 import UseFetch from "./Fetch";
 import MeuComponente from "./MeuComponente";
+import OrderComponent from "./OrderComponent";
+import PortfolioComponent from "./PortfolioComponent";
 import PCInfoComponent from "./PCInfoComponent";
-export { MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };
+export { PortfolioComponent, OrderComponent, MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };

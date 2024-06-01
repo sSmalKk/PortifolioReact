@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {ServicesComponent, Img, Heading, Button } from "../../components"; // Import any required components
+import { Link } from "react-router-dom"; // Importe Link do React Router
+import { ServicesComponent, Img, Heading, Button } from "../../components"; // Importe os componentes necessários
 
 const BlogModel = ({ blogData, content }) => {
   const [filter, setFilter] = useState("");
@@ -24,10 +25,7 @@ const BlogModel = ({ blogData, content }) => {
   const hasNextPage = indexOfLastPost < filteredPosts.length;
 
   return (
-
     <div className="mt-[18px] flex flex-col gap-5">
-
-
       <div className="flex flex-col items-start gap-8 md:flex-col">
         {/* Destaque do primeiro post */}
         <div className="mt-[18px] flex flex-col gap-5">
@@ -58,6 +56,11 @@ const BlogModel = ({ blogData, content }) => {
                   {blogData[0].subtitle}
                 </>
               </Heading>
+              <Link to={`post/${blogData[0].id}`}>
+              <Button className="!text-gray-900">
+                {content[0].cookiesmais}
+              </Button>
+            </Link>
             </div>
           </div>
         </div>
@@ -73,20 +76,20 @@ const BlogModel = ({ blogData, content }) => {
                   <br />
                   {post.subtitle}
                 </h3>
-                <Button className="!text-gray-900">
-          {content[0].cookiesmais}
-
-        </Button>
+                {/* Adicione o Link envolvendo o botão */}
+                <Link to={`post/${post.id}`}>
+                  <Button className="!text-gray-900">
+                    {content[0].cookiesmais}
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
-
-
-      </div><div className="flex justify-between mt-5">
+      </div>
+      <div className="flex justify-between mt-5">
         <Button onClick={prevPage} disabled={!hasPrevPage} className="!text-gray-900">
           {content[0].buttonPrevious}
-
         </Button>
         <Button onClick={nextPage} disabled={!hasNextPage} className="!text-gray-900">
           {content[0].buttonNext}
@@ -97,6 +100,3 @@ const BlogModel = ({ blogData, content }) => {
 };
 
 export default BlogModel;
-
-
-
