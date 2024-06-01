@@ -77,7 +77,7 @@ const BlogModel = ({ blogData, content }) => {
                   {post.subtitle}
                 </h3>
                 {/* Adicione o Link envolvendo o botão */}
-                <Link to={`post/${post.id}`}>
+                <Link to={`/post/${post.id}`}>
                   <Button className="!text-gray-900">
                     {content[0].cookiesmais}
                   </Button>
