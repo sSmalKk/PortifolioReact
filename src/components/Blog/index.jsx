@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Importe Link do React Router
-import { ServicesComponent, Img, Heading, Button } from "../../components"; // Importe os componentes necessários
+import { Img, Heading, Button } from "../../components"; // Importe os componentes necessários
 
 const BlogModel = ({ blogData, content }) => {
-  const [filter, setFilter] = useState("");
+  const [filter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
   const filteredPosts = blogData.filter(post =>
