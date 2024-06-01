@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { UseFetch } from "..";
 import "./style.css";
 
 const MeuComponente = () => {
-  const [dados, setDados] = useState(null);
+  const [dados] = useState(null);
   const [formData, setFormData] = useState({
     id: "",
     title: "",

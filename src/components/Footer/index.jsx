@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Importe o Link do React Router
-import { Text,Contactbar, Button, Img} from "./..";
+import { Text,Contactbar, Button} from "./..";
 
 export default function Footer({ ...props }) {
   return (

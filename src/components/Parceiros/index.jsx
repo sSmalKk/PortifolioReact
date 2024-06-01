@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 
 const Parceiros = () => {
-  const [dados, setDados] = useState(null);
+  const [dados] = useState(null);
   const [formData, setFormData] = useState({
     id: "",
     title: "",

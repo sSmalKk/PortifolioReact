@@ -1,5 +1,5 @@
 import React from "react";
-import { Contact, Contactbar, Button, Img, Text } from "..";
+import { Contact, Contactbar, Text } from "..";
 import "./style.css";
 export default function Header(props) {
   const { content } = props;

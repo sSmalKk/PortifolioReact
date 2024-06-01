@@ -1,4 +1,3 @@
-import React from "react";
 
 const UseFetch = ({ url, api, onMessageSent }) => {
   const executeFetch = async (formData) => {
