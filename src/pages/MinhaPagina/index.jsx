@@ -1,8 +1,6 @@
 import React, { } from "react";
 import { Helmet } from "react-helmet";
-import { MeuComponente, PortfolioComponent, OrderComponent } from "../../components";
-
-
+import {Parceiros, MeuComponente, PortfolioComponent, OrderComponent } from "../../components";
 
 export default function MinhaPagina() {
   return (
@@ -16,7 +14,7 @@ export default function MinhaPagina() {
         <MeuComponente />
         <PortfolioComponent />
         <OrderComponent />
-
+        <Parceiros />
       </div>
     </>
   );

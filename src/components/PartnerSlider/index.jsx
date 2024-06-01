@@ -49,7 +49,7 @@ const PartnerSlider = ({ parceiros }) => {
         };
     }, []);
 
-    const duplicatedParceiros = [...parceiros, ...parceiros, ...parceiros];
+    const duplicatedParceiros = [...parceiros, ...parceiros, ...parceiros,...parceiros, ...parceiros, ...parceiros];
 
     return (
         <div id="partner-slider" className="overflow-hidden w-full">
@@ -60,7 +60,7 @@ const PartnerSlider = ({ parceiros }) => {
                 {duplicatedParceiros.map((partner, index) => (
                     <a
                         key={`partner-item-${index}`}
-                        href={partner.link}
+                        href={partner.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="partner-item inline-block"

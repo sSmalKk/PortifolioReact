@@ -1,6 +1,7 @@
 import blogPosts from "../assets/posts.json";
 import services from "../assets/orders.json";
 import Portfolio from "../assets/portfolio.json";
+import parceiros from "../assets/parceiros.json";
 
 const content = [
   {
@@ -125,7 +126,6 @@ const content = [
 
 
 
-const parceiros = content[0].parceiros;
 
 const Blog = blogPosts;
 export { Blog, parceiros, Portfolio, services, content };
