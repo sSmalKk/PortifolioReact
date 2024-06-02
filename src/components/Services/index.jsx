@@ -1,4 +1,3 @@
-// ServicesComponent.jsx
 import React from 'react';
 import ServiceComponentType1 from './ServiceA';
 import ServiceComponentType2 from './ServiceB';
@@ -11,17 +10,17 @@ const ServicesComponent = ({ services, content, url }) => {
         let component;
         switch (service.designtype) {
           case 1:
-            component = <ServiceComponentType1 url={url} content={content} key={service.orderId} service={service} />;
+            component = <ServiceComponentType1 url={url} content={content} key={service.id} service={service} />;
             break;
           case 2:
-            component = <ServiceComponentType2 url={url} content={content} key={service.orderId} service={service} />;
+            component = <ServiceComponentType2 url={url} content={content} key={service.id} service={service} />;
             break;
           case 3:
             component = (
               <ServiceComponentType3
                 url={url}
                 content={content}
-                key={service.orderId}
+                key={service.id}
                 service={service}
                 imagePosition={service.imagePosition || 'center'} // Assuming 'center' as default
               />
@@ -31,7 +30,7 @@ const ServicesComponent = ({ services, content, url }) => {
             component = null;
         }
         return (
-          <React.Fragment key={service.orderId}>
+          <React.Fragment key={service.id}>
             {component}
             {index < services.length - 1 && <div className="my-10" />} {/* Add margin between components */}
           </React.Fragment>

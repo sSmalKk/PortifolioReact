@@ -49,7 +49,7 @@ const ServiceComponentType4 = ({ url, content, service }) => {
           </div>
           <button
             className="bg-green-700 text-white px-4 py-2 rounded-full border border-solid border-green-400 tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0"
-            onClick={handleButtonClick}
+            onClick={handleButtonClick} // Chame a função handleButtonClick ao clicar no botão
           >
             {content[0].falecmg}
           </button>

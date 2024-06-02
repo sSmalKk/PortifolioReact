@@ -52,7 +52,7 @@ const ServiceComponentType2 = ({ url, content, service }) => {
             size="md"
             shape="round"
             className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
-            href={service.link}
+            onClick={handleButtonClick} // Chame a função handleButtonClick ao clicar no botão
           >
             {content[0].falecmg}
           </Button>

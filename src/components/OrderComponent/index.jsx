@@ -4,7 +4,7 @@ import "./style.css";
 const OrderComponent = () => {
   const [orders, setOrders] = useState([]);
   const [formData, setFormData] = useState({
-    orderId: "",
+    id: "",
     item: "",
     isDelete: false,
     Title: "",
@@ -26,16 +26,16 @@ const OrderComponent = () => {
   const enviarDados = () => {
     if (isEditing) {
       const updatedOrders = orders.map((order) =>
-        order.orderId === formData.orderId ? formData : order
+        order.id === formData.id ? formData : order
       );
       setOrders(updatedOrders);
       setIsEditing(false);
     } else {
-      const newOrder = { ...formData, orderId: Date.now().toString() };
+      const newOrder = { ...formData, id: Date.now().toString() };
       setOrders([...orders, newOrder]);
     }
     setFormData({
-      orderId: "",
+      id: "",
       item: "",
       isDelete: false,
       Title: "",
@@ -51,8 +51,8 @@ const OrderComponent = () => {
     setIsEditing(true);
   };
 
-  const excluirPedido = (orderId) => {
-    const updatedOrders = orders.filter((order) => order.orderId !== orderId);
+  const excluirPedido = (id) => {
+    const updatedOrders = orders.filter((order) => order.id !== id);
     setOrders(updatedOrders);
   };
 
@@ -96,7 +96,7 @@ const OrderComponent = () => {
               name={key}
               value={formData[key]}
               onChange={handleChange}
-              disabled={key === "orderId" && isEditing}
+              disabled={key === "id" && isEditing}
             />
           </div>
         ))}
@@ -114,7 +114,7 @@ const OrderComponent = () => {
             <img src={order.image} alt="Imagem do Pedido" />
             <img src={order.Icon} alt="Ícone do Pedido" />
             <button onClick={() => editarPedido(order)}>Editar</button>
-            <button onClick={() => excluirPedido(order.orderId)}>Excluir</button>
+            <button onClick={() => excluirPedido(order.id)}>Excluir</button>
           </div>
         ))}
       </div>

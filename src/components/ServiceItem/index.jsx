@@ -19,21 +19,13 @@ const ServiceItem = ({ service, index, animationDelay, animationDuration }) => {
     return () => clearTimeout(timeout);
   }, []); // Apenas executa uma vez no carregamento inicial
 
-  // Função para rolar até o elemento com o ID correspondente
-  const scrollToElement = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <React.Fragment>
       {/* Adicione uma linha horizontal */}
       <div className="w-full border-t border-gray-300"></div>
       {/* Texto do serviço com atraso de animação */}
-      <button 
-        onClick={() => scrollToElement(`#${service.id}`)}
+      <a
+        href={`#${service.id}`}
         className={`wave-animation uppercase tracking-[4.00px] !text-black-900_01 animate-delay`}
         style={{
           animationDelay: delay,
@@ -44,7 +36,7 @@ const ServiceItem = ({ service, index, animationDelay, animationDuration }) => {
         <Text size="md" as="p">
           {service.Title}
         </Text>
-      </button>
+      </a>
     </React.Fragment>
   );
 };
