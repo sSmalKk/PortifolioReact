@@ -55,41 +55,8 @@
         "body": "<ul><li>Implementação de Metodologias Ágeis</li><li>Design Sprint</li></ul>"
     },
     {
-        "designtype": 3,
+        "designtype": 1,
         "orderId": "6",
-        "item": "Manutenção e Suporte Técnico",
-        "isDelete": false,
-        "Title": "Manutenção e Suporte Técnico",
-        "description": "Serviços de montagem, manutenção de hardware e suporte técnico em software.",
-        "image": "/images/tech_support.jpg",
-        "Icon": "/images/icon_tech_support.svg",
-        "body": "<ul><li>Montagem e Manutenção de Computadores</li><li>Suporte Técnico em Software</li></ul>"
-    },
-    {
-        "designtype": 1,
-        "orderId": "7",
-        "item": "Consultoria em Mídias Sociais e Marketing Digital",
-        "isDelete": false,
-        "Title": "Consultoria em Mídias Sociais e Marketing Digital",
-        "description": "Gestão de redes sociais, SEO e estratégias de marketing digital.",
-        "image": "/images/social_media_marketing.jpg",
-        "Icon": "/images/icon_social_media_marketing.svg",
-        "body": "<ul><li>Gestão de Redes Sociais</li><li>SEO e Marketing Digital</li></ul>"
-    },
-    {
-        "designtype": 2,
-        "orderId": "8",
-        "item": "Desenvolvimento de Aplicações 3D",
-        "isDelete": false,
-        "Title": "Desenvolvimento de Aplicações 3D",
-        "description": "Criação de aplicações interativas em 3D usando Three.js e outras bibliotecas.",
-        "image": "/images/3d_development.jpg",
-        "Icon": "/images/icon_3d_development.svg",
-        "body": "<ul><li>Desenvolvimento de Aplicações 3D</li></ul>"
-    },
-    {
-        "designtype": 1,
-        "orderId": "9",
         "item": "Desenvolvimento de Aplicativos Flutter",
         "isDelete": false,
         "Title": "Desenvolvimento de Aplicativos Flutter",
@@ -97,16 +64,5 @@
         "image": "/images/flutter.jpg",
         "Icon": "/images/icon_flutter.svg",
         "body": "<ul><li>Desenvolvimento de Aplicativos para Android e iOS</li><li>Interface de Usuário Consistente</li><li>Alta Performance</li><li>Manutenção e Suporte</li></ul>"
-    },
-    {
-        "designtype": 2,
-        "orderId": "10",
-        "item": "Criação de Sites em Código Normal",
-        "isDelete": false,
-        "Title": "Criação de Sites em Código Normal",
-        "description": "Desenvolvimento de sites utilizando HTML, CSS, JavaScript e frameworks modernos para uma performance e personalização máxima.",
-        "image": "/images/code_development.jpg",
-        "Icon": "/images/icon_code.svg",
-        "body": "<ul><li>Desenvolvimento de Sites em HTML, CSS, JavaScript</li><li>Uso de Frameworks como React.js e Bootstrap</li><li>Otimização de Performance</li><li>Manutenção e Atualizações</li></ul>"
     }
 ]
