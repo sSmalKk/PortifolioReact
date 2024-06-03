@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "..";
 
-export default function Contact({ content, msg, withMessage, openInNewTab }) {
+export default function Contact({ content, msg, withMessage, openInNewTab, buttonClassName, transparent }) {
   // Construção do URL com ou sem mensagem
   const phone = "5561981594849";
   const baseUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(phone)}`;
@@ -19,7 +19,7 @@ export default function Contact({ content, msg, withMessage, openInNewTab }) {
   return (
     <Button
       onClick={redirectToWhatsApp}
-      className="h-[36px] min-w-[92px] rounded-[18px] border border-solid border-green-400 bg-green-700 px-[15px] text-xs tracking-[0.50px] text-white-A700"
+      className={`h-[36px] min-w-[92px] rounded-[8px] ${transparent ? 'bg-transparent border-white' : 'bg-green-700 border-green-700'} border border-solid px-[15px] text-white text-xs tracking-[0.50px] ${buttonClassName}`}
     >
       {content[0].personalInfoButton}
     </Button>

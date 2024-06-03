@@ -19,8 +19,9 @@ const PopupManager = ({ content, url }) => {
   };
 
   const [message, setMessage] = useState("");
-  const handleSendMessage = () => {
-    setMessage(content[0].messageSentSuccess);
+  const handleSendMessage = (msg) => {
+    setPopupQueue((prevQueue) => prevQueue.slice(1));
+    setMessage(msg);
   };
 
   const handleClick = async () => {
@@ -28,7 +29,7 @@ const PopupManager = ({ content, url }) => {
       const ipResponse = await fetch('https://api.ipify.org?format=json');
       const { ip } = await ipResponse.json();
 
-      const pcInfo = localStorage.getItem(ip);
+      const pcInfo = localStorage.getItem('cookiesAccepted');
       if (pcInfo) {
         setPopupQueue((prevQueue) => prevQueue.filter((popup) => popup !== "cookiesPopupOpen"));
         return;
@@ -50,8 +51,6 @@ const PopupManager = ({ content, url }) => {
         date: new Date().toLocaleString(),
       };
 
-      localStorage.setItem(ip, JSON.stringify(info));
-
       const { executeFetch } = UseFetch({
         url: "https://0e27ec-kend-sandbox.dhiwise.co",
         api: "/client/content/list",
@@ -66,9 +65,12 @@ const PopupManager = ({ content, url }) => {
 
       await executeFetch(info);
 
+      localStorage.setItem('cookiesAccepted', 'true');
+
       setPopupQueue((prevQueue) => prevQueue.filter((popup) => popup !== "cookiesPopupOpen"));
     } catch (error) {
       console.error('Erro ao obter informações:', error);
+      setPopupQueue((prevQueue) => prevQueue.filter((popup) => popup !== "cookiesPopupOpen"));
     }
   };
 
@@ -82,9 +84,9 @@ const PopupManager = ({ content, url }) => {
         return (
           <Popup onClose={onClose} title={content[0].popuptitle} subTitle={content[0].popsubtitle}>
             <Notification message={message} />
-            <Changelogs content={content} handleSendMessage={handleSendMessage} />
+            <Changelogs content={content} />
             <h2>{content[0].personalInfoTitle}</h2>
-            <ContactForm content={content} onMessageSent={handleSendMessage} url={url} />
+            <ContactForm onClose={onClose} content={content} onMessageSent={handleSendMessage} url={url} />
           </Popup>
         );
       case "cookiesPopupOpen":

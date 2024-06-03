@@ -30,7 +30,10 @@ const BlogModel = ({ blogData, content }) => {
         {/* Destaque do primeiro post */}
         <div className="mt-[18px] flex flex-col gap-5">
           <div className="flex flex-col items-center">
-            <div className="flex items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
+            <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
+            <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]">
+              {content[0].filtrar}
+            </Heading> 
               <input className="!font-inter tracking-[0.50px] !text-black-900_60" placeholder="Filter" />
             </div>
             <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]">

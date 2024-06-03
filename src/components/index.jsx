@@ -20,4 +20,6 @@ import OrderComponent from "./OrderComponent";
 import PortfolioComponent from "./PortfolioComponent";
 import Parceiros from "./Parceiros";
 import PCInfoComponent from "./PCInfoComponent";
-export { Parceiros, PortfolioComponent, OrderComponent, MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };
+import Doublecollum from "./Doublecollum";
+
+export { Doublecollum, Parceiros, PortfolioComponent, OrderComponent, MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };

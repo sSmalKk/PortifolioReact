@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { Button } from "..";
 
-const ContactForm = ({ content, url, onMessageSent }) => {
+const ContactForm = ({onClose, content, url, onMessageSent }) => {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState(null);
 
@@ -42,6 +42,7 @@ const ContactForm = ({ content, url, onMessageSent }) => {
       setError(content[0].errorMessage);
       redirectToWhatsApp();
     }
+    onClose();
   };
 
   const redirectToWhatsApp = () => {
@@ -49,7 +50,7 @@ const ContactForm = ({ content, url, onMessageSent }) => {
     const baseUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(phone)}`;
     const url = `${baseUrl}&text=${encodeURIComponent(inputValue)}`;
 
-    window.location.href = url;
+    window.open(url, '_blank');
   };
 
   return (

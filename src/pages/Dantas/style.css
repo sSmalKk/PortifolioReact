@@ -1,3 +1,10 @@
+.avatar {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  height: 100px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%;
+  object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+  margin-right: 16px; /* Espaçamento entre o avatar e o título */
+}
 .wrapper {
   height: 100vh;
   /* Define a altura da div para ocupar toda a tela */
@@ -17,7 +24,6 @@
   width: 100%;
   z-index: 1000;
   /* Ensure header is on top */
-  background-color: #fff;
   /* Add background color to prevent content bleed-through */
 }
 

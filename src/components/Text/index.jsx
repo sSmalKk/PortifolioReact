@@ -19,7 +19,7 @@ const Text = ({ children, className = "", as, size = "xl", ...restProps }) => {
   const Component = as || "p";
 
   return (
-    <Component className={`text-black-900_dd font-roboto ${className} ${sizes[size]}`} {...restProps}>
+    <Component className={`font-roboto ${className} ${sizes[size]}`} {...restProps}>
       {children}
     </Component>
   );

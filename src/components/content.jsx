@@ -2,6 +2,84 @@ import blogPosts from "../assets/posts.json";
 import services from "../assets/orders.json";
 import Portfolio from "../assets/portfolio.json";
 import parceiros from "../assets/parceiros.json";
+const info = {
+  personalDetails: {
+    name: "Gustavo Dantas Guimarães",
+    nationality: "Brasileiro",
+    age: 25,
+    dob: "21/12/1998",
+    birthPlace: "Monte Alegre/MG",
+    address: "QE 15 CJ N CASA 47 GUARA-DF",
+    phone: ["(61)9.8159-4849", "(61)9.8195-5443"],
+    email: "dantaswebdesign77@gmail.com",
+    github: "https://github.com/sSmalKk",
+    portfolio: "https://dantastec.netlify.app"
+  },
+  education: [
+    "Tecnólogo em Análise e Desenvolvimento de Sistema (Unopar-Ead)",
+    "Técnico em Computação Gráfica (Escola Técnica do Guara-CEPAG)"
+  ],
+  professionalProfile: [
+    "Busco constantemente sair da zona de conforto",
+    "Me sinto mais motivado e produtivo ao trabalhar sob pressão",
+    "Sou proativo, empreendedor e encaro desafios com determinação"
+  ],
+  professionalExperience: [
+    {
+      role: "Web Designer",
+      company: "Espaço Multiplicidades",
+      period: "2019/2023"
+    },
+    {
+      role: "Estagiário, secretaria",
+      company: "Auto Escola Defensiva",
+      period: "2016/2017"
+    },
+    {
+      role: "Design Gráfico e Web Design",
+      company: "Implante Giovani Centro",
+      period: "2016/2017",
+      website: "http://implantegiovanicentro.com.br"
+    }
+  ],
+  methodologies: [
+    "Agile Scrum", "Lean", "Design Sprint", "Kanban", "Design Thinking", "Sprint Method", "Kanban Method"
+  ],
+  certifications: [
+    "Informática básica (PRATIK) 2012",
+    "Windows, Word, Excel, PowerPoint",
+    "Web Design (CEBRAC) 2014",
+    "Photoshop CS4 (Prepara cursos) 2013",
+    "Montagem e Manutenção de computadores (Senac) 2015",
+    "Redes sociais (CEBRAC) 2012",
+    "Introdução à Linguagem Python",
+    "Direito Internacional",
+    "Planejamento Estratégico",
+    "Introdução à Análise de Dados com Python",
+    "Matemática Financeira para Análise de Riscos",
+    "Compliance e Governança Corporativa"
+  ],
+  knowledge: [
+    "CSS 3", "Ajax", "JQuery", "Pandas"
+  ],
+  programmingLanguages: [
+    "Java 8", "Angular JS", "TypeScript", "JavaScript", "JSON", "C++", "PHP", "Python"
+  ],
+  databases: [
+    "SQL", "MongoDB"
+  ],
+  frameworks: [
+    "React.js", "Redux", "Tailwind CSS", "Bootstrap 3 ou superior", "Node.js", "Three.js", "Canon.js", "Fiber"
+  ],
+  tools: [
+    "GIT", "HTML 5", "XML"
+  ],
+  additionalSkills: [
+    "Experiência com Illustrator, Photoshop, Blender, Wordpress e Elementor",
+    "Inglês fluente",
+    "Noções de Atuaria"
+  ]
+};
 
 const content = [
   {
@@ -80,6 +158,7 @@ const content = [
       },
       // Adicione mais portfólios conforme necessário
     ],
+    filtrar:"filtra",
     parceiros: [
       {
         link: "https://example.com",
@@ -97,7 +176,7 @@ const content = [
     cookiesmais: "ler mais...",
     cookiesmenos: "ler menos",
     cookiesb: "Conteúdo adicional que aparece quando o botão ''Ler mais'' é clicado.",
-    headerTitle: "DANTAS SOLUÇÕES",
+    headerTitle: "GUSTAVO DANTAS",
     headerSubtitle: "Soluções especializadas para o seu negócio",
     personalInfoTitle: "Me mande uma mensagem!",
     personalInfoSubtitle: "Soluções especializadas para o seu negócio",
@@ -107,7 +186,7 @@ const content = [
     servicos: "SERVIÇOS",
     personalInfoButton: "CONTATO",
     typehere: "digite aqui...",
-    portfolioTitle: "PORTFÓLIO",
+    portfolioTitle: "PORTFOLIO",
     blogTitle: "Blog",
     blogSubtitle: "Conteúdos sobre o marketing",
     ParceirosTitle: "PARCEIROS",
@@ -119,6 +198,10 @@ const content = [
     messageSentSuccess: "Mensagem enviada com sucesso!",
     errorMessage: "Erro ao enviar mensagem.",
     solucoes: "Soluções personalizadas!",
+    titulo1: "Deselvolvedor Fullstack",
+    titulo2: "UX/UI",
+    titulo3: "Web Designer",
+
 
   }
 ];
@@ -128,4 +211,4 @@ const content = [
 
 
 const Blog = blogPosts;
-export { Blog, parceiros, Portfolio, services, content };
+export { info, Blog, parceiros, Portfolio, services, content };
