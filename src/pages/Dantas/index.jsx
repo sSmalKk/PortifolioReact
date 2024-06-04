@@ -15,8 +15,8 @@ function generateRandomTransformations() {
 
   for (let i = 0; i <= numSteps; i++) {
     const percent = (i / numSteps) * 200;
-    const translateX = (_.random(-0.2, 0.2)).toFixed(2); // Valor aleatório entre -2 e 2
-    const translateY = (_.random(-0.2, 0.2)).toFixed(2); // Valor aleatório entre -1 e 1
+    const translateX = (_.random(-2, 2)); // Valor aleatório entre -2 e 2
+    const translateY = (_.random(-2, 2)); // Valor aleatório entre -1 e 1
 
     keyframes += `${percent}% { transform: translate(${translateX}px, ${translateY}px); } `;
   }
