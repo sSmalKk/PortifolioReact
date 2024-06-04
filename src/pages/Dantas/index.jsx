@@ -181,7 +181,11 @@ export default function DantasPage() {
             </div>
 
           </div>
-          <div className="container-xs px-4 md:px-5">
+          <div             style={{
+              backgroundColor: '#fff',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }} className="w-screen   px-4 md:px-5">
 
             {/* parceiros section */}
             <div className="mt-8 flex flex-col gap-8" ref={partnersRef}>

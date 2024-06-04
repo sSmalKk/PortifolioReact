@@ -1,10 +1,45 @@
-.avatar {
-  width: 100px; /* Ajuste o tamanho conforme necessário */
-  height: 100px; /* Ajuste o tamanho conforme necessário */
-  border-radius: 50%;
-  object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
-  margin-right: 16px; /* Espaçamento entre o avatar e o título */
+.transparent-text {
+  opacity: 0.7;
 }
+
+.animate-left-right {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+@keyframes hue-croma-animation-1 {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: translate(-10px, -10px);
+  }
+
+  50% {
+    filter: hue-rotate(120deg);
+    transform: translate(-5px, -5px);
+  }
+
+  100% {
+    filter: hue-rotate(240deg);
+    transform: translate(-10px, -10px);
+  }
+}
+
+.animate-left-right {
+  animation: hue-croma-animation-1 3s ease-in-out infinite;
+}
+
+.avatar {
+  width: 100px;
+  /* Ajuste o tamanho conforme necessário */
+  height: 100px;
+  /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%;
+  object-fit: cover;
+  /* Garante que a imagem se ajuste ao contêiner */
+  margin-right: 16px;
+  /* Espaçamento entre o avatar e o título */
+}
+
 .wrapper {
   height: 100vh;
   /* Define a altura da div para ocupar toda a tela */

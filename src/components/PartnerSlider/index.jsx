@@ -49,7 +49,7 @@ const PartnerSlider = ({ parceiros }) => {
         };
     }, []);
 
-    const duplicatedParceiros = [...parceiros, ...parceiros, ...parceiros,...parceiros, ...parceiros, ...parceiros];
+    const duplicatedParceiros = [...parceiros,...parceiros, ...parceiros, ...parceiros,...parceiros, ...parceiros, ...parceiros];
 
     return (
         <div id="partner-slider" className="overflow-hidden w-full">
