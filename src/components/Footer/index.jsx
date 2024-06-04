@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Importe o Link do React Router
-import { Text,Contactbar, Button} from "./..";
+import { Text, Contactbar, Button } from "./..";
 
 export default function Footer({ ...props }) {
   return (
     <footer {...props}>
-      <div              style={{
-              backgroundColor: '#fff',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }} className="flex justify-center self-stretch">
+      <div style={{
+        backgroundColor: '#fff',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }} className="flex justify-center self-stretch">
         <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-5 px-[61px] md:p-5 md:px-5 sm:flex-col">
           <Text size="4xl" as="p" className="tracking-[0.18px]">
             DANTAS
@@ -39,16 +39,16 @@ export default function Footer({ ...props }) {
           >
             CONTATO
           </Button>
-          
-          <Contactbar/>
+
+          <Contactbar />
 
         </div>
       </div>
-      <ul             style={{
-              backgroundColor: '#fff',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }} className="!mx-auto flex w-full max-w-[1449px] flex-wrap items-center justify-between gap-5 border-t border-solid border-gray-300 py-[9px] pr-[9px] md:p-5">
+      <ul style={{
+        backgroundColor: '#fff',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }} className="!mx-auto flex w-full max-w-[1449px] flex-wrap items-center justify-between gap-5 border-t border-solid border-gray-300 py-[9px] pr-[9px] md:p-5">
         <li>
           <Link to="/privacypolicy
 ">

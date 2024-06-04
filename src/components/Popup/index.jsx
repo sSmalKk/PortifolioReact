@@ -8,7 +8,7 @@ const Popup = ({ onClick, title, subTitle, children, onClose, buttonContent, ima
     <div className="popup-overlay">
       <div className="popup-container">
         <div className="popup-content">
-          <button className="popup-close" onClick={onClose}>x</button>
+          <button className="popup-close" onClick={onClose}>X</button>
           <div className="popup-header">
             <h2 className="popup-title">{title}</h2>
             {subTitle && <h3 className="popup-subtitle">{subTitle}</h3>}

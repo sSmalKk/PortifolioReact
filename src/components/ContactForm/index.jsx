@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { Button } from "..";
 
-const ContactForm = ({onClose, content, url, onMessageSent }) => {
+const ContactForm = ({ onClose, content, url, onMessageSent }) => {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState(null);
 

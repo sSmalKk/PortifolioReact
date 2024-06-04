@@ -1,17 +1,46 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Doublecollum, Contact, BlogModel, PopupManager, PartnerSlider, Text, Heading } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
+import _ from 'lodash';
 import { Portfolio, parceiros, Blog, content } from "../../components/content.jsx"
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
 
 
+function generateRandomTransformations() {
+  const numSteps = 10; // Número de keyframes (0%, 25%, 50%, 75%, 100%)
+  let keyframes = '';
 
+  for (let i = 0; i <= numSteps; i++) {
+    const percent = (i / numSteps) * 200;
+    const translateX = (_.random(-2, 2)).toFixed(2); // Valor aleatório entre -2 e 2
+    const translateY = (_.random(-1, 1)).toFixed(2); // Valor aleatório entre -1 e 1
+
+    keyframes += `${percent}% { transform: translate(${translateX}px, ${translateY}px); } `;
+  }
+
+  return keyframes;
+}
 // const animationDelay = 1; // Altere para o valor desejado
 
 export default function DantasPage() {
+  useEffect(() => {
+    const styleSheet = document.styleSheets[0];
+    const numAberrations = 5; // Número de aberrações desejadas
+
+    for (let i = 1; i <= numAberrations; i++) {
+      const chromaAberration = generateRandomTransformations();
+      styleSheet.insertRule(`
+        @keyframes chromaAberration${i} {
+          ${chromaAberration}
+        }
+      `, styleSheet.cssRules.length);
+    }
+  }, []);
+
+
   // Referências para as seções
   const personalInfoRef = useRef(null);
   const portfolioRef = useRef(null);
@@ -43,22 +72,22 @@ export default function DantasPage() {
           <div className="container-xs px-4 md:px-5">
             <div className="h-screen flex items-center justify-center">
               <div className="flex items-center justify-evenly md:flex-col">
-                <div className="flex flex-col items-center w-full space-y-4 mt-4 text-center"> {/* Adicionado "text-center" aqui */}
-                  <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
+                <div className="flex flex-col items-center w-full space-y-4 mt-4 text-center">
+                  <Heading size="s" as="h1" className="chroma-text text-blueLimeade leading-[56px] text-responsive" data-text={content[0].portfolioTitle}>
                     {content[0].portfolioTitle}
                   </Heading>
-                  <Text size="7xl" as="h1" className="font-poppins-bold tracking-[1.50px] text-white text-responsive">
+                  <Text size="7xl" as="h1" className="chroma-text font-poppins-bold tracking-[1.50px] text-white text-responsive" data-text={content[0].headerTitle}>
                     {content[0].headerTitle}
                   </Text>
-                  <Text size="4lg" as="h3" className="font-lora-regular text-white uppercase">
+                  <Text size="4lg" as="h3" className="chroma-text font-lora-regular text-white uppercase" data-text={`|${content[0].titulo1}|${content[0].titulo2}${content[0].titulo3}|`}>
                     |{content[0].titulo1}|{content[0].titulo2}{content[0].titulo3}|
                   </Text>
                   <Contact content={content} msg="..." withMessage openInNewTab buttonClassName="meu-estilo-personalizado" transparent />
                 </div>
               </div>
-
             </div>
           </div>
+
           <div className=" w-screen flex items-center justify-center"
             style={{
               backgroundColor: '#fff',
@@ -181,11 +210,11 @@ export default function DantasPage() {
             </div>
 
           </div>
-          <div             style={{
-              backgroundColor: '#fff',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }} className="w-screen   px-4 md:px-5">
+          <div style={{
+            backgroundColor: '#fff',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }} className="w-screen   px-4 md:px-5">
 
             {/* parceiros section */}
             <div className="mt-8 flex flex-col gap-8" ref={partnersRef}>

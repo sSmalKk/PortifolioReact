@@ -1,3 +1,27 @@
+.chroma-text {
+  position: relative;
+  display: inline-block;
+}
+
+.chroma-text::before,
+.chroma-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.chroma-text::before {
+  color: red;
+  animation: chromaAberration1 2s infinite;
+}
+
+.chroma-text::after {
+  color: blue;
+  animation: chromaAberration2 2s infinite reverse;
+}
+
 .transparent-text {
   opacity: 0.7;
 }
