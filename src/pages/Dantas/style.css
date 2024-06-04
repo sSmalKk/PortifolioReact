@@ -13,12 +13,12 @@
 }
 
 .chroma-text::before {
-  color: red;
+  color: rgba(255, 0, 0, 0.5);
   animation: chromaAberration1 2s infinite;
 }
 
 .chroma-text::after {
-  color: blue;
+  color: rgba(0, 0, 255, 0.5);
   animation: chromaAberration2 2s infinite reverse;
 }
 
