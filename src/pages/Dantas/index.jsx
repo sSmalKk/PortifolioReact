@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Doublecollum, Contact, BlogModel, PopupManager, PartnerSlider, Text, Heading } from "../../components";
 import Footer from "../../components/Footer";
@@ -8,7 +8,6 @@ import _ from 'lodash';
 import { Portfolio, parceiros, Blog, content } from "../../components/content.jsx"
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
 const languageIndex = localStorage.getItem('languageIndex');
-
 
 function generateRandomTransformations() {
   const numSteps = 10; // Número de keyframes (0%, 25%, 50%, 75%, 100%)
@@ -26,6 +25,31 @@ function generateRandomTransformations() {
 }
 // const animationDelay = 1; // Altere para o valor desejado
 export default function DantasPage() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+   
+  
+        // Debug language before saving
+        console.log('Detected language:', navigator.language);
+  
+        // Save the language in localStorage
+        localStorage.setItem('language', navigator.language);
+  
+      } catch (error) {
+        console.error('Erro ao obter informações:', error);
+      }
+    };
+  
+    fetchData();
+  
+    // Cleanup function
+    return () => {
+      // Any cleanup code
+    };
+  }, []);
+  
+  
   useEffect(() => {
     const styleSheet = document.styleSheets[0];
     const numAberrations = 5; // Número de aberrações desejadas
