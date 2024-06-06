@@ -4,7 +4,7 @@ import { Text, Heading } from "../components";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { content } from "../components/content.jsx"
-const languageIndex = localStorage.getItem('languageIndex') || 0;
+const languageIndex = 0;
 
 export default function Page({ title, texts }) {
   return (
