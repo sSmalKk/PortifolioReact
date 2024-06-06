@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { Button } from "..";
 
-const ContactForm = ({languageIndex, onClose, content, url, onMessageSent }) => {
+const ContactForm = ({languageindex, onClose, content, url, onMessageSent }) => {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState(null);
 
@@ -31,7 +31,7 @@ const ContactForm = ({languageIndex, onClose, content, url, onMessageSent }) => 
 
       if (response.ok) {
         // Notify parent component that message was sent successfully
-        onMessageSent(content[languageIndex].messageSentSuccess);
+        onMessageSent(content[languageindex].messageSentSuccess);
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
@@ -39,7 +39,7 @@ const ContactForm = ({languageIndex, onClose, content, url, onMessageSent }) => 
       }
     } catch (error) {
       console.error("Erro:", error);
-      setError(content[languageIndex].errorMessage);
+      setError(content[languageindex].errorMessage);
       redirectToWhatsApp();
     }
     onClose();
@@ -59,17 +59,17 @@ const ContactForm = ({languageIndex, onClose, content, url, onMessageSent }) => 
         <input
           id="content"
           type="text"
-          placeholder={content[languageIndex].typehere}
+          placeholder={content[languageindex].typehere}
           value={inputValue}
           onChange={handleInputChange}
           style={{ marginBottom: '10px' }}
         />
 
         <Button onClick={handleSend} className="h-[36px] min-w-[92px] rounded-[18px] border border-solid border-green-400 bg-green-700 px-[15px] text-xs tracking-[0.50px] text-white-A700">
-          {content[languageIndex].personalInfoButton}
+          {content[languageindex].personalInfoButton}
         </Button>
       </div>
-      {error && <p style={{ color: 'red', fontSize: '12px' }}>{content[languageIndex].errorMessage}</p>}
+      {error && <p style={{ color: 'red', fontSize: '12px' }}>{content[languageindex].errorMessage}</p>}
     </div>
   );
 }

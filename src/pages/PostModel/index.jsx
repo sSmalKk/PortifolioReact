@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Blog, content } from "../../components/content.jsx"
 
-const languageIndex = localStorage.getItem('languageIndex') || 0;
+const languageindex =  0;
 
 
 
@@ -18,7 +18,7 @@ export default function Post() {
       </Helmet>
       <div className="flex w-full flex-col gap-[11px] bg-gray-50">
         {/* header section */}
-        <Header content={content} languageIndex={languageIndex} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
+        <Header content={content} languageindex={languageindex} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
         <div className="flex flex-col items-center gap-5">
           {/* about section */}
           <div className="container-xs flex flex-col items-center gap-[83px] md:gap-[62px] md:p-5 sm:gap-[41px]">
@@ -177,9 +177,9 @@ export default function Post() {
 
             </div>
 
-            <BlogModel blogData={Blog} content={content} languageIndex={languageIndex} />
+            <BlogModel blogData={Blog} content={content} languageindex={languageindex} />
             {/* footer section */}
-            <Footer content={content} languageIndex={languageIndex} />
+            <Footer content={content} languageindex={languageindex} />
           </div>
         </div>
       </div>

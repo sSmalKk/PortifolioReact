@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading } from "..";
 import { content } from "../content.jsx";
-const languageIndex = localStorage.getItem('languageIndex') || 0;
+const languageindex = localStorage.getItem('languageindex') || 0;
 
 const ProgressBar = ({ percentage }) => {
   return (
@@ -54,30 +54,30 @@ const Doublecollum = () => {
       <div className="flex flex-col flex-1 bg-gray-200 p-4 space-y-4 mt-4 md:mt-0">
  
         <InfoColumn title="Personal Details" items={[
-          `Name: ${content[languageIndex].personalDetails.name}`,
-          `Nationality: ${content[languageIndex].personalDetails.nationality}`,
-          `Age: ${content[languageIndex].personalDetails.age}`,
-          `DOB: ${content[languageIndex].personalDetails.dob}`,
-          `Birthplace: ${content[languageIndex].personalDetails.birthPlace}`,
-          `Address: ${content[languageIndex].personalDetails.address}`,
-          `Phone: ${content[languageIndex].personalDetails.phone.join(", ")}`,
-          `Email: ${content[languageIndex].personalDetails.email}`,
-          `GitHub: ${content[languageIndex].personalDetails.github}`,
-          `Portfolio: ${content[languageIndex].personalDetails.portfolio}`
+          `Name: ${content[languageindex].personalDetails.name}`,
+          `Nationality: ${content[languageindex].personalDetails.nationality}`,
+          `Age: ${content[languageindex].personalDetails.age}`,
+          `DOB: ${content[languageindex].personalDetails.dob}`,
+          `Birthplace: ${content[languageindex].personalDetails.birthPlace}`,
+          `Address: ${content[languageindex].personalDetails.address}`,
+          `Phone: ${content[languageindex].personalDetails.phone.join(", ")}`,
+          `Email: ${content[languageindex].personalDetails.email}`,
+          `GitHub: ${content[languageindex].personalDetails.github}`,
+          `Portfolio: ${content[languageindex].personalDetails.portfolio}`
         ]} />
-        <InfoColumn title="Education" items={content[languageIndex].education} />
-        <InfoColumn title="Professional Profile" items={content[languageIndex].professionalProfile} />
-        <InfoColumn title="Methodologies" items={content[languageIndex].methodologies} />
-        <InfoColumn title="Certifications" items={content[languageIndex].certifications} />
+        <InfoColumn title="Education" items={content[languageindex].education} />
+        <InfoColumn title="Professional Profile" items={content[languageindex].professionalProfile} />
+        <InfoColumn title="Methodologies" items={content[languageindex].methodologies} />
+        <InfoColumn title="Certifications" items={content[languageindex].certifications} />
       </div>
       <div className="flex flex-col flex-1 bg-gray-200 p-4 space-y-4 mt-4 md:mt-0">
 
-        <SkillsColumn title="Knowledge" skills={content[languageIndex].knowledge} />
-        <SkillsColumn title="Programming Languages" skills={content[languageIndex].programmingLanguages} />
-        <SkillsColumn title="Databases" skills={content[languageIndex].databases} />
-        <SkillsColumn title="Frameworks" skills={content[languageIndex].frameworks} />
-        <SkillsColumn title="Tools" skills={content[languageIndex].tools} />
-        <SkillsColumn title="Additional Skills" skills={content[languageIndex].additionalSkills} />
+        <SkillsColumn title="Knowledge" skills={content[languageindex].knowledge} />
+        <SkillsColumn title="Programming Languages" skills={content[languageindex].programmingLanguages} />
+        <SkillsColumn title="Databases" skills={content[languageindex].databases} />
+        <SkillsColumn title="Frameworks" skills={content[languageindex].frameworks} />
+        <SkillsColumn title="Tools" skills={content[languageindex].tools} />
+        <SkillsColumn title="Additional Skills" skills={content[languageindex].additionalSkills} />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { LanguageInfoComponent, Contact, Contactbar, Text } from "..";
 import "./style.css";
 
 export default function Header(props) {
-  const { content, languageIndex } = props;
+  const { content, languageindex } = props;
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Header(props) {
             }}
             className="text-2xl font-normal tracking-[0.18px] md:text-[22px]"
           >
-            {content[languageIndex].headerTitle}
+            {content[languageindex].headerTitle}
           </Text>
         </button>
         <ul className="flex items-center gap-[15px]">
@@ -56,7 +56,7 @@ export default function Header(props) {
               color: isScrolled ? "#000000" : "#fff",
             }}
               className="text-base font-normal tracking-[0.50px]">
-              {content[languageIndex].sobre}
+              {content[languageindex].sobre}
             </Text>
           </button>
           <button
@@ -67,7 +67,7 @@ export default function Header(props) {
               color: isScrolled ? "#000000" : "#fff",
             }}
               className="text-base font-normal tracking-[0.50px]">
-              {content[languageIndex].projetos}
+              {content[languageindex].projetos}
             </Text>
           </button>
           <button
@@ -79,14 +79,14 @@ export default function Header(props) {
               color: isScrolled ? "#000000" : "#fff",
             }}
               className="text-base font-semibold tracking-[0.50px]">
-              {content[languageIndex].blogTitleuper}
+              {content[languageindex].blogTitleuper}
             </Text>
           </button>
 
         </ul>
         <div className="flex justify-between gap-5 ">
           <Contactbar className={isScrolled ? "contactbutton scrolled" : "contactbutton"} />
-          <Contact content={content} languageIndex={languageIndex} />
+          <Contact content={content} languageindex={languageindex} />
           <LanguageInfoComponent />
         </div>
       </header>

@@ -5,8 +5,8 @@ import { PCInfoComponent } from "../../components";
 const LanguageInfoComponent = () => {
     const languages = content.map(item => item.language);
 
-    const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('languageIndex') ? languages[parseInt(localStorage.getItem('languageIndex'))] : localStorage.getItem('selectedLanguage') || languages[0]);
-    const [languageIndex, setLanguageIndex] = useState(parseInt(localStorage.getItem('languageIndex')) || 0);
+    const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('languageindex') ? languages[parseInt(localStorage.getItem('languageindex'))] : localStorage.getItem('selectedLanguage') || languages[0]);
+    const [languageindex, setlanguageindex] = useState(parseInt(localStorage.getItem('languageindex')) || 0);
     const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar se o menu está aberto ou fechado
 
     const menuRef = useRef();
@@ -16,13 +16,13 @@ const LanguageInfoComponent = () => {
     }, [selectedLanguage]);
 
     useEffect(() => {
-        console.log("languageIndex:", languageIndex);
-    }, [languageIndex]);
+        console.log("languageindex:", languageindex);
+    }, [languageindex]);
 
     useEffect(() => {
-        if (!localStorage.getItem('languageIndex')) {
+        if (!localStorage.getItem('languageindex')) {
             setSelectedLanguage(localStorage.getItem('selectedLanguage') || languages[0]);
-            setLanguageIndex(languages.indexOf(localStorage.getItem('selectedLanguage')) || 0);
+            setlanguageindex(languages.indexOf(localStorage.getItem('selectedLanguage')) || 0);
         }
     }, [languages]);
 
@@ -43,9 +43,9 @@ const LanguageInfoComponent = () => {
 
     const handleLanguageChange = (language, index) => {
         setSelectedLanguage(language);
-        setLanguageIndex(index);
+        setlanguageindex(index);
         localStorage.setItem('selectedLanguage', language);
-        localStorage.setItem('languageIndex', index);
+        localStorage.setItem('languageindex', index);
         setMenuOpen(false); // Fecha o menu após selecionar um idioma
          window.location.reload();
     };

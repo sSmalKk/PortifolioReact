@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { BlogModel } from "../../components";
 import { Blog, content } from "../../components/content.jsx"
-const languageIndex = localStorage.getItem('languageIndex') || 0;
+const languageindex =  0;
 
 export default function Post({ id, blog }) {
   const post = blog[0]; // Seleciona o primeiro post
@@ -26,7 +26,7 @@ export default function Post({ id, blog }) {
       </Helmet>
       <div className="flex w-full flex-col gap-[11px] bg-gray-50">
         {/* header section */}
-        <Header content={content} languageIndex={languageIndex}  style={{ position: 'fixed', padding: '5px' }} />
+        <Header content={content} languageindex={languageindex}  style={{ position: 'fixed', padding: '5px' }} />
         <div className="flex flex-col items-center gap-5" style={{ marginTop: '100px' }}>
           {/* about section */}
           <div id={"top"} className="container-xs flex flex-col items-center gap-[83px] md:gap-[62px] md:p-5 sm:gap-[41px]">
@@ -54,9 +54,9 @@ export default function Post({ id, blog }) {
           {/* Renderiza a seção do artigo */}
           <div dangerouslySetInnerHTML={{ __html: post.articleSection }} />
           {/* footer section */}
-          <BlogModel blogData={Blog} content={content} languageIndex={languageIndex}  />
+          <BlogModel blogData={Blog} content={content} languageindex={languageindex}  />
 
-          <Footer content={content} languageIndex={languageIndex}  />
+          <Footer content={content} languageindex={languageindex}  />
         </div>
       </div>
     </>

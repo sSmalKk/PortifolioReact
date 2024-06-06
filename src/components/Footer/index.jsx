@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"; // Importe o Link do React Router
 import { Text, Contactbar } from "./..";
 
-export default function Footer({languageIndex, content,...props }) {
+export default function Footer({languageindex, content,...props }) {
   return (
     <footer {...props}>
       <div style={{
@@ -24,7 +24,7 @@ export default function Footer({languageIndex, content,...props }) {
                 color: "#000000",
               }}
                 className="text-base font-normal tracking-[0.50px]">
-                {content[languageIndex].sobre}
+                {content[languageindex].sobre}
               </Text>
             </button>
             <button
@@ -35,7 +35,7 @@ export default function Footer({languageIndex, content,...props }) {
                 color: "#000000",
               }}
                 className="text-base font-normal tracking-[0.50px]">
-                {content[languageIndex].projetos}
+                {content[languageindex].projetos}
               </Text>
             </button>
             <button
@@ -47,7 +47,7 @@ export default function Footer({languageIndex, content,...props }) {
                 color: "#000000",
               }}
                 className="text-base font-semibold tracking-[0.50px]">
-                {content[languageIndex].blogTitleuper}
+                {content[languageindex].blogTitleuper}
               </Text>
             </button>
 

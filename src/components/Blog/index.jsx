@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Img, Heading, Button } from "../../components";
 
-const BlogModel = ({ languageIndex, blogData, content }) => {
+const BlogModel = ({ languageindex, blogData, content }) => {
   const [filter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
@@ -36,7 +36,7 @@ const BlogModel = ({ languageIndex, blogData, content }) => {
           <div className="flex flex-col items-center" style={{ backgroundColor: '#f7f7f7' }}>
           <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5"  >
               <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]" >
-                {content[languageIndex].filtrar}
+                {content[languageindex].filtrar}
               </Heading>
               <input className="!font-inter tracking-[0.50px] !text-black-900_60" placeholder="Filter" />
             </div>
@@ -68,7 +68,7 @@ const BlogModel = ({ languageIndex, blogData, content }) => {
               </Heading>
               <Link to={`post/${blogData[0].id}`}>
                 <Button className="!text-gray-900">
-                  {content[languageIndex].cookiesmais}
+                  {content[languageindex].cookiesmais}
                 </Button>
               </Link>
             </div>
@@ -95,7 +95,7 @@ const BlogModel = ({ languageIndex, blogData, content }) => {
                     </Heading>
                   </div>
                   <Button className="!text-gray-900">
-                    {content[languageIndex].cookiesmais}
+                    {content[languageindex].cookiesmais}
                   </Button>
                 </div>
               </Link>
@@ -105,10 +105,10 @@ const BlogModel = ({ languageIndex, blogData, content }) => {
       </div>
       <div className="flex justify-between mt-5">
         <Button onClick={prevPage} disabled={!hasPrevPage} className="!text-gray-900">
-          {content[languageIndex].buttonPrevious}
+          {content[languageindex].buttonPrevious}
         </Button>
         <Button onClick={nextPage} disabled={!hasNextPage} className="!text-gray-900">
-          {content[languageIndex].buttonNext}
+          {content[languageindex].buttonNext}
         </Button>
       </div>
     </div>
