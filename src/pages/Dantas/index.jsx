@@ -7,7 +7,7 @@ import "./style.css";
 import _ from 'lodash';
 import { Portfolio, parceiros, Blog, content } from "../../components/content.jsx"
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
-const languageindex = 0;
+const languageindex = localStorage.getItem('languageIndex');
 
 function generateRandomTransformations() {
   const numSteps = 10; // Número de keyframes (0%, 25%, 50%, 75%, 100%)

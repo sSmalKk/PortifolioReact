@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { BlogModel } from "../../components";
 import { Blog, content } from "../../components/content.jsx"
-const languageindex =  0;
+const languageindex = localStorage.getItem('languageIndex');
 
 export default function Post({ id, blog }) {
   const post = blog[0]; // Seleciona o primeiro post
