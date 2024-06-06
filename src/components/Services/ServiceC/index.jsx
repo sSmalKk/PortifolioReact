@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ContactForm, Popup, Notification, Text, Button } from "../..";
 import "../style.css"
 
-const ServiceComponentType3 = ({ url, service, imagePosition, content }) => {
+const ServiceComponentType3 = ({languageIndex, url, service, imagePosition, content }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Estado para controlar se o popup está aberto
   const [message, setMessage] = useState("");
 
@@ -17,7 +17,7 @@ const ServiceComponentType3 = ({ url, service, imagePosition, content }) => {
   };
 
   const handleSendMessage = () => {
-    setMessage(content[0]?.messageSentSuccess || "Message sent successfully");
+    setMessage(content[languageIndex]?.messageSentSuccess || "Message sent successfully");
   };
 
   return (
@@ -58,7 +58,7 @@ const ServiceComponentType3 = ({ url, service, imagePosition, content }) => {
         className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
         onClick={handleButtonClick} // Chame a função handleButtonClick ao clicar no botão
       >
-        {content[0].falecmg}
+        {content[languageIndex].falecmg}
       </Button>
     </div>
   );

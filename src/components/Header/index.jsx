@@ -4,7 +4,7 @@ import { LanguageInfoComponent, Contact, Contactbar, Text } from "..";
 import "./style.css";
 
 export default function Header(props) {
-  const { content } = props;
+  const { content,languageIndex} = props;
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Header(props) {
             }}
             className="text-2xl font-normal tracking-[0.18px] md:text-[22px]"
           >
-            {content[0].headerTitle}
+            {content[languageIndex].headerTitle}
           </Text>
         </button>
         <ul className="flex items-center gap-[15px]">
@@ -56,7 +56,7 @@ export default function Header(props) {
               color: isScrolled ? "#000000" : "#fff",
             }}
               className="text-base font-normal tracking-[0.50px]">
-              {content[0].sobre}
+              {content[languageIndex].sobre}
             </Text>
           </button>
           <button
@@ -67,7 +67,7 @@ export default function Header(props) {
               color: isScrolled ? "#000000" : "#fff",
             }}
               className="text-base font-normal tracking-[0.50px]">
-              {content[0].projetos}
+              {content[languageIndex].projetos}
             </Text>
           </button>
           <button
@@ -79,7 +79,7 @@ export default function Header(props) {
               color: isScrolled ? "#000000" : "#fff",
             }}
               className="text-base font-semibold tracking-[0.50px]">
-              {content[0].blogTitleuper}
+              {content[languageIndex].blogTitleuper}
             </Text>
           </button>
 
@@ -88,7 +88,7 @@ export default function Header(props) {
           <LanguageInfoComponent />
 
           <Contactbar className={isScrolled ? "contactbutton scrolled" : "contactbutton"} />
-          <Contact content={content} />
+          <Contact content={content} languageIndex={languageIndex}  />
         </div>
       </header>
     </>

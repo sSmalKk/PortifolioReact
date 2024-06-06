@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ContactForm, Popup, Notification, Text, Img, Button } from "../..";
 import "../style.css";
 
-const ServiceComponentType1 = ({ url, content, service }) => {
+const ServiceComponentType1 = ({languageIndex, url, content, service }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Estado para controlar se o popup está aberto
   const [message, setMessage] = useState("");
 
@@ -17,7 +17,7 @@ const ServiceComponentType1 = ({ url, content, service }) => {
   };
 
   const handleSendMessage = () => {
-    setMessage(content[0]?.messageSentSuccess || "Message sent successfully");
+    setMessage(content[languageIndex]?.messageSentSuccess || "Message sent successfully");
   };
 
   return (
@@ -29,7 +29,7 @@ const ServiceComponentType1 = ({ url, content, service }) => {
             className="w-full leading-[56px]"
             dangerouslySetInnerHTML={{ __html: service.body }}
           />
-          <ContactForm content={content} onMessageSent={handleSendMessage} url={url} />
+          <ContactForm content={content} languageIndex={languageIndex} onMessageSent={handleSendMessage} url={url} />
         </Popup>
       )}
       <div className="service-component flex items-start justify-around w-full">
@@ -58,7 +58,7 @@ const ServiceComponentType1 = ({ url, content, service }) => {
             className="min-w-[92px] border border-solid border-green-400 tracking-[0.50px]"
             onClick={handleButtonClick} // Chame a função handleButtonClick ao clicar no botão
           >
-            {content[0]?.falecmg || "Fale conosco"}
+            {content[languageIndex]?.falecmg || "Fale conosco"}
           </Button>
         </div>
       </div>

@@ -7,6 +7,7 @@ import "./style.css";
 import _ from 'lodash';
 import { Portfolio, parceiros, Blog, content } from "../../components/content.jsx"
 const bdurl = 'https://0e27ec-kend-sandbox.dhiwise.co/swagger/';
+const languageIndex = localStorage.getItem('languageIndex');
 
 
 function generateRandomTransformations() {
@@ -47,7 +48,7 @@ export default function DantasPage() {
         <title>Dantas Soluções</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <Header content={content} style={{ position: 'fixed', padding: '5px' }} />
+      <Header content={content} languageIndex={languageIndex} style={{ position: 'fixed', padding: '5px' }} />
 
 
 
@@ -66,16 +67,16 @@ export default function DantasPage() {
             <div className="h-screen flex items-center justify-center">
               <div className="flex items-center justify-evenly md:flex-col">
                 <div className="flex flex-col items-center w-full space-y-4 mt-4 text-center">
-                  <Heading size="s" as="h1" className="chroma-text text-blueLimeade leading-[56px] text-responsive" data-text={content[0].portfolioTitle}>
-                    {content[0].portfolioTitle}
+                  <Heading size="s" as="h1" className="chroma-text text-blueLimeade leading-[56px] text-responsive" data-text={content[languageIndex].portfolioTitle}>
+                    {content[languageIndex].portfolioTitle}
                   </Heading>
-                  <Text size="7xl" as="h1" className="chroma-text font-poppins-bold tracking-[1.50px] text-white text-responsive" data-text={content[0].headerTitle}>
-                    {content[0].headerTitle}
+                  <Text size="7xl" as="h1" className="chroma-text font-poppins-bold tracking-[1.50px] text-white text-responsive" data-text={content[languageIndex].headerTitle}>
+                    {content[languageIndex].headerTitle}
                   </Text>
-                  <Text size="4lg" as="h3" className="chroma-text font-lora-regular text-white uppercase" data-text={`|${content[0].titulo1}|${content[0].titulo2}${content[0].titulo3}|`}>
-                    |{content[0].titulo1}|{content[0].titulo2}{content[0].titulo3}|
+                  <Text size="4lg" as="h3" className="chroma-text font-lora-regular text-white uppercase" data-text={`|${content[languageIndex].titulo1}|${content[languageIndex].titulo2}${content[languageIndex].titulo3}|`}>
+                    |{content[languageIndex].titulo1}|{content[languageIndex].titulo2}{content[languageIndex].titulo3}|
                   </Text>
-                  <Contact content={content} msg="..." withMessage openInNewTab buttonClassName="meu-estilo-personalizado" transparent />
+                  <Contact content={content} languageIndex={languageIndex} msg="..." withMessage openInNewTab buttonClassName="meu-estilo-personalizado" transparent />
                 </div>
               </div>
             </div>
@@ -92,21 +93,21 @@ export default function DantasPage() {
               {/* quem sou */}
               <div className="flex flex-col items-center w-full space-y-4 mt-4 text-center">
                 <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
-                  {content[0].portfolioTitle}
+                  {content[languageIndex].portfolioTitle}
                 </Heading>
                 <div className="flex flex-row md:flex-col items-center space-x-4 mt-4 text-center">
                   <img src="/images/avatar.png" alt="avatar" className="avatar" />
                   <div className="flex flex-col items-center space-y-4 mt-4 text-center">
                     <Text size="7xl" as="h1" className="font-poppins-bold tracking-[1.50px] text-black text-responsive">
-                      {content[0].headerTitle}
+                      {content[languageIndex].headerTitle}
                     </Text>
                     <Text size="4lg" as="h3" className="font-lora-regular text-black uppercase">
-                      |{content[0].titulo1}|{content[0].titulo2}{content[0].titulo3}|
+                      |{content[languageIndex].titulo1}|{content[languageIndex].titulo2}{content[languageIndex].titulo3}|
                     </Text>
                   </div>
                 </div>
                 <div className="flex flex-row md:flex-col md:space-x-4 px-4 md:px-5 my-8">
-                  <Doublecollum />
+                  <Doublecollum languageIndex={languageIndex}  />
 
 
                 </div>
@@ -125,7 +126,7 @@ export default function DantasPage() {
                   </div>
 
                   
-                  <ServicesComponent url={bdurl} services={services} content={content} />
+                  <ServicesComponent url={bdurl} services={services} content={content} languageIndex={languageIndex} />
                 </div> */}
 
 
@@ -135,16 +136,16 @@ export default function DantasPage() {
             <div className="container-xs px-4 md:px-5" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="flex flex-row  items-center md:flex-col md:max-w-screen-xl md:mx-auto my-8" >
                 <div className="h-screen px-4 md:h-auto md:relative md:w-full md:max-w-[379px]">
-                  <img src={content[0].personalimage} alt="container" className="w-[379px] h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
+                  <img src={content[languageIndex].personalimage} alt="container" className="w-[379px] h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
                 </div>
                 <div className="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full mt-8 md:mt-0 md:ml-4"> {/* Removi md:ml-4 */}
                   <div>
-                    <p className="text-lg tracking-[0.50px] md:text-base">{content[0].personalInfoTitle}</p>
-                    <p className="text-6xl mt-2 tracking-[-1.50px] md:text-3xl">{content[0].headerTitle}</p>
-                    <p className="text-4xl w-[81%] leading-[40px] md:text-base md:w-full md:leading-normal">{content[0].personalInfoSubtitle}</p>
+                    <p className="text-lg tracking-[0.50px] md:text-base">{content[languageIndex].personalInfoTitle}</p>
+                    <p className="text-6xl mt-2 tracking-[-1.50px] md:text-3xl">{content[languageIndex].headerTitle}</p>
+                    <p className="text-4xl w-[81%] leading-[40px] md:text-base md:w-full md:leading-normal">{content[languageIndex].personalInfoSubtitle}</p>
                   </div>
                   <div id="projects" className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
-                    <Contact content={content} />
+                    <Contact content={content} languageIndex={languageIndex} />
                   </div>
                 </div>
               </div>
@@ -156,7 +157,7 @@ export default function DantasPage() {
               <Heading as="h3" style={{
                 color: "#007bff"
               }} className="!font-bold uppercase tracking-[2.70px]">
-                {content[0].portfolioTitle}
+                {content[languageIndex].portfolioTitle}
               </Heading>
             </div>
           </div>
@@ -188,7 +189,7 @@ export default function DantasPage() {
             }}>
 
             <div className="container-xs pt-10 px-4 md:px-5">
-              <BlogModel id="blog" blogData={Blog} content={content} />
+              <BlogModel id="blog" blogData={Blog} content={content} languageIndex={languageIndex} />
             </div>
 
           </div>
@@ -202,7 +203,7 @@ export default function DantasPage() {
             <div className="mt-8 flex flex-col gap-8" >
               <div className="flex flex-col items-center px-4 md:px-5">
                 <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
-                  {content[0].ParceirosTitle}
+                  {content[languageIndex].ParceirosTitle}
                 </Heading>
               </div>
               <PartnerSlider parceiros={parceiros} />
@@ -211,14 +212,14 @@ export default function DantasPage() {
             >
               <div class="main-content flex flex-col items-center">
                 <div class="popup-wrapper" >
-                  <PopupManager url={bdurl} content={content} />
+                  <PopupManager url={bdurl} content={content} languageIndex={languageIndex} />
                 </div>
               </div>
             </div>
           </div>
 
         </div >
-        <Footer content={content} />
+        <Footer content={content} languageIndex={languageIndex} />
       </div>
 
 

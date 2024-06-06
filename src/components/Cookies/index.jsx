@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Cookies.css';
 import { Popup } from "../../components"; // Importe o componente Notification
 
-const Cookies = ({ content, onClick, handleClosePopup }) => {
+const Cookies = ({languageIndex, content, onClick, handleClosePopup }) => {
   const [showMore, setShowMore] = useState(false);
 
   const handleReadMore = () => {
@@ -20,17 +20,17 @@ const Cookies = ({ content, onClick, handleClosePopup }) => {
       >
         <div className='flex'>
           <p>
-            {content[0].cookiesa}
+            {content[languageIndex].cookiesa}
             {showMore && (
               <>
                 <br />
                 <br />
-                {content[0].cookiesb}
+                {content[languageIndex].cookiesb}
               </>
             )}
           </p>
           <button onClick={handleReadMore}>
-            {showMore ? content[0].cookiesmenos : content[0].cookiesmais}
+            {showMore ? content[languageIndex].cookiesmenos : content[languageIndex].cookiesmais}
           </button>
         </div>
       </Popup>

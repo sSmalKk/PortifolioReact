@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-const Changelogs = ({ content }) => {
+const Changelogs = ({languageIndex, content }) => {
   return (
     <div className="changelogs-container">
-      <h2>{content[0].changelogsText}</h2>
+      <h2>{content[languageIndex].changelogsText}</h2>
       <div className="changelogs-list">
         <ul>
-          {content[0].changelog.map((log, index) => (
+          {content[languageIndex].changelog.map((log, index) => (
             <li key={index}>{log.title}: {log.content}</li>
           ))}
         </ul>

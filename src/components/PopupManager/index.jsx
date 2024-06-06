@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { UseFetch, Popup, ContactForm, Notification, Cookies, Changelogs } from "../../components";
 import "./style.css";
 
-const PopupManager = ({ content, url }) => {
+const PopupManager = ({languageIndex, content, url }) => {
   const [popupQueue, setPopupQueue] = useState(["popupOpen", "cookiesPopupOpen", "empty"]);
   const [currentPopup, setCurrentPopup] = useState("");
 
@@ -82,15 +82,15 @@ const PopupManager = ({ content, url }) => {
     switch (currentPopup) {
       case "popupOpen":
         return (
-          <Popup onClose={onClose} title={content[0].popuptitle} subTitle={content[0].popsubtitle}>
+          <Popup onClose={onClose} title={content[languageIndex].popuptitle} subTitle={content[languageIndex].popsubtitle}>
             <Notification message={message} />
-            <Changelogs content={content} />
-            <h2>{content[0].personalInfoTitle}</h2>
-            <ContactForm onClose={onClose} content={content} onMessageSent={handleSendMessage} url={url} />
+            <Changelogs languageIndex={languageIndex} content={content}  />
+            <h2>{content[languageIndex].personalInfoTitle}</h2>
+            <ContactForm onClose={onClose} languageIndex={languageIndex} content={content} onMessageSent={handleSendMessage} url={url} />
           </Popup>
         );
       case "cookiesPopupOpen":
-        return <Cookies content={content} onClick={handleClick} handleClosePopup={onClose} />;
+        return <Cookies languageIndex={languageIndex} content={content} onClick={handleClick} handleClosePopup={onClose} />;
       default:
         return null;
     }
