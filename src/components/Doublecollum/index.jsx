@@ -22,12 +22,13 @@ const InfoColumn = ({ title, items }) => {
       </Heading>
       <ul>
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index} className="mt-2">{item}</li> 
         ))}
       </ul>
     </div>
   );
 };
+
 
 const SkillsColumn = ({ title, skills }) => {
   return (
@@ -50,8 +51,8 @@ const SkillsColumn = ({ title, skills }) => {
 const Doublecollum = () => {
   return (
     <div className="flex flex-colu md:flex-col md:space-x-4 px-4 md:px-5 my-8">
-      <div className="flex flex-col flex-1 bg-gray-100 p-4 space-y-4">
-
+      <div className="flex flex-col flex-1 bg-gray-200 p-4 space-y-4 mt-4 md:mt-0">
+ 
         <InfoColumn title="Personal Details" items={[
           `Name: ${content[languageIndex].personalDetails.name}`,
           `Nationality: ${content[languageIndex].personalDetails.nationality}`,
