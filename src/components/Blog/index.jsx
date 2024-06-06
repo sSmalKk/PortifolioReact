@@ -33,8 +33,8 @@ const BlogModel = ({ languageIndex, blogData, content }) => {
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}>
-          <div className="flex flex-col items-center ">
-            <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5"  >
+          <div className="flex flex-col items-center" style={{ backgroundColor: '#f7f7f7' }}>
+          <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5"  >
               <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]" >
                 {content[languageIndex].filtrar}
               </Heading>
@@ -76,12 +76,12 @@ const BlogModel = ({ languageIndex, blogData, content }) => {
         </div>
         {/* Lista de posts restantes */}
         <div className="grid-container">
-          {currentPosts.map((post, index) => (
-            <div key={`blog-post-${index}`} className="blog-post" style={{
-              backgroundColor: '#fff',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}>
+            {currentPosts.map((post, index) => (
+              <div
+                key={`blog-post-${index}`}
+                className="blog-post"
+                style={{ backgroundColor: index % 2 === 0 ? '#f7f7f7' : '#fff' }}
+              >
               <Link to={`/post/${post.id}`} key={`blog-post-${index}`} className="blog-post">
                 <Img src={post.image} alt="container" className="post-image" />
                 <div className="post-content">
