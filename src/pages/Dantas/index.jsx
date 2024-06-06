@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Doublecollum, Contact, BlogModel, PopupManager, PartnerSlider, Text, Heading } from "../../components";
 import Footer from "../../components/Footer";
