@@ -32,6 +32,7 @@
 }/* Estilo para o botão de contato com fundo branco e texto preto */
 .contactbutton-white {
   color: black;
+  text-emphasis-color: black;
   background-color: white;
   border-color: black;
 }
@@ -81,12 +82,12 @@
 }
 
 .contactbutton {
-  color: white;
+  color: rgb(0, 0, 0);
   border-color: white;
 }
 
 .contactbutton:hover {
-  color: rgba(216, 216, 216, 0.822);
+  color: rgba(0, 0, 0, 0.822);
   border-color: rgba(216, 216, 216, 0.822);
 }
 
@@ -106,7 +107,7 @@
 }
 
 .contactbutton {
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: white;
   /* Fundo branco */
   border-color: white;

@@ -4,7 +4,7 @@ import { LanguageInfoComponent, Contact, Contactbar, Text } from "..";
 import "./style.css";
 
 export default function Header(props) {
-  const { content,languageIndex} = props;
+  const { content, languageIndex } = props;
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Header(props) {
     <>
       <header
         {...props}
-        className={`w-[100%] flex md:flex-col justify-between items-center sticky top-0 z-10 ${isScrolled ? "scrolled-header" : "top-header"
+        className={`w-full flex md:flex-col justify-between items-center sticky top-0 z-10 ${isScrolled ? "scrolled-header" : "top-header"
           }`}
       >
         <button
@@ -84,13 +84,13 @@ export default function Header(props) {
           </button>
 
         </ul>
-        <div className="flex justify-between gap-5 md:w-full">
-          <LanguageInfoComponent />
-
+        <div className="flex justify-between gap-5 ">
           <Contactbar className={isScrolled ? "contactbutton scrolled" : "contactbutton"} />
-          <Contact content={content} languageIndex={languageIndex}  />
+          <Contact content={content} languageIndex={languageIndex} />
+          <LanguageInfoComponent />
         </div>
       </header>
+
     </>
   );
 }

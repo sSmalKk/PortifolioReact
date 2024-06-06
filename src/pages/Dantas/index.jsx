@@ -107,7 +107,7 @@ export default function DantasPage() {
                   </div>
                 </div>
                 <div className="flex flex-row md:flex-col md:space-x-4 px-4 md:px-5 my-8">
-                  <Doublecollum languageIndex={languageIndex}  />
+                  <Doublecollum  />
 
 
                 </div>

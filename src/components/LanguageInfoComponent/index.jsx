@@ -54,7 +54,7 @@ const LanguageInfoComponent = () => {
                     <button
                         key={language}
                         onClick={() => handleLanguageChange(language, index)}
-                        className="block l-0 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left"
                         role="menuitem"
                     >
                         {language}
