@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading } from "..";
 import { content } from "../content.jsx";
-const languageIndex = localStorage.getItem('languageIndex');
+const languageIndex = localStorage.getItem('languageIndex') || 0;
 
 const ProgressBar = ({ percentage }) => {
   return (

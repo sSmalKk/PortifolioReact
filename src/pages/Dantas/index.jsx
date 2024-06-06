@@ -25,30 +25,6 @@ function generateRandomTransformations() {
 }
 // const animationDelay = 1; // Altere para o valor desejado
 export default function DantasPage() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-   
-  
-        // Debug language before saving
-        console.log('Detected language:', navigator.language);
-  
-        // Save the language in localStorage
-        localStorage.setItem('language', navigator.language);
-  
-      } catch (error) {
-        console.error('Erro ao obter informações:', error);
-      }
-    };
-  
-    fetchData();
-  
-    // Cleanup function
-    return () => {
-      // Any cleanup code
-    };
-  }, []);
-  
   
   useEffect(() => {
     const styleSheet = document.styleSheets[0];

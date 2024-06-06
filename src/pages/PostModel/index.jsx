@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Blog, content } from "../../components/content.jsx"
 
-const languageIndex = localStorage.getItem('languageIndex');
+const languageIndex = localStorage.getItem('languageIndex') || 0;
 
 
 
