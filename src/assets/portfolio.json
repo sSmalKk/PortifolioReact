@@ -7,6 +7,6 @@
         "image": "/images/javascript.png",
         "Logo": "https://via.placeholder.com/150",
         "body": "<section><h2>Descrição do Projeto</h2><p>Este é um projeto desenvolvido como parte do curso do FreeCodeCamp. Ele consiste em uma aplicação full-stack onde os usuários podem visualizar e aprender sobre diferentes projetos realizados ao longo do curso. Cada projeto é apresentado com um título, descrição, imagem ilustrativa, e conteúdo detalhado dividido em seções. Este portfólio exemplifica um desses projetos.</p></section><section><h2>Conteúdo Detalhado</h2><p>Este projeto inclui uma descrição detalhada das funcionalidades e tecnologias utilizadas. O conteúdo é estruturado em diferentes seções, como: <ul><li>Descrição do Projeto</li><li>Conteúdo Detalhado</li><li>Link</li><li>Logo</li></ul></p></section>",
-        "link": "https://github.com/sSmalKk/smalk-store"
+        "link": "https://github.com/sSmalKk/javascript-freecodecamp"
     }
 ]

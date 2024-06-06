@@ -101,7 +101,7 @@ export default function DantasPage() {
                 <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
                   {content[0].portfolioTitle}
                 </Heading>
-                <div className="flex flex-row items-center space-x-4 mt-4 text-center">
+                <div className="flex flex-row md:flex-col items-center space-x-4 mt-4 text-center">
                   <img src="/images/avatar.png" alt="avatar" className="avatar" />
                   <div className="flex flex-col items-center space-y-4 mt-4 text-center">
                     <Text size="7xl" as="h1" className="font-poppins-bold tracking-[1.50px] text-black text-responsive">
@@ -138,32 +138,21 @@ export default function DantasPage() {
 
             </div>
           </div>
-          <div className=" w-screen flex items-center justify-center"
-            style={{
-              backgroundColor: '#fff',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}>
-            <div
-              className="container-xs px-4 md:px-5"
-              style={{
-                backgroundColor: '#fff',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            >
-              <div className="flex flex-row items-center md:flex-col md:max-w-screen-xl md:mx-auto my-8" ref={personalInfoRef}>
-                <div className="h-screen md:h-auto md:relative md:w-full md:max-w-[379px]">
+          <div className="w-screen flex items-center justify-center" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="container-xs px-4 md:px-5" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className="flex flex-row  items-center md:flex-col md:max-w-screen-xl md:mx-auto my-8" ref={personalInfoRef}>
+                <div className="h-screen px-4 md:h-auto md:relative md:w-full md:max-w-[379px]">
                   <img src={content[0].personalimage} alt="container" className="w-[379px] h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
                 </div>
-                <div className="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full mt-8 md:mt-0">
+                <div className="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full mt-8 md:mt-0 md:ml-4"> {/* Removi md:ml-4 */}
                   <div>
                     <p className="text-lg tracking-[0.50px] md:text-base">{content[0].personalInfoTitle}</p>
-                    <p className="text-8xl mt-2 tracking-[-1.50px] md:text-4xl">{content[0].headerTitle}</p>
-                    <p className="text-6xl w-[81%] leading-[56px] md:text-base md:w-full">{content[0].personalInfoSubtitle}</p>
+                    <p className="text-6xl mt-2 tracking-[-1.50px] md:text-3xl">{content[0].headerTitle}</p>
+                    <p className="text-4xl w-[81%] leading-[40px] md:text-base md:w-full md:leading-normal">{content[0].personalInfoSubtitle}</p>
                   </div>
-                  <div className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0" ><Contact content={content} /></div>
-
+                  <div className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
+                    <Contact content={content} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -243,3 +232,9 @@ export default function DantasPage() {
     </>
   );
 }
+
+
+
+
+
+//PROG BAR PRECISA CHAMAR MENOS ATENÇÃO, CONTATO PRECISA CHAMAR MAIS
