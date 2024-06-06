@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Importe Link do React Router
-import { Img, Heading, Button } from "../../components"; // Importe os componentes necessários
+import { Link } from "react-router-dom";
+import { Img, Heading, Button } from "../../components";
 
-const BlogModel = ({languageIndex, blogData, content }) => {
+const BlogModel = ({ languageIndex, blogData, content }) => {
   const [filter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
@@ -25,12 +25,16 @@ const BlogModel = ({languageIndex, blogData, content }) => {
   const hasNextPage = indexOfLastPost < filteredPosts.length;
 
   return (
-    <div  className="mt-[18px] flex flex-col gap-5">
+    <div className="mt-[18px] flex flex-col gap-5">
       <div className="flex flex-col items-start gap-8 md:flex-col">
         {/* Destaque do primeiro post */}
-        <div className="mt-[18px] flex flex-col gap-5">
-          <div className="flex flex-col items-center">
-            <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5" >
+        <div className="mt-[18px] flex flex-col gap-5" style={{
+                  backgroundColor: '#fff',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}>
+          <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5"  >
               <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]" >
                 {content[languageIndex].filtrar}
               </Heading>
@@ -39,15 +43,18 @@ const BlogModel = ({languageIndex, blogData, content }) => {
             <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]">
               {blogData[0].author}
             </Heading>
-            <Heading size="xl" as="h5" className="mt-[7px] !text-gray-900">
-              {blogData[0].title}
-              <br />
-              {blogData[0].subtitle}
-            </Heading>
+            <div className="text-center">
+              <Heading size="xl" as="h5" className="mt-[7px] !text-gray-900">
+                {blogData[0].title}
+              </Heading>
+              <Heading size="lg" as="h6" className="mt-[7px] !text-gray-900">
+                {blogData[0].subtitle}
+              </Heading>
+            </div>
           </div>
           {/* Destaque do primeiro post */}
           <div className="flex flex-1 flex-col gap-8 md:self-stretch">
-            <Img src={blogData[0].image} alt="container" className="h-[453px] object-cover" />
+            <Img src={blogData[0].image} alt="container" className="h-[300px] object-cover" />
             <div className="flex flex-col items-start gap-[13px] rounded-[5px] border border-solid border-blue_gray-50 p-8 shadow-sm sm:p-5">
               <Heading as="h6" className="mt-[11px]">
                 {blogData[0].author}
@@ -70,17 +77,23 @@ const BlogModel = ({languageIndex, blogData, content }) => {
         {/* Lista de posts restantes */}
         <div className="grid-container">
           {currentPosts.map((post, index) => (
-            <div key={`blog-post-${index}`} className="blog-post">
-              <Link to={`/post/${post.id}`} key={`blog-post-${index}`} className="blog-post"> {/* Removi o "#top" do link */}
+            <div key={`blog-post-${index}`} className="blog-post" style={{
+              backgroundColor: '#fff',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}>
+              <Link to={`/post/${post.id}`} key={`blog-post-${index}`} className="blog-post">
                 <Img src={post.image} alt="container" className="post-image" />
                 <div className="post-content">
-                  <h6>{post.author}</h6>
-                  <h3>
-                    {post.title}
-                    <br />
-                    {post.subtitle}
-                  </h3>
-                  {/* Adicione o Link envolvendo o botão */}
+                  <Heading as="h6">{post.author}</Heading>
+                  <div className="text-center">
+                    <Heading as="h3">
+                      {post.title}
+                    </Heading>
+                    <Heading as="h4">
+                      {post.subtitle}
+                    </Heading>
+                  </div>
                   <Button className="!text-gray-900">
                     {content[languageIndex].cookiesmais}
                   </Button>

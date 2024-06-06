@@ -53,7 +53,7 @@ export default function DantasPage() {
 
 
       <div>
-        <div className="flex flex-col">
+        <div className="w-full flex flex-col">
           <div id="top" className="h-screen w-screen flex items-center justify-center"
             style={{
               position: 'fixed',
@@ -93,7 +93,7 @@ export default function DantasPage() {
               {/* quem sou */}
               <div className="flex flex-col items-center w-full space-y-4 mt-4 text-center">
                 <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
-                  {content[languageIndex].portfolioTitle}
+                  {content[languageIndex].sobre}
                 </Heading>
                 <div className="flex flex-row md:flex-col items-center space-x-4 mt-4 text-center">
                   <img src="/images/avatar.png" alt="avatar" className="avatar" />
@@ -107,7 +107,7 @@ export default function DantasPage() {
                   </div>
                 </div>
                 <div className="flex flex-row md:flex-col md:space-x-4 px-4 md:px-5 my-8">
-                  <Doublecollum  />
+                  <Doublecollum languageIndex={languageIndex} />
 
 
                 </div>
@@ -133,38 +133,35 @@ export default function DantasPage() {
             </div>
           </div>
           <div className="w-screen flex items-center justify-center" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className="container-xs px-4 md:px-5" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-              <div className="flex flex-row  items-center md:flex-col md:max-w-screen-xl md:mx-auto my-8" >
-                <div className="h-screen px-4 md:h-auto md:relative md:w-full md:max-w-[379px]">
-                  <img src={content[languageIndex].personalimage} alt="container" className="w-[379px] h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
+
+            <div className="flex flex-row md:flex-col items-center md:max-w-screen-xl md:mx-auto my-8">
+              <div className="h-screen px-4 md:h-auto md:relative md:w-full md:max-w-[379px] flex justify-center md:justify-end">
+                <img src={content[languageIndex].personalimage} alt="container" className="w-[379px] h-auto object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-[80vh]" />
+              </div>
+              <div className="flex flex-col justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full mt-8 md:mt-0">
+                <div>
+                  <p className="text-lg tracking-[0.50px] md:text-base">{content[languageIndex].personalInfoTitle}</p>
+                  <p className="text-6xl mt-2 tracking-[-1.50px] md:text-3xl">{content[languageIndex].headerTitle}</p>
+                  <p className="text-4xl w-[81%] leading-[40px] md:text-base md:w-full md:leading-normal">{content[languageIndex].personalInfoSubtitle}</p>
                 </div>
-                <div className="flex flex-col justify-start md:justify-center items-start md:items-center md:pl-10 md:pr-10 md:w-full mt-8 md:mt-0 md:ml-4"> {/* Removi md:ml-4 */}
-                  <div>
-                    <p className="text-lg tracking-[0.50px] md:text-base">{content[languageIndex].personalInfoTitle}</p>
-                    <p className="text-6xl mt-2 tracking-[-1.50px] md:text-3xl">{content[languageIndex].headerTitle}</p>
-                    <p className="text-4xl w-[81%] leading-[40px] md:text-base md:w-full md:leading-normal">{content[languageIndex].personalInfoSubtitle}</p>
-                  </div>
-                  <div id="projects" className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
-                    <Contact content={content} languageIndex={languageIndex} />
-                  </div>
+                <div id="projects" className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
+                  <Contact content={content} languageIndex={languageIndex} />
                 </div>
               </div>
             </div>
           </div>
-          {/* portfolio section */}
-          <div className="container-xs px-4 md:px-5">
-            <div className="flex flex-col items-center px-4 md:px-5 my-8" >
-              <Heading as="h3" style={{
-                color: "#007bff"
-              }} className="!font-bold uppercase tracking-[2.70px]">
-                {content[languageIndex].portfolioTitle}
-              </Heading>
-            </div>
-          </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
 
           {/* portfolio section */}
           <div className="container-xs px-4 md:px-5">
             <div className="flex text-white flex-col md:flex-col items-center gap-8">
+              <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
+                {content[languageIndex].portfolioTitle}
+              </Heading>
+
               {Portfolio.map((item, index) => (
                 <div className="portfolio-item flex flex-col items-center md:items-start mb-8 md:mb-12" key={`portfolio-item-${index}`}>
                   <img
@@ -188,9 +185,27 @@ export default function DantasPage() {
               backgroundPosition: 'center',
             }}>
 
-            <div className="container-xs pt-10 px-4 md:px-5">
-              <BlogModel id="blog" blogData={Blog} content={content} languageIndex={languageIndex} />
+            <div id="blog" className="w-screen flex items-center justify-center  p-4 md:p-5" style={{
+              backgroundColor: '#fff',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}>
+              <div className="container-xs bg-gray-100 p-4 md:p-5">
+                <div className="flex items-center justify-center" style={{
+                  backgroundColor: '#fff',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }} >
+                  <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
+                    {content[languageIndex].blogTitle}
+                  </Heading>
+                </div>
+                <div className="bg-gray-100 mt-4 p-4 md:p-8">
+                  <BlogModel id="blog" blogData={Blog} content={content} languageIndex={languageIndex} />
+                </div>
+              </div>
             </div>
+
 
           </div>
           <div style={{
@@ -202,7 +217,7 @@ export default function DantasPage() {
             {/* parceiros section */}
             <div className="mt-8 flex flex-col gap-8" >
               <div className="flex flex-col items-center px-4 md:px-5">
-                <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
+                <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
                   {content[languageIndex].ParceirosTitle}
                 </Heading>
               </div>

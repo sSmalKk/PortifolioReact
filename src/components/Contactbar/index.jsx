@@ -18,7 +18,7 @@ export default function Contactbar({ className }) {
   };
 
   return (
-    <div>
+    <div className="flex flex-row gap-2 md:flex-col">
       <button
         onClick={handleExpand}
         className={`contactbutton-white  h-[36px] w-[36px] rounded-[18px] px-2.5 ${className}`}
@@ -26,7 +26,7 @@ export default function Contactbar({ className }) {
         +
       </button>
       {expanded && (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-row gap-2 md:flex-col">
           <button
             onClick={() => handleRedirect("https://www.linkedin.com/in/gustavodantasdev/")}
             className={`contactbutton-white h-[36px] w-[36px] rounded-[18px] px-2.5 ${className}`}

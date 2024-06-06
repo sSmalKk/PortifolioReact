@@ -1,13 +1,13 @@
 import React from "react";
 import { Heading } from "..";
-import { content } from "../content.jsx"
+import { content } from "../content.jsx";
 const languageIndex = localStorage.getItem('languageIndex');
 
 const ProgressBar = ({ percentage }) => {
   return (
-    <div className="h-2 bg-blue-500 rounded-md">
+    <div className="h-2 bg-blue-400 rounded-md"> {/* Altera a cor principal da barra de progresso para azul */}
       <div
-        className="h-full bg-green-500 rounded-md"
+        className="h-full bg-blue-600 rounded-md"
         style={{ width: `${percentage}%` }}
       ></div>
     </div>
