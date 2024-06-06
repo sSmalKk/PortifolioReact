@@ -178,7 +178,7 @@ export default function Post() {
 
             <BlogModel blogData={Blog} content={content} />
             {/* footer section */}
-            <Footer />
+            <Footer content={content} />
           </div>
         </div>
       </div>

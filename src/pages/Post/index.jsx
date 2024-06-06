@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { BlogModel } from "../../components";
 import { Blog, content } from "../../components/content.jsx"
 
-
 export default function Post({ id, blog }) {
-  // Verifica se o objeto blog e o post 0 existem antes de tentar acessá-los
+  const post = blog[0]; // Seleciona o primeiro post
+  useEffect(() => {
+    // Rolando a página para o topo quando a página do post for carregada
+    window.scrollTo(0, 0);
+  }, []); // Usando um array vazio como segundo argumento para garantir que isso só aconteça uma vez, após o carregamento inicial da página
+
   if (!blog || !Array.isArray(blog) || !blog[0]) {
     return <p>Post not found</p>;
   }
 
-  const post = blog[0]; // Seleciona o primeiro post
 
   return (
     <>
@@ -25,7 +28,7 @@ export default function Post({ id, blog }) {
         <Header content={content} style={{ position: 'fixed', padding: '5px' }} />
         <div className="flex flex-col items-center gap-5" style={{ marginTop: '100px' }}>
           {/* about section */}
-          <div className="container-xs flex flex-col items-center gap-[83px] md:gap-[62px] md:p-5 sm:gap-[41px]">
+          <div id={"top"} className="container-xs flex flex-col items-center gap-[83px] md:gap-[62px] md:p-5 sm:gap-[41px]">
             <div className="flex items-center gap-[50px] self-stretch md:flex-col">
               <img
                 src={post.image}
@@ -52,7 +55,7 @@ export default function Post({ id, blog }) {
           {/* footer section */}
           <BlogModel blogData={Blog} content={content} />
 
-          <Footer />
+          <Footer content={content} />
         </div>
       </div>
     </>

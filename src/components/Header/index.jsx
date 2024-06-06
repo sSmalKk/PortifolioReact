@@ -34,7 +34,7 @@ export default function Header(props) {
           }`}
       >
         <button
-          onClick={() => (window.location.href = "/#about")}
+          onClick={() => (window.location.href = "/#top")}
           className="mainbutton h-[36px] min-w-[92px] border border-solid px-[15px] text-xs tracking-[0.50px] text-white-A700"
         >
           <Text
@@ -47,30 +47,6 @@ export default function Header(props) {
           </Text>
         </button>
         <ul className="flex items-center gap-[15px]">
-          <button
-            onClick={() => (window.location.href = "/#services")}
-            style={{ margin: 5 }}
-            className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
-          >
-            <Text style={{
-              color: isScrolled ? "#000000" : "#fff",
-            }}
-              className="text-base font-semibold tracking-[0.50px]">
-              {content[0].servicos}
-            </Text>
-          </button>
-
-          <button
-            onClick={() => (window.location.href = "/#projects")}
-            className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
-          >
-            <Text style={{
-              color: isScrolled ? "#000000" : "#fff",
-            }}
-              className="text-base font-normal tracking-[0.50px]">
-              {content[0].projetos}
-            </Text>
-          </button>
 
           <button
             onClick={() => (window.location.href = "/#about")}
@@ -83,6 +59,30 @@ export default function Header(props) {
               {content[0].sobre}
             </Text>
           </button>
+          <button
+            onClick={() => (window.location.href = "/#projects")}
+            className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
+          >
+            <Text style={{
+              color: isScrolled ? "#000000" : "#fff",
+            }}
+              className="text-base font-normal tracking-[0.50px]">
+              {content[0].projetos}
+            </Text>
+          </button>
+          <button
+            onClick={() => (window.location.href = "/#blog")}
+            style={{ margin: 5 }}
+            className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
+          >
+            <Text style={{
+              color: isScrolled ? "#000000" : "#fff",
+            }}
+              className="text-base font-semibold tracking-[0.50px]">
+              {content[0].blogTitleuper}
+            </Text>
+          </button>
+
         </ul>
         <div className="flex justify-between gap-5 md:w-full">
           <Contactbar className={isScrolled ? "contactbutton scrolled" : "contactbutton"} />

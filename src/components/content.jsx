@@ -158,7 +158,7 @@ const content = [
       },
       // Adicione mais portfólios conforme necessário
     ],
-    filtrar:"filtra",
+    filtrar: "filtra",
     parceiros: [
       {
         link: "https://example.com",
@@ -187,7 +187,9 @@ const content = [
     personalInfoButton: "CONTATO",
     typehere: "digite aqui...",
     portfolioTitle: "PORTFOLIO",
+    portifolio: "Portfolio",
     blogTitle: "Blog",
+    blogTitleuper: "BLOG",
     blogSubtitle: "Conteúdos sobre o marketing",
     ParceirosTitle: "PARCEIROS",
     buttonPrevious: "Anterior",

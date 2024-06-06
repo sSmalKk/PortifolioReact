@@ -33,7 +33,7 @@ export default function Page({ title, texts }) {
         </div>
 
         {/* footer section */}
-        <Footer />
+        <Footer content={content}/>
       </div>
     </>
   );

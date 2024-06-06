@@ -96,6 +96,18 @@ const PopupManager = ({ content, url }) => {
     }
   };
 
+  useEffect(() => {
+    const popupStorageKey = `popupShown-${currentPopup}`;
+
+    // Verificar se o popup já foi mostrado anteriormente
+    if (localStorage.getItem(popupStorageKey)) {
+      setPopupQueue((prevQueue) => prevQueue.filter((popup) => popup !== currentPopup));
+    } else {
+      // Marcar o popup como mostrado no localStorage
+      localStorage.setItem(popupStorageKey, true);
+    }
+  }, [currentPopup]);
+
   return (
     <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
       <div className="main-content flex flex-col items-center">

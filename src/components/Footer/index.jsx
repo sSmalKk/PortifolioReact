@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Importe o Link do React Router
-import { Text, Contactbar, Button } from "./..";
+import { Text, Contactbar } from "./..";
 
-export default function Footer({ ...props }) {
+export default function Footer({ content,...props }) {
   return (
     <footer {...props}>
       <div style={{
@@ -15,31 +15,43 @@ export default function Footer({ ...props }) {
             DANTAS
           </Text>
           <ul className="flex items-center gap-[15px]">
-            {/* Use Link em vez de <a> */}
-            <Link to="/#services" className="cursor-pointer rounded-[3px] active:text-black-900">
-              <Text className="text-base font-semibold tracking-[0.50px]">
-                SERVIÇOS
-              </Text>
-            </Link>
-            <Link to="/#projects" className="cursor-pointer rounded-[3px] active:text-black-900">
-              <Text className="text-base font-normal tracking-[0.50px]">
-                PROJETOS
-              </Text>
-            </Link>
-            <Link to="/#about" className="cursor-pointer rounded-[3px] active:text-black-900">
-              <Text className="text-base font-normal tracking-[0.50px]">
-                SOBRE
-              </Text>
-            </Link>
-          </ul>
-          <Button
-            color="green_700"
-            size="md"
-            className="min-w-[92px] rounded-[18px] border border-solid border-green-400 tracking-[0.50px]"
-          >
-            CONTATO
-          </Button>
 
+            <button
+              onClick={() => (window.location.href = "/#about")}
+              className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
+            >
+              <Text style={{
+                color: "#000000",
+              }}
+                className="text-base font-normal tracking-[0.50px]">
+                {content[0].sobre}
+              </Text>
+            </button>
+            <button
+              onClick={() => (window.location.href = "/#projects")}
+              className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
+            >
+              <Text style={{
+                color: "#000000",
+              }}
+                className="text-base font-normal tracking-[0.50px]">
+                {content[0].projetos}
+              </Text>
+            </button>
+            <button
+              onClick={() => (window.location.href = "/#blog")}
+              style={{ margin: 5 }}
+              className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
+            >
+              <Text style={{
+                color: "#000000",
+              }}
+                className="text-base font-semibold tracking-[0.50px]">
+                {content[0].blogTitleuper}
+              </Text>
+            </button>
+
+          </ul>
           <Contactbar />
 
         </div>

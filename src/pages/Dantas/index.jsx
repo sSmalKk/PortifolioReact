@@ -41,12 +41,6 @@ export default function DantasPage() {
   }, []);
 
 
-  // Referências para as seções
-  const personalInfoRef = useRef(null);
-  const portfolioRef = useRef(null);
-  const partnersRef = useRef(null);
-  const topRef = useRef(null);
-
 
   return (
     <>
@@ -58,9 +52,9 @@ export default function DantasPage() {
 
 
 
-      <div ref={topRef}>
+      <div>
         <div className="flex flex-col">
-          <div className="h-screen w-screen flex items-center justify-center"
+          <div id="top" className="h-screen w-screen flex items-center justify-center"
             style={{
               position: 'fixed',
               zIndex: -99,
@@ -88,7 +82,7 @@ export default function DantasPage() {
             </div>
           </div>
 
-          <div className=" w-screen flex items-center justify-center"
+          <div id="about" className=" w-screen flex items-center justify-center"
             style={{
               backgroundColor: '#fff',
               backgroundSize: 'cover',
@@ -122,7 +116,7 @@ export default function DantasPage() {
 
 
 
-              {/* <div id="services" ref={servicesRef}>
+              {/* <div id="services" >
                   
                   <div className="my-8 flex items-center justify-around gap-5 overflow-auto border-b border-t border-solid border-gray-300 py-[13px] md:flex-col">
                     {services.map((service, index) => (
@@ -140,7 +134,7 @@ export default function DantasPage() {
           </div>
           <div className="w-screen flex items-center justify-center" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="container-xs px-4 md:px-5" style={{ backgroundColor: '#fff', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-              <div className="flex flex-row  items-center md:flex-col md:max-w-screen-xl md:mx-auto my-8" ref={personalInfoRef}>
+              <div className="flex flex-row  items-center md:flex-col md:max-w-screen-xl md:mx-auto my-8" >
                 <div className="h-screen px-4 md:h-auto md:relative md:w-full md:max-w-[379px]">
                   <img src={content[0].personalimage} alt="container" className="w-[379px] h-full object-cover md:static md:w-auto md:h-auto md:transform-none md:max-h-screen" />
                 </div>
@@ -150,7 +144,7 @@ export default function DantasPage() {
                     <p className="text-6xl mt-2 tracking-[-1.50px] md:text-3xl">{content[0].headerTitle}</p>
                     <p className="text-4xl w-[81%] leading-[40px] md:text-base md:w-full md:leading-normal">{content[0].personalInfoSubtitle}</p>
                   </div>
-                  <div className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
+                  <div id="projects" className="tracking-[0.50px] md:text-sm self-end mt-4 md:mt-0">
                     <Contact content={content} />
                   </div>
                 </div>
@@ -159,7 +153,7 @@ export default function DantasPage() {
           </div>
           {/* portfolio section */}
           <div className="container-xs px-4 md:px-5">
-            <div className="flex flex-col items-center px-4 md:px-5 my-8" ref={portfolioRef}>
+            <div className="flex flex-col items-center px-4 md:px-5 my-8" >
               <Heading as="h3" style={{
                 color: "#007bff"
               }} className="!font-bold uppercase tracking-[2.70px]">
@@ -187,15 +181,15 @@ export default function DantasPage() {
           </div>
 
           {/* blog section */}
-          <div className=" w-screen flex items-center justify-center"
+          <div id="blog" className=" w-screen flex items-center justify-center"
             style={{
               backgroundColor: '#fff',
               backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundPosition: 'center',
             }}>
 
-            <div className="container-xs px-4 md:px-5">
-              <BlogModel blogData={Blog} content={content} />
+            <div className="container-xs pt-10 px-4 md:px-5">
+              <BlogModel id="blog" blogData={Blog} content={content} />
             </div>
 
           </div>
@@ -206,7 +200,7 @@ export default function DantasPage() {
           }} className="w-screen   px-4 md:px-5">
 
             {/* parceiros section */}
-            <div className="mt-8 flex flex-col gap-8" ref={partnersRef}>
+            <div className="mt-8 flex flex-col gap-8" >
               <div className="flex flex-col items-center px-4 md:px-5">
                 <Heading as="h6" className="!font-bold uppercase tracking-[2.70px]">
                   {content[0].ParceirosTitle}
@@ -225,7 +219,7 @@ export default function DantasPage() {
           </div>
 
         </div >
-        <Footer />
+        <Footer content={content} />
       </div>
 
 

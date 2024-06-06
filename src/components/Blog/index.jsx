@@ -25,15 +25,15 @@ const BlogModel = ({ blogData, content }) => {
   const hasNextPage = indexOfLastPost < filteredPosts.length;
 
   return (
-    <div className="mt-[18px] flex flex-col gap-5">
+    <div  className="mt-[18px] flex flex-col gap-5">
       <div className="flex flex-col items-start gap-8 md:flex-col">
         {/* Destaque do primeiro post */}
         <div className="mt-[18px] flex flex-col gap-5">
           <div className="flex flex-col items-center">
-            <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5">
-            <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]">
-              {content[0].filtrar}
-            </Heading> 
+            <div className="flex flex-col items-start gap-2.5 self-stretch rounded-[3px] p-2.5" >
+              <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]" >
+                {content[0].filtrar}
+              </Heading>
               <input className="!font-inter tracking-[0.50px] !text-black-900_60" placeholder="Filter" />
             </div>
             <Heading as="h4" className="!font-bold uppercase tracking-[2.70px]">
@@ -60,10 +60,10 @@ const BlogModel = ({ blogData, content }) => {
                 </>
               </Heading>
               <Link to={`post/${blogData[0].id}`}>
-              <Button className="!text-gray-900">
-                {content[0].cookiesmais}
-              </Button>
-            </Link>
+                <Button className="!text-gray-900">
+                  {content[0].cookiesmais}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -71,21 +71,21 @@ const BlogModel = ({ blogData, content }) => {
         <div className="grid-container">
           {currentPosts.map((post, index) => (
             <div key={`blog-post-${index}`} className="blog-post">
-              <Img src={post.image} alt="container" className="post-image" />
-              <div className="post-content">
-                <h6>{post.author}</h6>
-                <h3>
-                  {post.title}
-                  <br />
-                  {post.subtitle}
-                </h3>
-                {/* Adicione o Link envolvendo o botão */}
-                <Link to={`/post/${post.id}`}>
+              <Link to={`/post/${post.id}`} key={`blog-post-${index}`} className="blog-post"> {/* Removi o "#top" do link */}
+                <Img src={post.image} alt="container" className="post-image" />
+                <div className="post-content">
+                  <h6>{post.author}</h6>
+                  <h3>
+                    {post.title}
+                    <br />
+                    {post.subtitle}
+                  </h3>
+                  {/* Adicione o Link envolvendo o botão */}
                   <Button className="!text-gray-900">
                     {content[0].cookiesmais}
                   </Button>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
