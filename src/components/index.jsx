@@ -21,5 +21,6 @@ import PortfolioComponent from "./PortfolioComponent";
 import Parceiros from "./Parceiros";
 import PCInfoComponent from "./PCInfoComponent";
 import Doublecollum from "./Doublecollum";
+import LanguageInfoComponent from "./LanguageInfoComponent";
 
-export { Doublecollum, Parceiros, PortfolioComponent, OrderComponent, MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };
+export { LanguageInfoComponent, Doublecollum, Parceiros, PortfolioComponent, OrderComponent, MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };

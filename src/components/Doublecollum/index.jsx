@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading } from "..";
-import { info } from "../content.jsx"
+import { content } from "../content.jsx"
 
 const ProgressBar = ({ percentage }) => {
   return (
@@ -52,30 +52,30 @@ const Doublecollum = () => {
  <div className="flex flex-col flex-1 bg-gray-100 p-4 space-y-4">
                     
                     <InfoColumn title="Personal Details" items={[
-        `Name: ${info.personalDetails.name}`,
-        `Nationality: ${info.personalDetails.nationality}`,
-        `Age: ${info.personalDetails.age}`,
-        `DOB: ${info.personalDetails.dob}`,
-        `Birthplace: ${info.personalDetails.birthPlace}`,
-        `Address: ${info.personalDetails.address}`,
-        `Phone: ${info.personalDetails.phone.join(", ")}`,
-        `Email: ${info.personalDetails.email}`,
-        `GitHub: ${info.personalDetails.github}`,
-        `Portfolio: ${info.personalDetails.portfolio}`
+        `Name: ${content[0].personalDetails.name}`,
+        `Nationality: ${content[0].personalDetails.nationality}`,
+        `Age: ${content[0].personalDetails.age}`,
+        `DOB: ${content[0].personalDetails.dob}`,
+        `Birthplace: ${content[0].personalDetails.birthPlace}`,
+        `Address: ${content[0].personalDetails.address}`,
+        `Phone: ${content[0].personalDetails.phone.join(", ")}`,
+        `Email: ${content[0].personalDetails.email}`,
+        `GitHub: ${content[0].personalDetails.github}`,
+        `Portfolio: ${content[0].personalDetails.portfolio}`
       ]} />
-      <InfoColumn title="Education" items={info.education} />
-      <InfoColumn title="Professional Profile" items={info.professionalProfile} />
-      <InfoColumn title="Methodologies" items={info.methodologies} />
-      <InfoColumn title="Certifications" items={info.certifications} />
+      <InfoColumn title="Education" items={content[0].education} />
+      <InfoColumn title="Professional Profile" items={content[0].professionalProfile} />
+      <InfoColumn title="Methodologies" items={content[0].methodologies} />
+      <InfoColumn title="Certifications" items={content[0].certifications} />
                   </div>
                   <div className="flex flex-col flex-1 bg-gray-200 p-4 space-y-4 mt-4 md:mt-0">
                     
-                    <SkillsColumn title="Knowledge" skills={info.knowledge} />
-      <SkillsColumn title="Programming Languages" skills={info.programmingLanguages} />
-      <SkillsColumn title="Databases" skills={info.databases} />
-      <SkillsColumn title="Frameworks" skills={info.frameworks} />
-      <SkillsColumn title="Tools" skills={info.tools} />
-      <SkillsColumn title="Additional Skills" skills={info.additionalSkills} />
+                    <SkillsColumn title="Knowledge" skills={content[0].knowledge} />
+      <SkillsColumn title="Programming Languages" skills={content[0].programmingLanguages} />
+      <SkillsColumn title="Databases" skills={content[0].databases} />
+      <SkillsColumn title="Frameworks" skills={content[0].frameworks} />
+      <SkillsColumn title="Tools" skills={content[0].tools} />
+      <SkillsColumn title="Additional Skills" skills={content[0].additionalSkills} />
                   </div>
     </div>
   );

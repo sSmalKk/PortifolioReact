@@ -2,144 +2,162 @@ import blogPosts from "../assets/posts.json";
 import services from "../assets/orders.json";
 import Portfolio from "../assets/portfolio.json";
 import parceiros from "../assets/parceiros.json";
-const info = {
-  personalDetails: {
-    name: "Gustavo Dantas Guimarães",
-    nationality: "Brasileiro",
-    age: 25,
-    dob: "21/12/1998",
-    birthPlace: "Monte Alegre/MG",
-    address: "QE 15 CJ N CASA 47 GUARA-DF",
-    phone: ["(61)9.8159-4849", "(61)9.8195-5443"],
-    email: "dantaswebdesign77@gmail.com",
-    github: "https://github.com/sSmalKk",
-    portfolio: "https://dantastec.netlify.app"
-  },
-  education: [
-    "Tecnólogo em Análise e Desenvolvimento de Sistema (Unopar-Ead)",
-    "Técnico em Computação Gráfica (Escola Técnica do Guara-CEPAG)"
-  ],
-  professionalProfile: [
-    "Busco constantemente sair da zona de conforto",
-    "Me sinto mais motivado e produtivo ao trabalhar sob pressão",
-    "Sou proativo, empreendedor e encaro desafios com determinação"
-  ],
-  professionalExperience: [
-    {
-      role: "Web Designer",
-      company: "Espaço Multiplicidades",
-      period: "2019/2023"
-    },
-    {
-      role: "Estagiário, secretaria",
-      company: "Auto Escola Defensiva",
-      period: "2016/2017"
-    },
-    {
-      role: "Design Gráfico e Web Design",
-      company: "Implante Giovani Centro",
-      period: "2016/2017",
-      website: "http://implantegiovanicentro.com.br"
-    }
-  ],
-  methodologies: [
-    "Agile Scrum", "Lean", "Design Sprint", "Kanban", "Design Thinking", "Sprint Method", "Kanban Method"
-  ],
-  certifications: [
-    "Informática básica (PRATIK) 2012",
-    "Windows, Word, Excel, PowerPoint",
-    "Web Design (CEBRAC) 2014",
-    "Photoshop CS4 (Prepara cursos) 2013",
-    "Montagem e Manutenção de computadores (Senac) 2015",
-    "Redes sociais (CEBRAC) 2012",
-    "Introdução à Linguagem Python",
-    "Direito Internacional",
-    "Planejamento Estratégico",
-    "Introdução à Análise de Dados com Python",
-    "Matemática Financeira para Análise de Riscos",
-    "Compliance e Governança Corporativa"
-  ],
-  knowledge: [
-    "CSS 3", "Ajax", "JQuery", "Pandas"
-  ],
-  programmingLanguages: [
-    "Java 8", "Angular JS", "TypeScript", "JavaScript", "JSON", "C++", "PHP", "Python"
-  ],
-  databases: [
-    "SQL", "MongoDB"
-  ],
-  frameworks: [
-    "React.js", "Redux", "Tailwind CSS", "Bootstrap 3 ou superior", "Node.js", "Three.js", "Canon.js", "Fiber"
-  ],
-  tools: [
-    "GIT", "HTML 5", "XML"
-  ],
-  additionalSkills: [
-    "Experiência com Illustrator, Photoshop, Blender, Wordpress e Elementor",
-    "Inglês fluente",
-    "Noções de Atuaria"
-  ]
-};
 
 const content = [
+
   {
-    language: "PT",
-    services: [
+    language: "en-US",
+
+    changelogsText: "Changelogs",
+    changelog: [
       {
-        designtype: 1,
-        id: 'Service1',
-        name: 'Service 1',
-        subtitle: 'Subtitle 1',
-        text: 'This is the text for service 1',
-        button: 'Learn More',
-        image: "images/img_container.png",
-        popupType: 'Service1Popup' // Adicione o tipo de popup associado ao serviço 1
-      },
-      {
-        designtype: 2,
-        id: 'Service2',
-        name: 'Service 2',
-        subtitle: 'Subtitle 2',
-        text: 'This is the text for service 2',
-        button: 'Learn More',
-        image: "images/img_container.png",
-        popupType: 'Service2Popup' // Adicione o tipo de popup associado ao serviço 2
-      },
-      {
-        designtype: 3,
-        id: 'Service3',
-        name: 'Service 3',
-        subtitle: 'Subtitle 3',
-        text: 'This is the text for service 3',
-        button: 'Learn More',
-        image: "images/img_container.png",
-        imagePosition: 'center',
-        popupType: 'Service3Popup' // Adicione o tipo de popup associado ao serviço 3
-      },
-      {
-        designtype: 3,
-        id: 'Service4',
-        name: 'Service 4',
-        subtitle: 'Subtitle 4',
-        text: 'This is the text for service 4',
-        button: 'Learn More',
-        image: "images/img_container.png",
-        imagePosition: 'start',
-        popupType: 'Service4Popup' // Adicione o tipo de popup associado ao serviço 4
-      },
-      {
-        designtype: 3,
-        id: 'Service5',
-        name: 'Service 5',
-        subtitle: 'Subtitle 5',
-        text: 'This is the text for service 5',
-        button: 'Learn More',
-        image: "images/img_container.png",
-        imagePosition: 'end',
-        popupType: 'Service5Popup' // Adicione o tipo de popup associado ao serviço 5
-      },
-      // Adicione mais serviços conforme necessário
+        id: 1,
+        title: "0.0.1",
+        content: "First version of the site, fronent in react, backend in node.js, mongo.db in test phase",
+      }
     ],
+
+    Portfolio: [
+      {
+        title: "implante giovani centro",
+        type: "link",
+        img: "/images/img_link_396x407.png",
+        link: "https://www.implantegiovanicentro.com.br",
+      },
+      // Add more portfolios as needed
+    ],
+    filter: "filter",
+    partners: [
+      {
+        link: "https://example.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 1"
+      }, {
+        link: "https://example.com",
+        image: "images/img_link_200x200.png",
+        title: "Partner 1"
+      }
+      // Add more Partners as needed
+    ],
+    contact: "contact",
+    cookiesa: "Here goes the explanatory content about cookies...",
+    cookiesmais: "read more...",
+    cookiesmenos: "read less",
+    cookiesb: "Additional content that appears when the ''Read more'' button is clicked.",
+    headerTitle: "GUSTAVO DANTAS",
+    headerSubtitle: "Specialized solutions for your business",
+    personalInfoTitle: "Send me a message!",
+    personalInfoSubtitle: "Specialized solutions for your business",
+    sobre: "ABOUT",
+    projetos: "PROJECTS",
+    contato: "CONTACT",
+    servicos: "SERVICES",
+    personalInfoButton: "CONTACT",
+    typehere: "type here...",
+    portfolioTitle: "PORTFOLIO",
+    portifolio: "Portfolio",
+    blogTitle: "Blog",
+    blogTitleuper: "BLOG",
+    blogSubtitle: "Contents about marketing",
+    ParceirosTitle: "PARTNERS",
+    buttonPrevious: "Previous",
+    buttonNext: "Next",
+    popuptitle: "Site under Construction",
+    popsubtitle: "Sorry for the inconvenience. We're working to improve your experience.",
+    personalimage: "images/img_container.png",
+    messageSentSuccess: "Message sent successfully!",
+    errorMessage: "Error sending message.",
+    solucoes: "Custom solutions!",
+    titulo1: "Fullstack Developer",
+    titulo2: "UX/UI",
+    titulo3: "Web Designer",
+
+    personalDetails: {
+      name: "Gustavo Dantas Guimarães",
+      nationality: "Brazilian",
+      age: 25,
+      dob: "12/21/1998",
+      birthPlace: "Monte Alegre/MG",
+      address: "QE 15 CJ N HOUSE 47 GUARA-DF",
+      phone: ["(61)9.8159-4849", "(61)9.8195-5443"],
+      email: "dantaswebdesign77@gmail.com",
+      github: "https://github.com/sSmalKk",
+      portfolio: "https://dantastec.netlify.app"
+    },
+    education: [
+      "Technologist in Analysis and System Development (Unopar-Ead)",
+      "Technical in Graphic Computing (Technical School of Guara-CEPAG)"
+    ],
+    professionalProfile: [
+      "I constantly seek to leave the comfort zone",
+      "I feel more motivated and productive when working under pressure",
+      "I am proactive, entrepreneurial and face challenges with determination"
+    ],
+    professionalExperience: [
+      {
+        role: "Web Designer",
+        company: "Espaço Multiplicidades",
+        period: "2019/2023"
+      },
+      {
+        role: "Intern, secretary",
+        company: "Auto Escola Defensiva",
+        period: "2016/2017"
+      },
+      {
+        role: "Graphic Design and Web Design",
+        company: "Implante Giovani Centro",
+        period: "2016/2017",
+        website: "http://implantegiovanicentro.com.br"
+      }
+    ],
+    methodologies: [
+      "Agile Scrum", "Lean", "Design Sprint", "Kanban", "Design Thinking", "Sprint Method", "Kanban Method"
+    ],
+    certifications: [
+      "Basic Computing (PRATIK) 2012",
+      "Windows, Word, Excel, PowerPoint",
+      "Web Design (CEBRAC) 2014",
+      "Photoshop CS4 (Prepara cursos) 2013",
+      "Assembly and Maintenance of Computers (Senac) 2015",
+      "Social Networks (CEBRAC) 2012",
+      "Introduction to Python Language",
+      "International Law",
+      "Strategic Planning",
+      "Introduction to Data Analysis with Python",
+      "Financial Mathematics for Risk Analysis",
+      "Compliance and Corporate Governance"
+    ],
+
+    knowledge: [
+      "CSS 3", "Ajax", "JQuery", "Pandas"
+    ],
+
+    programmingLanguages: [
+      "Java 8", "Angular JS", "TypeScript", "JavaScript", "JSON", "C++", "PHP", "Python"
+    ],
+
+    databases: [
+      "SQL", "MongoDB"
+    ],
+
+    frameworks: [
+      "React.js", "Redux", "Tailwind CSS", "Bootstrap 3 or higher", "Node.js", "Three.js", "Canon.js", "Fiber"
+    ],
+
+    tools: [
+      "GIT", "HTML 5", "XML"
+    ],
+
+    additionalSkills: [
+      "Experience with Illustrator, Photoshop, Blender, Wordpress, and Elementor",
+      "Fluent in English",
+      "Notions of Actuarial Science"
+    ]
+
+  }, {
+    language: "pt-BR",
+
     changelogsText: "Changelogs",
     changelog: [
       {
@@ -204,6 +222,88 @@ const content = [
     titulo2: "UX/UI",
     titulo3: "Web Designer",
 
+    personalDetails: {
+      name: "Gustavo Dantas Guimarães",
+      nationality: "Brasileiro",
+      age: 25,
+      dob: "21/12/1998",
+      birthPlace: "Monte Alegre/MG",
+      address: "QE 15 CJ N CASA 47 GUARA-DF",
+      phone: ["(61)9.8159-4849", "(61)9.8195-5443"],
+      email: "dantaswebdesign77@gmail.com",
+      github: "https://github.com/sSmalKk",
+      portfolio: "https://dantastec.netlify.app"
+    },
+    education: [
+      "Tecnólogo em Análise e Desenvolvimento de Sistema (Unopar-Ead)",
+      "Técnico em Computação Gráfica (Escola Técnica do Guara-CEPAG)"
+    ],
+    professionalProfile: [
+      "Busco constantemente sair da zona de conforto",
+      "Me sinto mais motivado e produtivo ao trabalhar sob pressão",
+      "Sou proativo, empreendedor e encaro desafios com determinação"
+    ],
+    professionalExperience: [
+      {
+        role: "Web Designer",
+        company: "Espaço Multiplicidades",
+        period: "2019/2023"
+      },
+      {
+        role: "Estagiário, secretaria",
+        company: "Auto Escola Defensiva",
+        period: "2016/2017"
+      },
+      {
+        role: "Design Gráfico e Web Design",
+        company: "Implante Giovani Centro",
+        period: "2016/2017",
+        website: "http://implantegiovanicentro.com.br"
+      }
+    ],
+    methodologies: [
+      "Agile Scrum", "Lean", "Design Sprint", "Kanban", "Design Thinking", "Sprint Method", "Kanban Method"
+    ],
+    certifications: [
+      "Basic Computing (PRATIK) 2012",
+      "Windows, Word, Excel, PowerPoint",
+      "Web Design (CEBRAC) 2014",
+      "Photoshop CS4 (Prepara cursos) 2013",
+      "Assembly and Maintenance of Computers (Senac) 2015",
+      "Social Networks (CEBRAC) 2012",
+      "Introduction to Python Language",
+      "International Law",
+      "Strategic Planning",
+      "Introduction to Data Analysis with Python",
+      "Financial Mathematics for Risk Analysis",
+      "Compliance and Corporate Governance"
+    ],
+
+    knowledge: [
+      "CSS 3", "Ajax", "JQuery", "Pandas"
+    ],
+
+    programmingLanguages: [
+      "Java 8", "Angular JS", "TypeScript", "JavaScript", "JSON", "C++", "PHP", "Python"
+    ],
+
+    databases: [
+      "SQL", "MongoDB"
+    ],
+
+    frameworks: [
+      "React.js", "Redux", "Tailwind CSS", "Bootstrap 3 or higher", "Node.js", "Three.js", "Canon.js", "Fiber"
+    ],
+
+    tools: [
+      "GIT", "HTML 5", "XML"
+    ],
+
+    additionalSkills: [
+      "Experience with Illustrator, Photoshop, Blender, Wordpress, and Elementor",
+      "Fluent in English",
+      "Notions of Actuarial Science"
+    ]
 
   }
 ];
@@ -212,5 +312,6 @@ const content = [
 
 
 
+
 const Blog = blogPosts;
-export { info, Blog, parceiros, Portfolio, services, content };
+export { Blog, parceiros, Portfolio, services, content };

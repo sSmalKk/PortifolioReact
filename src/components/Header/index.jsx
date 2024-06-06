@@ -1,6 +1,6 @@
 // Header.js
 import React, { useState, useEffect } from "react";
-import { Contact, Contactbar, Text } from "..";
+import { LanguageInfoComponent, Contact, Contactbar, Text } from "..";
 import "./style.css";
 
 export default function Header(props) {
@@ -85,6 +85,8 @@ export default function Header(props) {
 
         </ul>
         <div className="flex justify-between gap-5 md:w-full">
+          <LanguageInfoComponent />
+
           <Contactbar className={isScrolled ? "contactbutton scrolled" : "contactbutton"} />
           <Contact content={content} />
         </div>

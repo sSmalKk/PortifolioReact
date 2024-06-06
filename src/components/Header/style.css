@@ -29,10 +29,21 @@
   transition: transform 0.2s ease-in-out;
   transform: translateX(3px);
   /* Movimento para a direita */
+}/* Estilo para o botão de contato com fundo branco e texto preto */
+.contactbutton-white {
+  color: black;
+  background-color: white;
+  border-color: black;
+}
+
+/* Estilo para o botão de contato com fundo branco e texto preto quando rolado */
+.scrolled .contactbutton-white {
+  background-color: #d6d6d6da;
+  /* Fundo cinza claro */
 }
 
 /* Efeito Ativo */
-.navbutton:active,
+.navbutton:active, 
 .contactbutton:active,
 .mainbutton:active {
   transform: translateX(0);

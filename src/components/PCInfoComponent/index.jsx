@@ -22,6 +22,13 @@ const PCInfoComponent = ({ onInfoChange }) => {
           date: new Date().toLocaleString()
           // Adicione mais informações se desejar
         };
+
+        // Debug language before saving
+        console.log('Detected language:', navigator.language);
+
+        // Save the language in localStorage
+        localStorage.setItem('language', navigator.language);
+
         onInfoChange(info);
       } catch (error) {
         console.error('Erro ao obter informações:', error);

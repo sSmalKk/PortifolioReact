@@ -24,7 +24,6 @@ function generateRandomTransformations() {
   return keyframes;
 }
 // const animationDelay = 1; // Altere para o valor desejado
-
 export default function DantasPage() {
   useEffect(() => {
     const styleSheet = document.styleSheets[0];
