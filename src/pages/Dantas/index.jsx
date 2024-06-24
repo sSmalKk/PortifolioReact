@@ -157,13 +157,14 @@ export default function DantasPage() {
 
           {/* portfolio section */}
           <div className="container-xs px-4 md:px-5">
+
             <div className="flex text-white flex-col md:flex-col items-center gap-8">
               <Heading size="s" as="h1" className="text-blueLimeade leading-[56px] text-responsive">
                 {content[languageindex].portfolioTitle}
               </Heading>
 
-              {Portfolio.map((item, index) => (
-                <div className="portfolio-item flex flex-col items-center md:items-start mb-8 md:mb-12" key={`portfolio-item-${index}`}>
+              {Portfolio.map((item, index) => (<a
+                href={item.link}>                 <div className="portfolio-item flex flex-col items-center md:items-start mb-8 md:mb-12" key={`portfolio-item-${index}`}>
                   <img
                     src={item.image}
                     alt={item.Title}
@@ -173,6 +174,8 @@ export default function DantasPage() {
                     {item.Title}
                   </Heading>
                 </div>
+              </a>
+
               ))}
             </div>
           </div>
@@ -235,7 +238,7 @@ export default function DantasPage() {
 
         </div >
         <Footer content={content} languageindex={languageindex} />
-      </div>
+      </div >
 
 
     </>
