@@ -23,7 +23,12 @@ const content = [
         type: "link",
         img: "/images/img_link_396x407.png",
         link: "https://www.implantegiovanicentro.com.br",
-      },
+      },{
+        title: "WhatsappBot",
+        type: "link",
+        img: "/images/",
+        link: "https://github.com/sSmalKk/whatsappbot",
+      }
       // Add more portfolios as needed
     ],
     filter: "filter",
@@ -109,6 +114,11 @@ const content = [
         company: "Implante Giovani Centro",
         period: "2016/2017",
         website: "http://implantegiovanicentro.com.br"
+      },{
+        role: "Assistente administrativo",
+        company: "AlphabeetWeel",
+        period: "2024/08",
+        
       }
     ],
     methodologies: [
@@ -173,8 +183,12 @@ const content = [
         type: "link",
         img: "/images/img_link_396x407.png",
         link: "https://www.implantegiovanicentro.com.br",
-      },
-      // Adicione mais portfólios conforme necessário
+      },{
+        title: "WhatsappBot",
+        type: "link",
+        img: "/images/",
+        link: "https://github.com/sSmalKk/whatsappbot",
+      }
     ],
     filtrar: "filtra",
     parceiros: [
@@ -259,6 +273,11 @@ const content = [
         company: "Implante Giovani Centro",
         period: "2016/2017",
         website: "http://implantegiovanicentro.com.br"
+      },{
+        role: "Assistente administrativo",
+        company: "AlphabeetWeel",
+        period: "2024/08",
+        
       }
     ],
     methodologies: [
