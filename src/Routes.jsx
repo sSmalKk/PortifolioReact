@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useRoutes } from "react-router-dom";
 import NotFound from "pages/NotFound";
-import Dantas from "pages/Dantas";
-import MinhaPagina from "pages/MinhaPagina";
-import Page from "pages/Page"; 
+import LandingPage from "pages/LandingPage";
+import Page from "pages/Page";
 
 const PrivacyPolicy = () => {
   const title = "Privacy Policy";
@@ -69,12 +68,12 @@ const AuthenticatedPage = ({ children }) => {
 
 const ProjectRoutes = () => {
   const routes = [
-    { path: "/", element: <Dantas /> },
+    { path: "/", element: <LandingPage /> },
     {
-      path: "/MinhaPagina",
+      path: "/",
       element: (
         <AuthenticatedPage>
-          <MinhaPagina />
+          <LandingPage />
         </AuthenticatedPage>
       ),
     },
@@ -83,8 +82,6 @@ const ProjectRoutes = () => {
     { path: "copyright", element: <Copyright /> },
     { path: "termsconditions", element: <TermsConditions /> },
   ];
-
-
 
   const element = useRoutes(routes);
   return element;

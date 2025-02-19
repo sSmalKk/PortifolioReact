@@ -52,3 +52,13 @@ select:focus {
     @apply w-full mx-auto max-w-[1282px];
   }
 }
+.spacing-section {
+  @apply w-full max-w-[1440px] mx-auto px-6 md:px-12 py-16;
+}
+
+/* Ajuste responsivo */
+@layer components {
+  .container-xs {
+    @apply w-full mx-auto max-w-[1282px];
+  }
+}

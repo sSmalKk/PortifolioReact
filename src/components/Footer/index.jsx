@@ -1,89 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importe o Link do React Router
-import { Text, Contactbar } from "./..";
+import { Link } from "react-router-dom";
 
-export default function Footer({languageindex, content,...props }) {
+const Footer = () => {
   return (
-    <footer {...props}>
-      <div style={{
-        backgroundColor: '#fff',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }} className="flex justify-center self-stretch">
-        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-5 px-[61px] md:p-5 md:px-5 sm:flex-col">
-          <Text size="4xl" as="p" className="tracking-[0.18px]">
-            DANTAS
-          </Text>
-          <ul className="flex items-center gap-[15px]">
-
-            <button
-              onClick={() => (window.location.href = "/#about")}
-              className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
-            >
-              <Text style={{
-                color: "#000000",
-              }}
-                className="text-base font-normal tracking-[0.50px]">
-                {content[languageindex].sobre}
-              </Text>
-            </button>
-            <button
-              onClick={() => (window.location.href = "/#projects")}
-              className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
-            >
-              <Text style={{
-                color: "#000000",
-              }}
-                className="text-base font-normal tracking-[0.50px]">
-                {content[languageindex].projetos}
-              </Text>
-            </button>
-            <button
-              onClick={() => (window.location.href = "/#blog")}
-              style={{ margin: 5 }}
-              className="navbutton h-[36px] min-w-[92px]  px-[15px] text-xs tracking-[0.50px] text-white-A700"
-            >
-              <Text style={{
-                color: "#000000",
-              }}
-                className="text-base font-semibold tracking-[0.50px]">
-                {content[languageindex].blogTitleuper}
-              </Text>
-            </button>
-
-          </ul>
-          <Contactbar />
-
-        </div>
+    <footer className="bg-gray-900 text-white py-6 text-center">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+        <h2 className="text-xl font-bold">DANTAS</h2>
+        <ul className="flex gap-6">
+          <li>
+            <Link to="/#about" className="hover:underline">Sobre</Link>
+          </li>
+          <li>
+            <Link to="/#projects" className="hover:underline">Projetos</Link>
+          </li>
+          <li>
+            <Link to="/#blog" className="hover:underline">Blog</Link>
+          </li>
+        </ul>
       </div>
-      <ul style={{
-        backgroundColor: '#fff',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }} className="!mx-auto flex w-full max-w-[1449px] flex-wrap items-center justify-between gap-5 border-t border-solid border-gray-300 py-[9px] pr-[9px] md:p-5">
-        <li>
-          <Link to="/privacypolicy
-">
-            <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-              Privacypolicy
-            </Text>
-          </Link>
-        </li>
-        <li>
-          <a href="copyright">
-            <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-              © 2024 DANTAS COPYRIGHT
-            </Text>
-          </a>
-        </li>
-        <li>
-          <Link to="/termsconditions">
-            <Text size="xs" as="p" className="uppercase tracking-[4.00px] !text-blue_gray-500">
-              Terms & conditions
-            </Text>
-          </Link>
-        </li>
-      </ul>
+
+      <div className="mt-4 border-t border-gray-700 pt-4 text-sm">
+        <ul className="flex justify-center gap-6">
+          <li>
+            <Link to="/privacypolicy" className="hover:underline">Política de Privacidade</Link>
+          </li>
+          <li>
+            <Link to="/copyright" className="hover:underline">Copyright</Link>
+          </li>
+          <li>
+            <Link to="/termsconditions" className="hover:underline">Termos e Condições</Link>
+          </li>
+        </ul>
+        <p className="mt-2">&copy; {new Date().getFullYear()} Dantas. Todos os direitos reservados.</p>
+      </div>
     </footer>
   );
-}
+};
+
+export default Footer;

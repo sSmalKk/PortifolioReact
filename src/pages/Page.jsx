@@ -1,40 +1,34 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Text, Heading } from "../components";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { content } from "../components/content.jsx"
-const languageindex = localStorage.getItem('languageindex') || 0;
 
 export default function Page({ title, texts }) {
   return (
     <>
       <Helmet>
         <title>{title}</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
 
-      {/* main content section */}
-      <div className="flex  w-full flex-col gap-5 bg-gray-50 pt-2.5">
-        <div className="flex flex-col items-center">
-          {/* header section */}
-          <Header content={content} languageindex={languageindex} className="header sticky container-xs gap-5 px-7 md:p-5 sm:px-5" style={{ position: 'fixed', padding: '5px' }} />
+      <div className="flex w-full flex-col gap-5 bg-gray-50 pt-2.5">
+        <Header className="sticky top-0 bg-white shadow-md p-4" />
 
-          {/* hero section */}
-          <div className="container-xs flex flex-col items-center py-10 px-5 gap-5">
-            <Heading size="lg" className="text-center">
-              {title}
-            </Heading>
-            <div className="text-left">
-              {texts.map((text, index) => (
-                <Text key={index}>{text}</Text>
-              ))}
-            </div>
+        <div className="container mx-auto py-10 px-5">
+          <h1 className="text-3xl font-bold text-center">{title}</h1>
+          <div className="mt-4">
+            {texts.map((text, index) => (
+              <p key={index} className="text-base text-gray-700 mb-4">
+                {text}
+              </p>
+            ))}
           </div>
         </div>
 
-        {/* footer section */}
-        <Footer content={content} languageindex={languageindex}/>
+        <Footer className="bg-white p-4" />
       </div>
     </>
   );
