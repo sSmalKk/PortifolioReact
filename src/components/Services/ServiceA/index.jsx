@@ -1,37 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { ContactForm, Popup, Notification, Text, Img, Button } from "../..";
 import "../style.css";
 
-const ServiceComponentType1 = ({languageindex, url, content, service }) => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false); // Estado para controlar se o popup está aberto
+const ServiceComponentType1 = ({ languageindex, url, content, service }) => {
   const [message, setMessage] = useState("");
-
   const handleButtonClick = () => {
     // Abrir o popup ao clicar no botão
-    setIsPopupOpen(true);
   };
 
   const handleClosePopup = () => {
     // Fechar o popup
-    setIsPopupOpen(false);
   };
 
   const handleSendMessage = () => {
-    setMessage(content[languageindex]?.messageSentSuccess || "Message sent successfully");
+    setMessage(
+      content[languageindex]?.messageSentSuccess || "Message sent successfully"
+    );
   };
 
   return (
     <div id={service.id}>
-      {isPopupOpen && (
-        <Popup onClose={handleClosePopup} title={service.name} subTitle={service.subtitle}>
-          <Notification message={message} />
-          <div
-            className="w-full leading-[56px]"
-            dangerouslySetInnerHTML={{ __html: service.body }}
-          />
-          <ContactForm content={content} languageindex={languageindex} onMessageSent={handleSendMessage} url={url} />
-        </Popup>
-      )}
       <div className="service-component flex items-start justify-around w-full">
         <Img
           src={service.image}

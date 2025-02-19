@@ -3,9 +3,7 @@ import { useRoutes } from "react-router-dom";
 import NotFound from "pages/NotFound";
 import Dantas from "pages/Dantas";
 import MinhaPagina from "pages/MinhaPagina";
-import Post from "pages/Post";
-import Page from "pages/Page"; // Corrigido o nome do arquivo aqui
-import { Blog } from "./components/content";
+import Page from "pages/Page"; 
 
 const PrivacyPolicy = () => {
   const title = "Privacy Policy";
@@ -72,13 +70,13 @@ const AuthenticatedPage = ({ children }) => {
 const ProjectRoutes = () => {
   const routes = [
     { path: "/", element: <Dantas /> },
-    { 
-      path: "/MinhaPagina", 
+    {
+      path: "/MinhaPagina",
       element: (
         <AuthenticatedPage>
           <MinhaPagina />
         </AuthenticatedPage>
-      ) 
+      ),
     },
     { path: "*", element: <NotFound /> },
     { path: "privacypolicy", element: <PrivacyPolicy /> },
@@ -86,14 +84,7 @@ const ProjectRoutes = () => {
     { path: "termsconditions", element: <TermsConditions /> },
   ];
 
-  // Adicionar rotas para os posts do blog
-  Blog.forEach(post => {
-    routes.push({
-      path: `post/${post.id}`, // inclui o ID do post na rota
-      element: <Post blog={Blog} id={post.id} />, // passa o ID do post como prop
-    
-    });
-  });
+
 
   const element = useRoutes(routes);
   return element;

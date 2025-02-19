@@ -1,38 +1,32 @@
-import React from 'react';
-import ServiceComponentType1 from './ServiceA';
-import ServiceComponentType2 from './ServiceB';
-import ServiceComponentType3 from './ServiceC';
+import React from "react";
+import ServiceComponentType1 from "./ServiceA";
 
-const ServicesComponent = ({languageindex, services, content, url }) => {
+const ServicesComponent = ({ languageindex, services, content, url }) => {
   return (
     <div>
       {services.map((service, index) => {
         let component;
         switch (service.designtype) {
           case 1:
-            component = <ServiceComponentType1 url={url} content={content} languageindex={languageindex}  key={service.id} service={service} />;
-            break;
-          case 2:
-            component = <ServiceComponentType2 url={url}  languageindex={languageindex}  key={service.id} service={service} />;
-            break;
-          case 3:
             component = (
-              <ServiceComponentType3
+              <ServiceComponentType1
                 url={url}
-                 languageindex={languageindex} 
+                content={content}
+                languageindex={languageindex}
                 key={service.id}
                 service={service}
-                imagePosition={service.imagePosition || 'center'} // Assuming 'center' as default
               />
             );
             break;
+
           default:
             component = null;
         }
         return (
           <React.Fragment key={service.id}>
             {component}
-            {index < services.length - 1 && <div className="my-10" />} {/* Add margin between components */}
+            {index < services.length - 1 && <div className="my-10" />}{" "}
+            {/* Add margin between components */}
           </React.Fragment>
         );
       })}
