@@ -1,0 +1,120 @@
+.top-header {
+  background-color: white;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scrolled-header {
+  background-color: #f8f9fa;
+  /* Cor diferente para quando está rolando */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra para dar destaque */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estilos dos botões */
+/* Estilos dos botões */
+.navbutton,
+.contactbutton,
+.mainbutton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Efeito Hover */
+.navbutton:hover,
+.contactbutton:hover,
+.mainbutton:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: translateX(3px);
+  /* Movimento para a direita */
+}/* Estilo para o botão de contato com fundo branco e texto preto */
+.contactbutton-white {
+  color: black;
+  text-emphasis-color: black;
+  background-color: white;
+  border-color: black;
+}
+
+/* Estilo para o botão de contato com fundo branco e texto preto quando rolado */
+.scrolled .contactbutton-white {
+  background-color: #d6d6d6da;
+  /* Fundo cinza claro */
+}
+
+/* Efeito Ativo */
+.navbutton:active, 
+.contactbutton:active,
+.mainbutton:active {
+  transform: translateX(0);
+}
+
+/* Estilos específicos para o botão principal (mainbutton) */
+.mainbutton {
+  color: white;
+  border: #ffffff00;
+}
+
+.mainbutton:hover {
+  color: rgb(212, 212, 212);
+
+}
+
+.mainbutton:active {
+  color: white;
+
+}
+
+.navbutton {
+  color: white;
+  border: #ffffff00;
+}
+
+.navbutton:hover {
+  color: #007bff;
+
+}
+
+.navbutton:active {
+  color: #007bff;
+
+}
+
+.contactbutton {
+  color: rgb(0, 0, 0);
+  border-color: white;
+}
+
+.contactbutton:hover {
+  color: rgba(0, 0, 0, 0.822);
+  border-color: rgba(216, 216, 216, 0.822);
+}
+
+
+
+.top-header {
+  background-color: rgb(0, 0, 0);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scrolled-header {
+  background-color: #f8f9fa;
+  /* Cor diferente para quando está rolando */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra para dar destaque */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.contactbutton {
+  color: rgb(0, 0, 0);
+  background-color: white;
+  /* Fundo branco */
+  border-color: white;
+}
+
+/* Estilos para o botão de contato quando rolado */
+.scrolled .contactbutton {
+  background-color: #d6d6d6da;
+  /* Fundo cinza claro */
+}

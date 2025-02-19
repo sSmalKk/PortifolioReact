@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "title": "Design Thinking: A New Approach to UX Design",
+        "alternativeHeadline": "Innovative Techniques in User Experience Design",
+        "image": "https://via.placeholder.com/150",
+        "publishDate": "2024-05-31",
+        "author": "Gustavo",
+        "publisher": "Gustavo",
+        "articleSection": "UX Design",
+        "articleBody": "Design Thinking is revolutionizing how we approach UX design by focusing on user-centered solutions...",
+        "description": "Explore the principles of Design Thinking and how they can improve your UX design process.",
+        "slug": "design-thinking-ux",
+        "url": "https://designworld.com/design-thinking-ux",
+        "isDraft": "false",
+        "Categoria": "UX Design"
+    }
+]

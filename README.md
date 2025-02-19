@@ -1,4 +1,4 @@
-## roleplayer
+## gustavo_s_application1
 
 Generated with ❤️ from [DhiWise](https://www.dhiwise.com)
 
@@ -6,7 +6,7 @@ Generated with ❤️ from [DhiWise](https://www.dhiwise.com)
 
 - This React application is built using [craco](https://craco.js.org/).
 - It uses [Tailwind CSS](https://tailwindcss.com/)
-- The application is generated in [TypeScript](https://www.typescriptlang.org/).
+- The application is generated in JavaScript.
 
 ## Pre-requisites
 
@@ -23,8 +23,6 @@ Generated with ❤️ from [DhiWise](https://www.dhiwise.com)
 ## .env file
 
 This file contains various environment variables that you can configure.
-
-**REACT_APP_GOOGLE_MAP_ID** - Your Google Map ID
 
 ## Folder Structure
 
@@ -43,25 +41,25 @@ This file contains various environment variables that you can configure.
 │   └── robots.txt
 ├── README.md
 ├── src
-│   ├── App.tsx
+│   ├── App.jsx
 │   ├── components --------- UI and Detected Common Components
 │   ├── constants ---------- Project constants
 │   ├── hooks -------------- Helpful Hooks
-│   ├── index.tsx
+│   ├── index.jsx
 │   ├── pages -------------- All route pages
-│   ├── Routes.tsx ---------- Routing
+│   ├── Routes.jsx ---------- Routing
 │   ├── styles
 │   │   ├── index.css ------ Other Global Styles
 │   │   └── tailwind.css --- Default Tailwind modules
 │   └── util
-│       └── index.tsx ------- Helpful utils
+│       └── index.jsx ------- Helpful utils
 └── tailwind.config.js ----- Entire theme config, colors, fonts etc.
 ```
 
 For the project to build, **these files must exist with exact filenames**:
 
 - `public/index.html` is the page template;
-- `src/index.tsx` is the TypeScript entry point.
+- `src/index.jsx` is the JavaScript entry point.
 
 You may create subdirectories inside src.
 

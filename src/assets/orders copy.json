@@ -1,0 +1,41 @@
+{
+    "id": "4",
+    "item": "Consultoria em Metodologias Ágeis",
+    "isDelete": false,
+    "Title": "Consultoria em Metodologias Ágeis",
+    "description": "Implementação de metodologias ágeis como Scrum, Kanban, Lean e Design Thinking.",
+    "image": "Uma imagem mostrando um quadro Kanban com post-its representando diferentes etapas de um projeto.",
+    "Icon": "../../assets/images/icon_agile_consulting.svg",
+    "body": "<ul><li>Implementação de Metodologias Ágeis</li><li>Design Sprint</li></ul>"
+},
+{
+    "id": "5",
+    "item": "Manutenção e Suporte Técnico",
+    "isDelete": false,
+    "Title": "Manutenção e Suporte Técnico",
+    "description": "Serviços de montagem, manutenção de hardware e suporte técnico em software.",
+    "image": "Uma imagem mostrando um técnico trabalhando em um computador, com ferramentas ao redor.",
+    "Icon": "../../assets/images/icon_tech_support.svg",
+    "body": "<ul><li>Montagem e Manutenção de Computadores</li><li>Suporte Técnico em Software</li></ul>"
+},
+{
+    "id": "6",
+    "item": "Consultoria em Mídias Sociais e Marketing Digital",
+    "isDelete": false,
+    "Title": "Consultoria em Mídias Sociais e Marketing Digital",
+    "description": "Gestão de redes sociais, SEO e estratégias de marketing digital.",
+    "image": "Uma imagem mostrando ícones de diferentes redes sociais conectados a gráficos de análise.",
+    "Icon": "../../assets/images/icon_social_media_marketing.svg",
+    "body": "<ul><li>Gestão de Redes Sociais</li><li>SEO e Marketing Digital</li></ul>"
+},
+{
+    "id": "7",
+    "item": "Desenvolvimento de Aplicações 3D",
+    "isDelete": false,
+    "Title": "Desenvolvimento de Aplicações 3D",
+    "description": "Criação de aplicações interativas em 3D usando Three.js e outras bibliotecas.",
+    "image": "Uma imagem mostrando um modelo 3D em um ambiente de desenvolvimento.",
+    "Icon": "../../assets/images/icon_3d_development.svg",
+    "body": "<ul><li>Desenvolvimento de Aplicações 3D</li></ul>"
+}
+]

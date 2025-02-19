@@ -1,0 +1,26 @@
+import { Text } from "./Text";
+import { Heading } from "./Heading";
+import { Button } from "./Button";
+import PartnerSlider from "./PartnerSlider";
+import { ServiceItem } from "./ServiceItem";
+import { ServicesComponent } from "./Services";
+import { Img } from "./Img";
+import Popup from "./Popup";
+import PopupManager from "./PopupManager";
+import Cookies from "./Cookies";
+import Notification from "./Notification";
+import ContactForm from "./ContactForm";
+import BlogModel from "./Blog";
+import Changelogs from "./Changelogs";
+import Contact from "./Contact";
+import Contactbar from "./Contactbar";
+import UseFetch from "./Fetch";
+import MeuComponente from "./MeuComponente";
+import OrderComponent from "./OrderComponent";
+import PortfolioComponent from "./PortfolioComponent";
+import Parceiros from "./Parceiros";
+import PCInfoComponent from "./PCInfoComponent";
+import Doublecollum from "./Doublecollum";
+import LanguageInfoComponent from "./LanguageInfoComponent";
+
+export { LanguageInfoComponent, Doublecollum, Parceiros, PortfolioComponent, OrderComponent, MeuComponente, Contact, UseFetch, Contactbar, BlogModel, Changelogs, PopupManager, PCInfoComponent, Cookies, ContactForm, Notification, Popup, PartnerSlider, ServiceItem, Text, Heading, Button, Img, ServicesComponent };

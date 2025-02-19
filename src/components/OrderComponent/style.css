@@ -1,0 +1,96 @@
+.container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.fields {
+  margin-bottom: 10px;
+}
+
+.fields ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fields li {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-wrapper {
+  margin-bottom: 10px;
+}
+
+.input-wrapper label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin-right: 10px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.portfolio-items-container,
+.orders-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.portfolio-item,
+.order {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.portfolio-item h3,
+.order h3 {
+  margin-top: 0;
+}
+
+.portfolio-item p,
+.order p {
+  margin-bottom: 10px;
+}
+
+.portfolio-item button,
+.order button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.portfolio-item button:hover,
+.order button:hover {
+  background-color: #0056b3;
+}

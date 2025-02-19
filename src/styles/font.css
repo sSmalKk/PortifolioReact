@@ -1,77 +1,255 @@
+/* src/fonts.css */
+
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("/public/fonts/RobotoRegular.ttf");
-  font-family: "Roboto";
+  src: url("/public/fonts/Lora-Bold.ttf");
+  font-family: "Lora";
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Lora-BoldItalic.ttf");
+  font-family: "Lora";
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Lora-Italic-VariableFont_wght.ttf");
+  font-family: "Lora";
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Lora-Italic.ttf");
+  font-family: "Lora";
   font-weight: 400;
 }
+
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("/public/fonts/InterRegular.ttf");
-  font-family: "Inter";
-  font-weight: 400;
-}
-@font-face {
-  font-display: swap;
-  font-style: normal;
-  src: url("/public/fonts/RobotoMedium.ttf");
-  font-family: "Roboto";
+  src: url("/public/fonts/Lora-Medium.ttf");
+  font-family: "Lora";
   font-weight: 500;
 }
+
 @font-face {
   font-display: swap;
-  font-style: normal;
-  src: url("/public/fonts/InterMedium.ttf");
-  font-family: "Inter";
+  font-style: italic;
+  src: url("/public/fonts/Lora-MediumItalic.ttf");
+  font-family: "Lora";
   font-weight: 500;
 }
+
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("/public/fonts/RobotoRomanBold.ttf");
-  font-family: "Roboto";
-  font-weight: 700;
-}
-@font-face {
-  font-display: swap;
-  font-style: normal;
-  src: url("/public/fonts/InterBold.ttf");
-  font-family: "Inter";
-  font-weight: 700;
-}
-@font-face {
-  font-display: swap;
-  font-style: normal;
-  src: url("/public/fonts/UrbanistRegular.ttf");
-  font-family: "Urbanist";
+  src: url("/public/fonts/lora-regular-webfont.woff");
+  font-family: "Lora";
   font-weight: 400;
 }
+
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("/public/fonts/MontserratBold.ttf");
-  font-family: "Montserrat";
+  src: url("/public/fonts/Lora-SemiBold.ttf");
+  font-family: "Lora";
+  font-weight: 600;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Lora-SemiBoldItalic.ttf");
+  font-family: "Lora";
+  font-weight: 600;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Lora-VariableFont_wght.ttf");
+  font-family: "Lora";
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-Black.ttf");
+  font-family: "Poppins";
+  font-weight: 900;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-BlackItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 900;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-Bold.ttf");
+  font-family: "Poppins";
   font-weight: 700;
 }
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-BoldItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 700;
+}
+
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("/public/fonts/MontserratRegular.ttf");
-  font-family: "Montserrat";
+  src: url("/public/fonts/Poppins-ExtraBold.ttf");
+  font-family: "Poppins";
+  font-weight: 800;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-ExtraBoldItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 800;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-ExtraLight.ttf");
+  font-family: "Poppins";
+  font-weight: 200;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-ExtraLightItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 200;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-Italic.ttf");
+  font-family: "Poppins";
   font-weight: 400;
 }
+
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("/public/fonts/RobotoRomanThin.ttf");
-  font-family: "Roboto";
+  src: url("/public/fonts/Poppins-Light.ttf");
+  font-family: "Poppins";
+  font-weight: 300;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-LightItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 300;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-Medium.ttf");
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-MediumItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-Regular.ttf");
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-SemiBold.ttf");
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: italic;
+  src: url("/public/fonts/Poppins-SemiBoldItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/Poppins-Thin.ttf");
+  font-family: "Poppins";
   font-weight: 100;
 }
+
 @font-face {
   font-display: swap;
-  font-style: normal;
-  src: url("/public/fonts/UrbanistRomanBold.ttf");
-  font-family: "Urbanist";
+  font-style: italic;
+  src: url("/public/fonts/Poppins-ThinItalic.ttf");
+  font-family: "Poppins";
+  font-weight: 100;
+}
+
+
+/* Poppins */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-poppins-bold {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
+}
+
+/* Lora */
+.font-lora {
+  font-family: 'Lora', serif;
+}
+
+.font-lora-regular {
+  font-family: "lora-regular", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.font-lora-bold {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+
+.font-lora-medium {
+  font-family: 'Lora', serif;
+  font-weight: 500;
 }
