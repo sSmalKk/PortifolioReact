@@ -30,29 +30,7 @@ const Footer = () => {
         </nav>
       </div>
 
-      <div className="mt-4 border-t border-gray-700 pt-4 text-sm">
-        <ul className="flex justify-center gap-6">
-          <li>
-            <Link to="/privacypolicy" className="hover:underline">
-              Política de Privacidade
-            </Link>
-          </li>
-          <li>
-            <Link to="/copyright" className="hover:underline">
-              Copyright
-            </Link>
-          </li>
-          <li>
-            <Link to="/termsconditions" className="hover:underline">
-              Termos e Condições
-            </Link>
-          </li>
-        </ul>
-        <p className="mt-2">
-          &copy; {new Date().getFullYear()} Dantas. Todos os direitos
-          reservados.
-        </p>
-      </div>
+     
     </footer>
   );
 };
