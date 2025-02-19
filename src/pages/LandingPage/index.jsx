@@ -60,19 +60,19 @@ export default function LandingPage() {
         {/* Hero Section */}
         <section
           id="top"
-          className="w-full h-screen flex items-center justify-center bg-cover bg-center"
+          className="w-full h-screen flex items-center justify-center bg-cover bg-center px-6 text-center"
           style={{ backgroundImage: "url('/images/section.png')" }}
         >
-          <h1 className="text-6xl font-bold text-white">My Portfolio</h1>
+          <h1 className="text-5xl sm:text-6xl font-bold text-white">My Portfolio</h1>
         </section>
 
         {/* About Section */}
-        <section id="about" className="spacing-section w-full py-16 bg-white text-center px-6">
+        <section id="about" className="w-full py-16 bg-white text-center px-6">
           <h2 className="text-3xl font-semibold text-gray-800">About</h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto px-4">
             Developer specialized in automation, backend, and UI/UX. Lead designer for the Didder live app and responsible for enhancing interactive dashboards.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-6">
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
             <a
               href="mailto:dantaswebdesign77@gmail.com"
               className="text-gray-600 hover:text-black text-2xl"
@@ -103,14 +103,18 @@ export default function LandingPage() {
         <DoubleColumn />
 
         {/* Portfolio Section */}
-        <section id="projects" className="spacing-section w-full py-16 bg-gray-200 text-center px-6">
+        <section id="projects" className="w-full py-16 bg-gray-200 text-center px-6">
           <h2 className="text-3xl font-semibold text-gray-800">Projects</h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
             {portfolio.map((item, index) => (
-              <a key={index} href={item.link} className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center transition-transform transform hover:scale-105">
-                <img src={item.image} alt={item.title} className="w-full h-48 object-cover rounded-lg" />
-                <h3 className="mt-4 text-xl font-semibold text-gray-800">{item.title}</h3>
-                <p className="text-gray-600 mt-2">{item.description}</p>
+              <a key={index} href={item.link} className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center transition-transform transform hover:scale-105 w-full">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-800">{item.title}</h3>
+                <p className="text-gray-600 mt-2 text-sm sm:text-base">{item.description}</p>
               </a>
             ))}
           </div>

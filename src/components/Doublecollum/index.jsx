@@ -27,18 +27,18 @@ const ProgressBar = ({ percentage }) => (
 );
 
 const InfoColumn = ({ title, items }) => (
-  <div className="flex flex-col flex-1 bg-gray-100 p-6 space-y-4 rounded-lg">
+  <div className="flex flex-col bg-gray-100 p-6 space-y-4 rounded-lg shadow-md w-full">
     <h3 className="text-lg font-bold uppercase tracking-wide text-center">{title}</h3>
-    <ul>
+    <ul className="text-sm sm:text-base text-gray-700">
       {items.map((item, index) => (
-        <li key={index} className="text-gray-700">{item}</li>
+        <li key={index}>{item}</li>
       ))}
     </ul>
   </div>
 );
 
 const SkillsColumn = ({ title, skills }) => (
-  <div className="flex flex-col flex-1 bg-gray-100 p-6 space-y-4 rounded-lg">
+  <div className="flex flex-col bg-gray-100 p-6 space-y-4 rounded-lg shadow-md w-full">
     <h3 className="text-lg font-bold uppercase tracking-wide text-center">{title}</h3>
     {skills.map((skill, index) => (
       <div key={index} className="flex items-center space-x-4">
@@ -53,37 +53,37 @@ const SkillsColumn = ({ title, skills }) => (
 
 const DoubleColumn = () => {
   return (
-    <div className="spacing-section w-full">
-      <div className="flex flex-col md:flex-row md:space-x-6 px-6 md:px-12 my-8 w-full">
-        {/* Personal Information Column */}
-        <div className="flex flex-col flex-1 bg-gray-200 p-6 rounded-lg">
-          <InfoColumn title="Personal Details" items={[
-            "Name: Gustavo Dantas Guimarães",
-            "Nationality: Brazilian",
-            "Age: 26 years (21/12/1998)",
-            "Location: Uberlândia - MG, Brazil",
-            "Phone: +55 (61) 9.8159-4849 / +55 (61) 9.8195-5443",
-            "Email: dantaswebdesign77@gmail.com",
-            "GitHub: github.com/sSmalKk",
-            "Portfolio: dantastec.netlify.app",
-          ]} />
-          <InfoColumn title="Education" items={[
-            "Systems Analysis and Development - TADS",
-            "Computer Technician - CEPAG",
-          ]} />
-          <InfoColumn title="Professional Experience" items={[
-            "Freelancer - 2019/2025",
-            "App Design - Minerva Intermediações",
-            "Technical Support - Pedido Lógico",
-          ]} />
-        </div>
+    <div className="spacing-section w-full px-4 sm:px-6 md:px-12 flex flex-col items-center space-y-6">
+      {/* Personal Information */}
+      <InfoColumn title="Personal Details" items={[
+        "Name: Gustavo Dantas Guimarães",
+        "Nationality: Brazilian",
+        "Age: 26 years (21/12/1998)",
+        "Location: Uberlândia - MG, Brazil",
+        "Phone: +55 (61) 9.8159-4849 / +55 (61) 9.8195-5443",
+        "Email: dantaswebdesign77@gmail.com",
+        "GitHub: github.com/sSmalKk",
+        "Portfolio: dantastec.netlify.app",
+      ]} />
+      
+      {/* Education */}
+      <InfoColumn title="Education" items={[
+        "Systems Analysis and Development - TADS",
+        "Computer Technician - CEPAG",
+      ]} />
+      
+      {/* Professional Experience */}
+      <InfoColumn title="Professional Experience" items={[
+        "Freelancer - 2019/2025",
+        "App Design - Minerva Intermediações",
+        "Technical Support - Pedido Lógico",
+      ]} />
 
-        {/* Skills Column */}
-        <div className="flex flex-col flex-1 bg-gray-200 p-6 space-y-6 rounded-lg">
-          <SkillsColumn title="Technical Skills" skills={skills} />
-          <SkillsColumn title="Tools & Design" skills={tools} />
-        </div>
-      </div>
+      {/* Technical Skills */}
+      <SkillsColumn title="Technical Skills" skills={skills} />
+
+      {/* Tools & Design */}
+      <SkillsColumn title="Tools & Design" skills={tools} />
     </div>
   );
 };
