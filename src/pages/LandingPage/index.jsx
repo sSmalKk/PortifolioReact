@@ -3,41 +3,41 @@ import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import DoubleColumn from "../../components/Doublecollum";
-import { FaEnvelope, FaWhatsapp, FaGithub } from "react-icons/fa"; // Ícones oficiais
+import { FaEnvelope, FaWhatsapp, FaGithub } from "react-icons/fa"; // Official icons
 
 const portfolio = [
   {
-    title: "Automação de Planilhas com ExcelJS",
+    title: "ExcelJS Spreadsheet Automation",
     description:
-      "Exportação de planilhas dinâmicas com colunas ajustáveis e estilização avançada.",
+      "Dynamic spreadsheet export with adjustable columns and advanced styling.",
     image: "/images/exceljs.jpg",
     link: "#",
   },
   {
-    title: "Bot de WhatsApp Modular",
+    title: "Modular WhatsApp Bot",
     description:
-      "Sistema de bot automatizado para WhatsApp utilizando Node.js e MongoDB.",
+      "Automated WhatsApp bot system using Node.js and MongoDB.",
     image: "/images/whatsapp-bot.jpg",
     link: "#",
   },
   {
-    title: "Sistema de Download de Faturas",
+    title: "Invoice Download System",
     description:
-      "Automação para download semanal de faturas, reduzindo trabalho manual.",
+      "Automation for weekly invoice downloads, reducing manual work.",
     image: "/images/download-bot.jpg",
     link: "#",
   },
   {
-    title: "Reajuste de Dashboard - Didder",
+    title: "Dashboard Redesign - Didder",
     description:
-      "Correção de UI/UX e conexão com GraphQL no painel administrativo.",
+      "UI/UX improvements and GraphQL integration for the admin panel.",
     image: "/images/dashboard.jpg",
     link: "#",
   },
   {
-    title: "Sistema de Tipagem do Bot de WhatsApp",
+    title: "WhatsApp Bot Typing System",
     description:
-      "Refatoração do backend para TypeScript, garantindo uma estrutura mais segura e organizada.",
+      "Backend refactoring to TypeScript, ensuring a more secure and structured system.",
     image: "/images/typescript.jpg",
     link: "#",
   },
@@ -45,13 +45,13 @@ const portfolio = [
 
 export default function LandingPage() {
   useEffect(() => {
-    document.title = "Meu Portfólio";
+    document.title = "My Portfolio";
   }, []);
 
   return (
     <>
       <Helmet>
-        <meta name="description" content="Veja meus trabalhos e projetos." />
+        <meta name="description" content="Check out my projects and work." />
       </Helmet>
 
       <Header />
@@ -63,25 +63,20 @@ export default function LandingPage() {
           className="w-full h-screen flex items-center justify-center bg-cover bg-center"
           style={{ backgroundImage: "url('/images/section.png')" }}
         >
-          <h1 className="text-6xl font-bold text-white">Meu Portfólio</h1>
+          <h1 className="text-6xl font-bold text-white">My Portfolio</h1>
         </section>
 
-        {/* Sobre Section */}
-        <section
-          id="about"
-          className="spacing-section w-full py-16 bg-white text-center px-6"
-        >
-          <h2 className="text-3xl font-semibold text-gray-800">Sobre</h2>
+        {/* About Section */}
+        <section id="about" className="spacing-section w-full py-16 bg-white text-center px-6">
+          <h2 className="text-3xl font-semibold text-gray-800">About</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Desenvolvedor especializado em automação, backend e UI/UX. Principal
-            responsável pelo design de aplicativos de live Didder e
-            aprimoramento de dashboards interativos.
+            Developer specialized in automation, backend, and UI/UX. Lead designer for the Didder live app and responsible for enhancing interactive dashboards.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-6">
             <a
               href="mailto:dantaswebdesign77@gmail.com"
               className="text-gray-600 hover:text-black text-2xl"
-              aria-label="E-mail"
+              aria-label="Email"
             >
               <FaEnvelope />
             </a>
@@ -104,36 +99,22 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Dupla Coluna */}
+        {/* Double Column */}
         <DoubleColumn />
 
-        {/* Portfólio Section */}
-        <section
-          id="projects"
-          className="spacing-section w-full py-16 bg-gray-200 text-center px-6"
-        >
-          <h2 className="text-3xl font-semibold text-gray-800">Projetos</h2>
+        {/* Portfolio Section */}
+        <section id="projects" className="spacing-section w-full py-16 bg-gray-200 text-center px-6">
+          <h2 className="text-3xl font-semibold text-gray-800">Projects</h2>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolio.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center transition-transform transform hover:scale-105"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-                <h3 className="mt-4 text-xl font-semibold text-gray-800">
-                  {item.title}
-                </h3>
+              <a key={index} href={item.link} className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center transition-transform transform hover:scale-105">
+                <img src={item.image} alt={item.title} className="w-full h-48 object-cover rounded-lg" />
+                <h3 className="mt-4 text-xl font-semibold text-gray-800">{item.title}</h3>
                 <p className="text-gray-600 mt-2">{item.description}</p>
               </a>
             ))}
           </div>
         </section>
-
       </main>
 
       <Footer />

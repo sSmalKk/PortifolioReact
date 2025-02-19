@@ -55,33 +55,33 @@ const DoubleColumn = () => {
   return (
     <div className="spacing-section w-full">
       <div className="flex flex-col md:flex-row md:space-x-6 px-6 md:px-12 my-8 w-full">
-        {/* Coluna Informações */}
+        {/* Personal Information Column */}
         <div className="flex flex-col flex-1 bg-gray-200 p-6 rounded-lg">
-          <InfoColumn title="Detalhes Pessoais" items={[
-            "Nome: Gustavo Dantas Guimarães",
-            "Nacionalidade: Brasileiro",
-            "Idade: 26 anos (21/12/1998)",
-            "Localização: Uberlândia - MG",
-            "Telefone: (61) 9.8159-4849 / (61) 9.8195-5443",
-            "E-mail: dantaswebdesign77@gmail.com",
+          <InfoColumn title="Personal Details" items={[
+            "Name: Gustavo Dantas Guimarães",
+            "Nationality: Brazilian",
+            "Age: 26 years (21/12/1998)",
+            "Location: Uberlândia - MG, Brazil",
+            "Phone: +55 (61) 9.8159-4849 / +55 (61) 9.8195-5443",
+            "Email: dantaswebdesign77@gmail.com",
             "GitHub: github.com/sSmalKk",
             "Portfolio: dantastec.netlify.app",
           ]} />
-          <InfoColumn title="Educação" items={[
-            "Análise e Desenvolvimento de Sistemas - TADS",
-            "Técnico em Computação - CEPAG",
+          <InfoColumn title="Education" items={[
+            "Systems Analysis and Development - TADS",
+            "Computer Technician - CEPAG",
           ]} />
-          <InfoColumn title="Experiência Profissional" items={[
+          <InfoColumn title="Professional Experience" items={[
             "Freelancer - 2019/2025",
-            "Design de Apps - Minerva Intermediações",
-            "Suporte Técnico - Pedido Lógico",
+            "App Design - Minerva Intermediações",
+            "Technical Support - Pedido Lógico",
           ]} />
         </div>
 
-        {/* Coluna Habilidades */}
+        {/* Skills Column */}
         <div className="flex flex-col flex-1 bg-gray-200 p-6 space-y-6 rounded-lg">
-          <SkillsColumn title="Habilidades Técnicas" skills={skills} />
-          <SkillsColumn title="Ferramentas e Design" skills={tools} />
+          <SkillsColumn title="Technical Skills" skills={skills} />
+          <SkillsColumn title="Tools & Design" skills={tools} />
         </div>
       </div>
     </div>
